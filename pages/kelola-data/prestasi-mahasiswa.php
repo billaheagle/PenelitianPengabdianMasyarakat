@@ -53,11 +53,11 @@
                 <tbody>
                   <tr>
                         <td>1</td>
-                        <td class="text-left">Muhammad Rizky Perdana</td>
-                        <td>Spammer</td>
-                        <td>Wilayah Tanggerang Selatan</td>
+                        <td class="text-left">ESQ Berbagi</td>
+                        <td>ACT</td>
+                        <td>Wilayah Jakarta Selatan</td>
                         <td>2019</td>
-                        <td>jumat, 13 april 2019</td>
+                        <td>jumat, 1 Januari 2019</td>
                         <td>
                         	<button class="btn btn-block btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
@@ -95,7 +95,47 @@
 	                <h4 class="modal-title">Modal Tambah</h4>
 	            </div>
                 <div class="modal-body">
-                   	<p>One fine body&hellip;</p>
+                   	<form action="GET">
+                        <div class="col-xs-6" >
+                            <label>Nama Kegiatan</label></br>
+                            <input type="text" placeholder="Nama Kegiatan" name="namakegiatan" class="form-control">
+                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Prestasi</label></br>
+                            <input type="text" placeholder="Prestasi" name="prestasi" class="form-control">
+                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Tingkat</label></br>
+                            <select name="tingkat" class="form-control">
+                                <option value="1">Tingkat</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Tahun</label></br>
+                            <select name="tahun" class="form-control">
+                                <option value="1">Tahun</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="col-xs-12">
+                            <label>Keterangan</label>
+                            <textarea name="keterangan" class="form-control" rows="5" placeholder=""></textarea>
+                            <br>
+                        </div>         
+                        <div class="col-xs-12">
+                            <label for="File">File</label>
+                            <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Choose File">
+                                <span class="input-group-btn">
+                                <button class="btn btn-flat btn-default" type="file">Browse</button>
+                                </span>
+                            </div>
+                            <br>
+                        </div>    
+                    </form>
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -112,7 +152,47 @@
 	                <h4 class="modal-title">Modal Edit</h4>
 	            </div>
                 <div class="modal-body">
-                   	<p>One fine body&hellip;</p>
+                   	<form action="GET">
+                        <div class="col-xs-6" >
+                            <label>Nama Kegiatan</label></br>
+                            <input type="text" placeholder="Nama Kegiatan" name="namakegiatan" class="form-control">
+                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Prestasi</label></br>
+                            <input type="text" placeholder="Prestasi" name="prestasi" class="form-control">
+                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Tingkat</label></br>
+                            <select name="tingkat" class="form-control">
+                                <option value="1">Tingkat</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Tahun</label></br>
+                            <select name="tahun" class="form-control">
+                                <option value="1">Tahun</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="col-xs-12">
+                            <label>Keterangan</label>
+                            <textarea name="keterangan" class="form-control" rows="5" placeholder=""></textarea>
+                            <br>
+                        </div>         
+                        <div class="col-xs-12">
+                            <label for="File">File</label>
+                            <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Choose File">
+                                <span class="input-group-btn">
+                                <button class="btn btn-flat btn-default" type="file">Browse</button>
+                                </span>
+                            </div>
+                            <br>
+                        </div>    
+                    </form>
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -129,7 +209,7 @@
 	                <h4 class="modal-title">Modal Delete</h4>
 	            </div>
                 <div class="modal-body">
-                   	<p>One fine body&hellip;</p>
+                   	<p>Apakah anda yakin menghapus data ini?</p>
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
