@@ -40,14 +40,14 @@
             <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
-                        <th rowspan="2">No</th>
-                        <th rowspan="2">Kode</th>
-                        <th rowspan="2">Mata Kuliah</th>
-                        <th rowspan="2">Semester</th>
-                        <th colspan="2">SKS</th>
-                        <th rowspan="2">Jenis</th>
-                        <th rowspan="2">File</th>
-                        <th rowspan="2" colspan="3">Action</th>
+                        <th rowspan="2" style="vertical-align: middle;">No</th>
+                        <th rowspan="2" style="vertical-align: middle;">Kode</th>
+                        <th rowspan="2" style="vertical-align: middle;">Mata Kuliah</th>
+                        <th rowspan="2" style="vertical-align: middle;">Semester</th>
+                        <th colspan="2" >SKS</th>
+                        <th rowspan="2" style="vertical-align: middle;">Jenis</th>
+                        <th rowspan="2" style="vertical-align: middle;">File</th>
+                        <th rowspan="2" colspan="3" style="vertical-align: middle;">Action</th>
                     </tr>
                     <tr>
                         <th>Teori</th>
@@ -79,18 +79,18 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                        <th rowspan="2">No</th>
-                        <th rowspan="2">Kode</th>
-                        <th rowspan="2">Mata Kuliah</th>
-                        <th rowspan="2">Semester</th>
-                        <th colspan="2">SKS</th>
-                        <th rowspan="2">Jenis</th>
-                        <th rowspan="2">File</th>
-                        <th rowspan="2" colspan="3">Action</th>
-                    </tr>
-                    <tr>
+                        <th rowspan="2" style="vertical-align: middle;">No</th>
+                        <th rowspan="2" style="vertical-align: middle;">Kode</th>
+                        <th rowspan="2" style="vertical-align: middle;">Mata Kuliah</th>
+                        <th rowspan="2" style="vertical-align: middle;">Semester</th>
                         <th>Teori</th>
                         <th>Lab</th>
+                        <th rowspan="2" style="vertical-align: middle;">Jenis</th>
+                        <th rowspan="2" style="vertical-align: middle;">File</th>
+                        <th rowspan="2" colspan="3" style="vertical-align: middle;">Action</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">SKS</th>
                     </tr>
                 </tfoot>
             </table>
@@ -150,7 +150,7 @@
                             <div class="input-group">
                                     <input type="text" class="form-control">
                                 <span class="input-group-btn">
-                                <button class="btn btn-info btn-flat" type="file">Browse</button>
+                                <button class="btn btn-flat btn-default" type="file">Browse</button>
                                 </span>
                             </div>
                             <br>
@@ -217,7 +217,7 @@
                             <div class="input-group">
                                     <input type="text" class="form-control">
                                 <span class="input-group-btn">
-                                <button class="btn btn-info btn-flat" type="file">Browse</button>
+                                <button class="btn btn-flat btn-default" type="file">Browse</button>
                                 </span>
                             </div>
                             <br>
