@@ -9,7 +9,8 @@
 <script src="../../plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="../../plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 <script src='../../plugins/fastclick/fastclick.min.js'></script>
-<script src="../../dist/js/app.min.js" type="text/javascript"></script>
+<script src="../../dist/js/app.js" type="text/javascript"></script>
+<script src="../../dist/js/demo.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
         $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});

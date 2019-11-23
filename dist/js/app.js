@@ -22,10 +22,10 @@ if (typeof jQuery === "undefined") {
  *
  * @type Object
  * @description $.AdminLTE is the main object for the template's app.
- *				It's used for implementing functions and options related
- *				to the template. Keeping everything wrapped in an object
- *				prevents conflict with other plugins and is a better
- *				way to organize our code.
+ *        It's used for implementing functions and options related
+ *        to the template. Keeping everything wrapped in an object
+ *        prevents conflict with other plugins and is a better
+ *        way to organize our code.
  */
 $.AdminLTE = {};
 
@@ -270,7 +270,8 @@ $.AdminLTE.tree = function (menu) {
       checkElement.slideUp('normal', function () {
         checkElement.removeClass('menu-open');
       });
-      checkElement.parent("li").removeClass("active");
+      //checkElement.parent("li").removeClass("active");
+      checkElement.parent("li").removeClass("menu-open");
     }
     //If the menu is not visible
     else if ((checkElement.is('.treeview-menu')) && (!checkElement.is(':visible'))) {
@@ -287,8 +288,10 @@ $.AdminLTE.tree = function (menu) {
       checkElement.slideDown('normal', function () {
         //Add the class active to the parent li
         checkElement.addClass('menu-open');
-        parent.find('li.active').removeClass('active');
-        parent_li.addClass('active');
+        //parent.find('li.active').removeClass('active');
+        //parent_li.addClass('active');
+        parent.find('li.menu-open').removeClass('menu-open');
+        parent_li.addClass('menu-open');
       });
     }
     //if this isn't a link, prevent the page from being redirected
@@ -305,7 +308,7 @@ $.AdminLTE.tree = function (menu) {
  *
  * @type Object
  * @usage $.AdminLTE.boxWidget.activate()
- *								Set all of your option in the main $.AdminLTE.options object
+ *                Set all of your option in the main $.AdminLTE.options object
  */
 $.AdminLTE.boxWidget = {
   activate: function () {
@@ -362,7 +365,7 @@ $.AdminLTE.boxWidget = {
  * This is a custom plugin to use with the compenet BOX. It allows you to add
  * a refresh button to the box. It converts the box's state to a loading state.
  *
- *	@type plugin
+ *  @type plugin
  * @usage $("#box-widget").boxRefresh( options );
  */
 (function ($) {

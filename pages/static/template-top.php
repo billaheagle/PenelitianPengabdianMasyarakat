@@ -9,6 +9,6 @@
     <link href="../../plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
     <link href="../../plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
     <link href="../../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="../../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../dist/css/skins/_all-skins.css" rel="stylesheet" type="text/css" />
     <link href="../../plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
 </head>
