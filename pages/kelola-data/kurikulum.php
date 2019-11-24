@@ -47,7 +47,7 @@
                         <th colspan="2" >SKS</th>
                         <th rowspan="2" style="vertical-align: middle;">Jenis</th>
                         <th rowspan="2" style="vertical-align: middle;">File</th>
-                        <th rowspan="2" colspan="3" style="vertical-align: middle;">Action</th>
+                        <th rowspan="2" style="vertical-align: middle;">Action</th>
                     </tr>
                     <tr>
                         <th>Teori</th>
@@ -63,16 +63,14 @@
                         <td>3</td>
                         <td>0</td>
                         <td>Wajib</td>
-                        <td>
-                        	<button class="btn btn-block btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
+                        <td width="5%">
+                        	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="1%">
+                        <td width="8%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
-                        </td>
-                        <td width="1%">
+                        
                         	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                        <td width="1%">
+                        
                         	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr>  
@@ -87,7 +85,7 @@
                         <th>Lab</th>
                         <th rowspan="2" style="vertical-align: middle;">Jenis</th>
                         <th rowspan="2" style="vertical-align: middle;">File</th>
-                        <th rowspan="2" colspan="3" style="vertical-align: middle;">Action</th>
+                        <th rowspan="2" style="vertical-align: middle;">Action</th>
                     </tr>
                     <tr>
                         <th colspan="2">SKS</th>
