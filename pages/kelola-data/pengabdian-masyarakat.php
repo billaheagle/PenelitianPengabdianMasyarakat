@@ -47,7 +47,7 @@
                         <th>Tempat</th>
                         <th>Integrasi</th>
                         <th>File</th>
-                        <th colspan="3">Action</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,13 +61,11 @@
                         <td>
                         	<button class="btn btn-block btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="1%">
+                        <td width="9%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
-                        </td>
-                        <td width="1%">
+                       
                         	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                        <td width="1%">
+                        
                         	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                   </tr>  
@@ -81,7 +79,7 @@
                         <th>Tempat</th>
                         <th>Integrasi</th>
                         <th>File</th>
-                        <th colspan="3">Action</th>
+                        <th>Action</th>
                   </tr>
                 </tfoot>
             </table>
@@ -116,9 +114,14 @@
                             <input type="text" placeholder="Tempat" name="matakuliah" class="form-control">
                             <br>
                         </div>
-                       <div class="col-xs-6">
-                            <label>Tanggal</label></br>
-                            <input type="text" placeholder="Tanggal" name="matakuliah" class="form-control">
+                        <div class="col-xs-6">
+                    <label>Tanggal</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                    </div>
                             <br>
                         </div>
                         <div class="col-xs-6">
@@ -201,9 +204,14 @@
                             <input type="text" placeholder="Tempat" name="matakuliah" class="form-control">
                             <br>
                         </div>
-                       <div class="col-xs-6">
-                            <label>Tanggal</label></br>
-                            <input type="text" placeholder="Tanggal" name="matakuliah" class="form-control">
+                        <div class="col-xs-6">
+                    <label>Tanggal</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                    </div>
                             <br>
                         </div>
                         <div class="col-xs-6">
