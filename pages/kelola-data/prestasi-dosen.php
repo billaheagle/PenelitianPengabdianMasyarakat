@@ -45,7 +45,7 @@
                         <th>Tingkat</th>
                         <th>Tahun</th>
                         <th>File</th>
-                        <th colspan="3">Action</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,17 +54,13 @@
                         <td class="text-left">ESQ Berbagi</td>
                         <td>Wilayah Jakarta Selatan</td>
                         <td>2019</td>
-                        <td>
-                        	<button class="btn btn-block btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
+                        <td width="5%">
+                        	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="1%">
+                        <td width="9%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
-                        </td>
-                        <td width="1%">
-                        	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                        <td width="1%">
-                        	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
+                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
+                            <button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                   </tr>  
                 </tbody>
@@ -75,7 +71,7 @@
                         <th>Tingkat</th>
                         <th>Tahun</th>
                         <th>File</th>
-                        <th colspan="3">Action</th>
+                        <th>Action</th>
                   </tr>
                 </tfoot>
             </table>
@@ -88,90 +84,89 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Tambah</h4>
 	            </div>
-                <div class="modal-body">
-                   	<form action="GET">
+                <form action="#">
+                    <div class="modal-body row">
                         <div class="col-xs-6" >
-                            <label>Bidang Keahlian</label></br>
-                            <input type="text" placeholder="Bidang Keahlian" name="namakegiatan" class="form-control">
-                            <br>
-                        </div>
-                        <div class="col-xs-6">
-                            <label>Tingkat</label></br>
-                            <select name="tingkat" class="form-control">
-                                <option value="1">Tingkat</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="col-xs-6">
-                            <label>Tahun</label></br>
-                            <select name="tahun" class="form-control">
-                                <option value="1">Tahun</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="File">File</label>
-                            <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Choose File">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-default" type="file">Browse</button>
-                                </span>
+                            <div class="form-group"> 
+                                <label>Bidang Keahlian</label>
+                                <input type="text" placeholder="Bidang Keahlian" name="namakegiatan" class="form-control">
                             </div>
-                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Tingkat</label>
+                                <select name="tingkat" class="form-control">
+                                    <option value="1">Tingkat</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Tahun</label>
+                                <select name="tahun" class="form-control">
+                                    <option value="1">Tahun</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="custom-file">
+                                <label>File</label>
+                                <input type="file" class="custom-file-input" id="customFile">
+                            </div>
                         </div>    
-                    </form>
-               	</div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-success">Save</button>
-	            </div>
+               	    </div>
+	                <div class="modal-footer">
+	                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	                   <button type="submit" class="btn btn-success">Save</button>
+	                </div>
+                </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
-     <div div class="modal fade" id="edit">
+    <div div class="modal fade" id="edit">
     	<div class="modal-dialog">
             <div class="modal-content">
 	            <div class="modal-header bg-yellow">
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Edit</h4>
 	            </div>
-                <div class="modal-body">
-                   	<form action="GET">
+            <form action="#">
+                <div class="modal-body row">
+                    <input name="id" type="hidden" value="">
                         <div class="col-xs-6" >
-                            <label>Bidang Keahlian</label></br>
-                            <input type="text" placeholder="Bidang Keahlian" name="namakegiatan" class="form-control">
-                            <br>
-                        </div>
-                        <div class="col-xs-6">
-                            <label>Tingkat</label></br>
-                            <select name="tingkat" class="form-control">
-                                <option value="1">Tingkat</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="col-xs-6">
-                            <label>Tahun</label></br>
-                            <select name="tahun" class="form-control">
-                                <option value="1">Tahun</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="File">File</label>
-                            <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Choose File">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-default" type="file">Browse</button>
-                                </span>
+                            <div class="form-group">
+                                <label>Bidang Keahlian</label>
+                                <input type="text" placeholder="Bidang Keahlian" name="namakegiatan" class="form-control">
                             </div>
-                            <br>
                         </div>
-                    </form>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Tingkat</label>
+                                <select name="tingkat" class="form-control">
+                                    <option value="1">Tingkat</option>
+                                </select>
+                            </div>    
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Tahun</label>
+                                <select name="tahun" class="form-control">
+                                <option value="1">Tahun</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="custom-file">
+                                <label>File</label>
+                                <input type="file" class="custom-file-input" id="customFile">
+                            </div>    
+                        </div>
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-warning">Save changes</button>
+	                <button type="submit" class="btn btn-warning">Save changes</button>
 	            </div>
+            </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
@@ -182,13 +177,16 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Delete</h4>
 	            </div>
+                <form action="#">
                 <div class="modal-body">
+                    <input name="id" type="hidden" value="">
                    	<p>Apakah anda yakin menghapus data ini?</p>
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-danger">Delete</button>
+	                <button type="submit" class="btn btn-danger">Delete</button>
 	            </div>
+                </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
