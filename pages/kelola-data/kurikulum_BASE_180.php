@@ -1,6 +1,6 @@
 <?php include '../static/top.php'; ?>
   <section class="content">
-    <div class="alert alert-danger alert-dismissable">
+  <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <h4><i class="icon fa fa-ban"></i> Alert!</h4>
         Gagal! Menambahkan Data
@@ -40,102 +40,113 @@
             <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Judul Kegiatan</th>
-                        <th>Lembaga Mitra</th>
-                        <th>Tingkat</th>
-                        <th>Tanggal</th>
-                        <th>Durasi</th>
-                        <th>Manfaat</th>
-                        <th>File</th>
-                        <th>Action</th>
+                        <th rowspan="2" style="vertical-align: middle;">No</th>
+                        <th rowspan="2" style="vertical-align: middle;">Kode</th>
+                        <th rowspan="2" style="vertical-align: middle;">Mata Kuliah</th>
+                        <th rowspan="2" style="vertical-align: middle;">Semester</th>
+                        <th colspan="2" >SKS</th>
+                        <th rowspan="2" style="vertical-align: middle;">Jenis</th>
+                        <th rowspan="2" style="vertical-align: middle;">File</th>
+                        <th rowspan="2" style="vertical-align: middle;">Action</th>
+                    </tr>
+                    <tr>
+                        <th>Teori</th>
+                        <th>Lab</th>
                     </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                     <tr>
                         <td>1</td>
-                        <td class="text-left">ESQ Berbagi</td>
-                        <td>ACT</td>
-                        <td>Wilayah Jakarta Selatan</td>
-                        <td>Jum'at,1 Januari 2019 </td>
-                        <td>90 Menit</td>
-                        <td>Blablabla</td>
-                        <td>
-                        	<button class="btn btn-block btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
+                        <td class="text-left">CSSE303</td>
+                        <td>Rekayasa Perangkat Lunak</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>Wajib</td>
+                        <td width="5%">
+                        	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="9%">
+                        <td width="8%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
-                       
+                        
                         	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                         
                         	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
-                  </tr>  
+                    </tr>  
                 </tbody>
                 <tfoot>
-                  <tr>
-                       <th>No</th>
-                        <th>Judul Kegiatan</th>
-                        <th>Lembaga Mitra</th>
-                        <th>Tingkat</th>
-                        <th>Tanggal</th>
-                        <th>Durasi</th>
-                        <th>Manfaat</th>
-                        <th>File</th>
-                        <th>Action</th>
-                  </tr>
+                <tr>
+                        <th rowspan="2" style="vertical-align: middle;">No</th>
+                        <th rowspan="2" style="vertical-align: middle;">Kode</th>
+                        <th rowspan="2" style="vertical-align: middle;">Mata Kuliah</th>
+                        <th rowspan="2" style="vertical-align: middle;">Semester</th>
+                        <th>Teori</th>
+                        <th>Lab</th>
+                        <th rowspan="2" style="vertical-align: middle;">Jenis</th>
+                        <th rowspan="2" style="vertical-align: middle;">File</th>
+                        <th rowspan="2" style="vertical-align: middle;">Action</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">SKS</th>
+                    </tr>
                 </tfoot>
             </table>
         </div><!-- /.box-body -->
     </div><!-- /.box -->
-      <div div class="modal fade" id="save">
-        <div class="modal-dialog">
+
+
+    <div div class="modal fade" id="save">
+    	<div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-green">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	            <div class="modal-header bg-green">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Data</h4> 
-                </div>
+	            </div>
                 <div class="modal-body">
                     <form action="GET">
-                        <div class="col-xs-12" >
-                            <label>Judul Kegiatan</label></br>
-                            <input type="text" placeholder="Judul Kegiatan" name="Judul Kegiatan" class="form-control">
+                        <div class="col-xs-4" >
+                            <label>Kode Mata Kuliah</label></br>
+                            <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
                             <br>
                         </div>
-                        <div class="col-xs-6">
-                            <label>Lembaga Mitra</label></br>
-                            <input type="text" placeholder="Lembaga Mitra" name="Lembaga Mitra" class="form-control">
+                        <div class="col-xs-8">
+                            <label>Mata Kuliah</label></br>
+                            <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
                             <br>
                         </div>
-                         <div class="col-xs-6">
-                            <label>Tingkat</label></br>
-                            <input type="text" placeholder="Tingkat" name="Tingkat" class="form-control">
+                        <div class="col-xs-4">
+                            <label>Semester</label></br>
+                            <select name="semester" class="form-control">
+                                <option value="1">Semester</option>
+                            </select>
                             <br>
                         </div>
-                         <div class="col-xs-6">
-                    <label>Tanggal</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-                    </div>
+                        <div class="col-xs-4">
+                            <label>SKS Teori</label></br>
+                            <select name="semester" class="form-control">
+                                <option value="1">SKS Teori</option>
+                            </select>
                             <br>
                         </div>
-                        <div class="col-xs-6">
-                            <label>Durasi</label></br>
-                            <input type="text" placeholder="Durasi" name="Durasi" class="form-control">
+                        <div class="col-xs-4">
+                            <label>SKS Lab</label></br>
+                            <select name="semester" class="form-control">
+                                <option value="1">SKS Lab</option>
+                            </select>
+                            <br>
+                        </div>         
+                        <div class="col-xs-4">
+                            <label>Jenis</label></br>
+                            <select name="jenis" class="form-control">
+                                <option value="Wajib">Jenis</option>
+                            </select>
                             <br>
                         </div>
-                       <div class="col-xs-12">
-                            <label>Manfaat</label></br>
-                            <textarea class="form-control" rows="3"></textarea>
-                            <br>
-                        </div>
-                         <div class="col-xs-12">
+                        <div class="col-xs-8">
                             <label for="File">File</label>
                             <div class="input-group">
-                                    <input type="text" placeholder="Choose file" class="form-control">
+                                    <input type="text" class="form-control">
                                 <span class="input-group-btn">
                                 <button class="btn btn-flat btn-default" type="file">Browse</button>
                                 </span>
@@ -143,14 +154,15 @@
                             <br>
                         </div>    
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save Changes</button>
-                </div>
+               	</div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	                <button type="button" class="btn btn-success">Save</button>
+	            </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
+
      <div div class="modal fade" id="edit">
     	<div class="modal-dialog">
             <div class="modal-content">
@@ -159,48 +171,49 @@
 	                <h4 class="modal-title">Edit Data</h4>
 	            </div>
                 <div class="modal-body">
-                    <form action="GET">
-                        <div class="col-xs-12" >
-                            <label>Judul Kegiatan</label></br>
-                            <input type="text" placeholder="Judul Kegiatan" name="Judul Kegiatan" class="form-control">
+                <form action="GET">
+                        <div class="col-xs-4" >
+                            <label>Kode Mata Kuliah</label></br>
+                            <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
                             <br>
                         </div>
-                        <div class="col-xs-6">
-                            <label>Lembaga Mitra</label></br>
-                            <input type="text" placeholder="Lembaga Mitra" name="Lembaga Mitra" class="form-control">
+                        <div class="col-xs-8">
+                            <label>Mata Kuliah</label></br>
+                            <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
                             <br>
                         </div>
-                         <div class="col-xs-6">
-                            <label>Tingkat</label></br>
-                            <select name="tingkat" class="form-control">
-                                <option value="1">Tingkat</option>
+                        <div class="col-xs-4">
+                            <label>Semester</label></br>
+                            <select name="semester" class="form-control">
+                                <option value="1">Semester</option>
                             </select>
                             <br>
                         </div>
-                         <div class="col-xs-6">
-                    <label>Tanggal</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-                    </div>
+                        <div class="col-xs-4">
+                            <label>SKS Teori</label></br>
+                            <select name="semester" class="form-control">
+                                <option value="1">SKS Teori</option>
+                            </select>
                             <br>
                         </div>
-                         <div class="col-xs-6">
-                            <label>Durasi</label></br>
-                            <input type="text" placeholder="Durasi" name="Durasi" class="form-control">
+                        <div class="col-xs-4">
+                            <label>SKS Lab</label></br>
+                            <select name="semester" class="form-control">
+                                <option value="1">SKS Lab</option>
+                            </select>
+                            <br>
+                        </div>         
+                        <div class="col-xs-4">
+                            <label>Jenis</label></br>
+                            <select name="jenis" class="form-control">
+                                <option value="Wajib">Jenis</option>
+                            </select>
                             <br>
                         </div>
-                        <div class="col-xs-12">
-                            <label>Manfaat</label></br>
-                            <textarea class="form-control" rows="3"></textarea>
-                            <br>
-                        </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-8">
                             <label for="File">File</label>
                             <div class="input-group">
-                                    <input type="text" placeholder="Choose file" class="form-control">
+                                    <input type="text" class="form-control">
                                 <span class="input-group-btn">
                                 <button class="btn btn-flat btn-default" type="file">Browse</button>
                                 </span>
@@ -216,6 +229,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
+    
      <div div class="modal fade" id="delete">
     	<div class="modal-dialog">
             <div class="modal-content">
@@ -224,7 +238,7 @@
 	                <h4 class="modal-title">Delete Data</h4>
 	            </div>
                 <div class="modal-body">
-                   	<p>Apakah anda yakin ingin menghapus data ini?</p>
+                       <p>Apakah anda yakin menghapus data ini&#63;</p>  
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
