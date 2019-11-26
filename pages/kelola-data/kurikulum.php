@@ -31,18 +31,10 @@
         Sukses! Mengedit Data
     </div>-->
     <div class="box">
-     
+        <div class="box-header">
             <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
-<<<<<<< HEAD
-
-
-      
-=======
-        
-        
         </div><!-- /.box-header -->
         <div class="box-body">
->>>>>>> c30d36c93af3886bb96975f2236d82e1fc7857a2
             <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
