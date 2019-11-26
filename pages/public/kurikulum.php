@@ -6,7 +6,7 @@
             <table class="table table-bordered text-center">
                 <thead>
                 	<tr>
-                		<th colspan="6" style="background-color: aqua;">Semester 1</th>
+                		<th colspan="5" style="background-color: aqua;">Semester 1</th>
                 	</tr>
                     <tr>
                         <th rowspan="2" style="vertical-align: middle;">Kode</th>

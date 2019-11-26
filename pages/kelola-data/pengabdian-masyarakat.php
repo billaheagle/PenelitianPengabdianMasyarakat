@@ -58,8 +58,8 @@
                         <td>Jumat, 1 Januari 2019</td>
                         <td>Jakarta</td>
                         <td>Blablabla</td>
-                        <td>
-                        	<button class="btn btn-block btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
+                        <td width="5%">
+                        	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
                         <td width="9%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
@@ -92,56 +92,66 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Data</h4> 
                 </div>
-                <div class="modal-body">
-                    <form action="GET">
+                <form action="#">
+                <div class="modal-body row">
                         <div class="col-xs-6" >
-                            <label>Tema</label></br>
+                            <div class="form-group">
+                            <label>Tema</label>
                             <input type="text" placeholder="Tema" name="kodematakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Judul</label></br>
+                            <div class="form-group">
+                            <label>Judul</label>
                             <input type="text" placeholder="Judul" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-12">
-                            <label>Deskripsi</label></br>
+                            <div class="form-group">
+                            <label>Deskripsi</label>
                             <textarea class="form-control" rows="3"></textarea>
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Tempat</label></br>
+                            <div class="form-group">
+                            <label>Tempat</label>
                             <input type="text" placeholder="Tempat" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                    <label>Tanggal</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-                    </div>
-                            <br>
+                            <div class="form-group">
+                            <label>Tanggal</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                             </div>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Sumber Pembiayaan</label></br>
+                            <div class="form-group">
+                            <label>Sumber Pembiayaan</label>
                             <input type="text" placeholder="Sumber Pembiayaan" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Biaya</label></br>
-                       <div class="input-group">
-                    <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
-                    <input type="text" placeholder="Biaya" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-xs-12">
-                            <label>Evaluasi</label></br>
+                        <div class="form-group">
+                            <label>Biaya</label>
+                            <div class="input-group">
+                            <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
+                            <input type="text" placeholder="Biaya" class="form-control">
+                            </div>
+                         </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                            <label>Evaluasi</label>
                             <textarea class="form-control" rows="3"></textarea>
-                            <br>
+                            </div>
                         </div>
                          <div class="col-xs-12">
+                            <div class="form-group">
                             <label for=" Mahasiswa">Mahasiswa yang terlibat</label>
                             <div class="input-group">
                                     <input type="text" placeholder="Mahasiswa" class="form-control">
@@ -149,30 +159,27 @@
                                 <button class="btn btn-flat btn-secondary" type="file">Tambah</button>
                                 </span>
                             </div>
-                            <br>
-                        </div>
-                  <div class="col-xs-6">
-                            <label>Integrasi</label></br>
-                            <input type="text" placeholder="Integrasi" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label for="File">File</label>
-                            <div class="input-group">
-                                    <input type="text" placeholder="Choose file" class="form-control">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-default" type="file">Browse</button>
-                                </span>
+                            <div class="form-group">
+                            <label>Integrasi</label>
+                            <input type="text" placeholder="Integrasi" name="matakuliah" class="form-control">
                             </div>
-                            <br>
-                        </div>    
-                    </form>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="custom-file">
+                                <label>File</label>
+                                <input type="file" class="custom-file-input" id="customFile">
+                            </div>
+                        </div>       
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-success">Save</button>
                 </div>
-            </div><!-- /.modal-content -->
+            </form>
+         </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
      <div div class="modal fade" id="edit">
@@ -182,56 +189,66 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Edit Data</h4>
 	            </div>
-                <div class="modal-body">
-                    <form action="GET">
+                <form action="#">
+                    <div class="modal-body row">
                         <div class="col-xs-6" >
-                            <label>Tema</label></br>
+                            <div class="form-group">
+                            <label>Tema</label>
                             <input type="text" placeholder="Tema" name="kodematakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Judul</label></br>
+                             <div class="form-group">
+                            <label>Judul</label>
                             <input type="text" placeholder="Judul" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-12">
-                            <label>Deskripsi</label></br>
+                             <div class="form-group">
+                            <label>Deskripsi</label>
                             <textarea class="form-control" rows="3"></textarea>
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Tempat</label></br>
+                            <div class="form-group">
+                            <label>Tempat</label>
                             <input type="text" placeholder="Tempat" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                    <label>Tanggal</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-                    </div>
-                            <br>
+                            <div class="form-group">
+                            <label>Tanggal</label>
+                                <div class="input-group">
+                                <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                                </div>
+                            <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Sumber Pembiayaan</label></br>
+                             <div class="form-group">
+                            <label>Sumber Pembiayaan</label>
                             <input type="text" placeholder="Sumber Pembiayaan" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label>Biaya</label></br>
-                       <div class="input-group">
-                    <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
-                    <input type="text" placeholder="Biaya" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-xs-12">
-                            <label>Evaluasi</label></br>
+                            <div class="form-group">
+                            <label>Biaya</label>
+                            <div class="input-group">
+                            <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
+                            <input type="text" placeholder="Biaya" class="form-control">
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                             <div class="form-group">
+                            <label>Evaluasi</label>
                             <textarea class="form-control" rows="3"></textarea>
-                            <br>
+                            </div>
                         </div>
                          <div class="col-xs-12">
+                             <div class="form-group">
                             <label for=" Mahasiswa">Mahasiswa yang terlibat</label>
                             <div class="input-group">
                                     <input type="text" placeholder="Mahasiswa" class="form-control">
@@ -239,29 +256,27 @@
                                 <button class="btn btn-flat btn-secondary" type="file">Tambah</button>
                                 </span>
                             </div>
-                            <br>
-                        </div>
-                  <div class="col-xs-6">
-                            <label>Integrasi</label></br>
-                            <input type="text" placeholder="Integrasi" name="matakuliah" class="form-control">
-                            <br>
+                            </div>
                         </div>
                         <div class="col-xs-6">
-                            <label for="File">File</label>
-                            <div class="input-group">
-                                    <input type="text" placeholder="Choose file" class="form-control">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-default" type="file">Browse</button>
-                                </span>
+                             <div class="form-group">
+                            <label>Integrasi</label>
+                            <input type="text" placeholder="Integrasi" name="matakuliah" class="form-control">
                             </div>
-                            <br>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="custom-file">
+                                <label>File</label>
+                                <input type="file" class="custom-file-input" id="customFile">
+                            </div>    
                         </div>    
-                    </form>
+                   
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	                <button type="button" class="btn btn-warning">Save changes</button>
 	            </div>
+              </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
