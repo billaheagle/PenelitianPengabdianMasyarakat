@@ -33,8 +33,8 @@
     <div class="box">
         <div class="box-header">
             <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
-
-
+        
+        
         </div><!-- /.box-header -->
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped text-center">
@@ -66,7 +66,7 @@
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="8%">
+                        <td width="9%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
                         
                         	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
@@ -76,7 +76,7 @@
                     </tr>  
                 </tbody>
                 <tfoot>
-                <tr>
+                    <tr>
                         <th rowspan="2" style="vertical-align: middle;">No</th>
                         <th rowspan="2" style="vertical-align: middle;">Kode</th>
                         <th rowspan="2" style="vertical-align: middle;">Mata Kuliah</th>
@@ -102,63 +102,67 @@
 	            <div class="modal-header bg-green">
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Data</h4> 
-	            </div>
-                <div class="modal-body">
-                    <form action="GET">
+                </div>
+                <form action="#">
+                    <div class="modal-body row">
                         <div class="col-xs-4" >
-                            <label>Kode Mata Kuliah</label></br>
-                            <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
-                            <br>
+                            <div class="form-group">
+                                <label>Kode Mata Kuliah</label>
+                                <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
+                            </div>
                         </div>
                         <div class="col-xs-8">
-                            <label>Mata Kuliah</label></br>
-                            <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
-                            <br>
+                            <div class="form-group">
+                                <label>Mata Kuliah</label>
+                                <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
+                            </div>
                         </div>
                         <div class="col-xs-4">
-                            <label>Semester</label></br>
-                            <select name="semester" class="form-control">
-                                <option value="1">Semester</option>
-                            </select>
-                            <br>
+                            <div class="form-group">
+                                <label>Semester</label>
+                                <select name="semester" class="form-control">
+                                    <option value="1">Semester</option>
+                                </select>
+                            </div>    
                         </div>
                         <div class="col-xs-4">
-                            <label>SKS Teori</label></br>
-                            <select name="semester" class="form-control">
-                                <option value="1">SKS Teori</option>
-                            </select>
-                            <br>
+                            <div class="form-group">
+                                <label>SKS Teori</label>
+                                <select name="semester" class="form-control">
+                                    <option value="1">SKS Teori</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-xs-4">
-                            <label>SKS Lab</label></br>
-                            <select name="semester" class="form-control">
-                                <option value="1">SKS Lab</option>
-                            </select>
-                            <br>
+                            <div class="form-group">
+                                <label>SKS Lab</label>
+                                <select name="semester" class="form-control">
+                                    <option value="1">SKS Lab</option>
+                                </select>
+                            </div>
                         </div>         
                         <div class="col-xs-4">
-                            <label>Jenis</label></br>
-                            <select name="jenis" class="form-control">
-                                <option value="Wajib">Jenis</option>
-                            </select>
-                            <br>
+                            <div class="form-group">
+                                <label>Jenis</label>
+                                <select name="jenis" class="form-control">
+                                    <option value="Wajib">Jenis</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-xs-8">
-                            <label for="File">File</label>
-                            <div class="input-group">
-                                    <input type="text" class="form-control">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-default" type="file">Browse</button>
-                                </span>
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <label class="custom-file-label" for="customFile">File</label>
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                </div>
                             </div>
-                            <br>
                         </div>    
-                    </form>
-               	</div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-success">Save</button>
-	            </div>
+               	    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
@@ -170,62 +174,67 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Edit Data</h4>
 	            </div>
-                <div class="modal-body">
-                <form action="GET">
-                        <div class="col-xs-4" >
-                            <label>Kode Mata Kuliah</label></br>
-                            <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
-                            <br>
-                        </div>
-                        <div class="col-xs-8">
-                            <label>Mata Kuliah</label></br>
-                            <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
-                            <br>
-                        </div>
-                        <div class="col-xs-4">
-                            <label>Semester</label></br>
-                            <select name="semester" class="form-control">
-                                <option value="1">Semester</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="col-xs-4">
-                            <label>SKS Teori</label></br>
-                            <select name="semester" class="form-control">
-                                <option value="1">SKS Teori</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="col-xs-4">
-                            <label>SKS Lab</label></br>
-                            <select name="semester" class="form-control">
-                                <option value="1">SKS Lab</option>
-                            </select>
-                            <br>
-                        </div>         
-                        <div class="col-xs-4">
-                            <label>Jenis</label></br>
-                            <select name="jenis" class="form-control">
-                                <option value="Wajib">Jenis</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div class="col-xs-8">
-                            <label for="File">File</label>
-                            <div class="input-group">
-                                    <input type="text" class="form-control">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-default" type="file">Browse</button>
-                                </span>
+               <form action="#">
+                    <div class="modal-body row">
+                        <input name="id" type="hidden" value="">
+                            <div class="col-xs-4" >
+                                <div class="form-group">
+                                    <label>Kode Mata Kuliah</label>
+                                    <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
+                                </div>
                             </div>
-                            <br>
-                        </div>    
-                    </form>
-               	</div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-warning">Save changes</button>
-	            </div>
+                            <div class="col-xs-8">
+                                <div class="form-group">
+                                    <label>Mata Kuliah</label>
+                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Semester</label>
+                                    <select name="semester" class="form-control">
+                                        <option value="1">Semester</option>
+                                    </select>
+                                </div>    
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>SKS Teori</label>
+                                    <select name="semester" class="form-control">
+                                        <option value="1">SKS Teori</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>SKS Lab</label>
+                                    <select name="semester" class="form-control">
+                                        <option value="1">SKS Lab</option>
+                                    </select>
+                                </div>
+                            </div>         
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>Jenis</label>
+                                    <select name="jenis" class="form-control">
+                                        <option value="Wajib">Jenis</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <label class="custom-file-label" for="customFile">File</label>
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                    </div>
+                                </div>
+                            </div>    
+               	    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
@@ -237,13 +246,16 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Delete Data</h4>
 	            </div>
-                <div class="modal-body">
-                       <p>Apakah anda yakin menghapus data ini&#63;</p>  
-               	</div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-danger">Delete</button>
-	            </div>
+                <form action="#">
+                    <input name="id" type="hidden" value="">
+                    <div class="modal-body">
+                       	<p>Apakah anda yakin menghapus data ini?</p>
+                   	</div>
+    	            <div class="modal-footer">
+    	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    	                <button type="submit" class="btn btn-danger">Delete</button>
+    	            </div>
+                </form>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
