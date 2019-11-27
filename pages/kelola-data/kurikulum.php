@@ -119,23 +119,43 @@
                             <div class="form-group">
                                 <label>Semester</label>
                                 <select name="semester" class="form-control">
-                                    <option value="1">Semester</option>
+                                    <option>Semester</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="Pilihan">Pilihan</option>
+                                    <option value="Pendek">Pendek</option>
                                 </select>
                             </div>    
                         </div>
                         <div class="col-xs-4">
                             <div class="form-group">
                                 <label>SKS Teori</label>
-                                <select name="semester" class="form-control">
-                                    <option value="1">SKS Teori</option>
+                                <select name="sksteori" class="form-control">
+                                    <option>SKS Teori</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="form-group">
                                 <label>SKS Lab</label>
-                                <select name="semester" class="form-control">
-                                    <option value="1">SKS Lab</option>
+                                <select name="skslab" class="form-control">
+                                    <option>SKS Lab</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
                                 </select>
                             </div>
                         </div>         
@@ -143,7 +163,11 @@
                             <div class="form-group">
                                 <label>Jenis</label>
                                 <select name="jenis" class="form-control">
-                                    <option value="Wajib">Jenis</option>
+                                    <option>Jenis</option>
+                                    <option value="Wajib">Wajib</option>
+                                    <option value="Peminatan AI">Peminatan AI</option>
+                                    <option value="PEminatan SE">Peminatan SE</option>
+                                    <option value="Pilihan">Pilihan</option>
                                 </select>
                             </div>
                         </div>
@@ -151,7 +175,7 @@
                             <div class="form-group">
                                 <div class="custom-file">
                                     <label class="custom-file-label" for="customFile">File</label>
-                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <input type="file" class="custom-file-input" id="customFile" name="file">
                                 </div>
                             </div>
                         </div>    
@@ -188,45 +212,69 @@
                                 </div>
                             </div>
                             <div class="col-xs-4">
-                                <div class="form-group">
-                                    <label>Semester</label>
-                                    <select name="semester" class="form-control">
-                                        <option value="1">Semester</option>
-                                    </select>
-                                </div>    
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="form-group">
-                                    <label>SKS Teori</label>
-                                    <select name="semester" class="form-control">
-                                        <option value="1">SKS Teori</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="form-group">
-                                    <label>SKS Lab</label>
-                                    <select name="semester" class="form-control">
-                                        <option value="1">SKS Lab</option>
-                                    </select>
-                                </div>
-                            </div>         
-                            <div class="col-xs-4">
-                                <div class="form-group">
-                                    <label>Jenis</label>
-                                    <select name="jenis" class="form-control">
-                                        <option value="Wajib">Jenis</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-xs-8">
-                                <div class="form-group">
-                                    <div class="custom-file">
-                                        <label class="custom-file-label" for="customFile">File</label>
-                                        <input type="file" class="custom-file-input" id="customFile">
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <label>Semester</label>
+                                <select name="semester" class="form-control">
+                                    <option>Semester</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="Pilihan">Pilihan</option>
+                                    <option value="Pendek">Pendek</option>
+                                </select>
                             </div>    
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label>SKS Teori</label>
+                                <select name="sksteori" class="form-control">
+                                    <option>SKS Teori</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label>SKS Lab</label>
+                                <select name="skslab" class="form-control">
+                                    <option>SKS Lab</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>         
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label>Jenis</label>
+                                <select name="jenis" class="form-control">
+                                    <option>Jenis</option>
+                                    <option value="Wajib">Wajib</option>
+                                    <option value="Peminatan AI">Peminatan AI</option>
+                                    <option value="PEminatan SE">Peminatan SE</option>
+                                    <option value="Pilihan">Pilihan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <label class="custom-file-label" for="customFile">File</label>
+                                    <input type="file" class="custom-file-input" id="customFile" name="file">
+                                </div>
+                            </div>
+                        </div>
                	    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
