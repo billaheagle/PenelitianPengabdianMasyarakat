@@ -202,13 +202,13 @@
                             <div class="col-xs-4" >
                                 <div class="form-group">
                                     <label>Kode Mata Kuliah</label>
-                                    <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
+                                    <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-xs-8">
                                 <div class="form-group">
                                     <label>Mata Kuliah</label>
-                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
+                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-xs-4">
@@ -232,7 +232,7 @@
                         <div class="col-xs-4">
                             <div class="form-group">
                                 <label>SKS Teori</label>
-                                <select name="sksteori" class="form-control">
+                                <select name="sks_teori" class="form-control">
                                     <option>SKS Teori</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
@@ -247,7 +247,7 @@
                         <div class="col-xs-4">
                             <div class="form-group">
                                 <label>SKS Lab</label>
-                                <select name="skslab" class="form-control">
+                                <select name="sks_lab" class="form-control">
                                     <option>SKS Lab</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
