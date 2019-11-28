@@ -33,8 +33,6 @@
     <div class="box">
         <div class="box-header">
             <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
-
-
         </div><!-- /.box-header -->
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped text-center">
@@ -96,7 +94,13 @@
                             <div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
-                                    <option value="1">Tingkat</option>
+                                    <option>Tingkat</option>
+                                    <option value="Dalam Kampus">Dalam Kampus</option>
+                                    <option value="Antar Kampus">Antar Kampus</option>
+                                    <option value="Kabupaten/Kota">Kabupaten/Kota</option>
+                                    <option value="Provinsi">Provinsi</option>
+                                    <option value="Nasional">Nasional</option>
+                                    <option value="Internasional">Internasional</option>
                                 </select>
                             </div>
                         </div>
@@ -143,7 +147,13 @@
                             <div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
-                                    <option value="1">Tingkat</option>
+                                    <option>Tingkat</option>
+                                    <option value="Dalam Kampus">Dalam Kampus</option>
+                                    <option value="Antar Kampus">Antar Kampus</option>
+                                    <option value="Kabupaten/Kota">Kabupaten/Kota</option>
+                                    <option value="Provinsi">Provinsi</option>
+                                    <option value="Nasional">Nasional</option>
+                                    <option value="Internasional">Internasional</option>
                                 </select>
                             </div>    
                         </div>

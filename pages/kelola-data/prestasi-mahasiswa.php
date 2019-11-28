@@ -108,7 +108,13 @@
                             <div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
-                                    <option value="1">Tingkat</option>
+                                    <option>Tingkat</option>
+                                    <option value="Dalam Kampus">Dalam Kampus</option>
+                                    <option value="Antar Kampus">Antar Kampus</option>
+                                    <option value="Kabupaten/Kota">Kabupaten/Kota</option>
+                                    <option value="Provinsi">Provinsi</option>
+                                    <option value="Nasional">Nasional</option>
+                                    <option value="Internasional">Internasional</option>
                                 </select>
                             </div>
                         </div>
@@ -167,7 +173,13 @@
                             <div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
-                                    <option value="1">Tingkat</option>
+                                    <option>Tingkat</option>
+                                    <option value="Dalam Kampus">Dalam Kampus</option>
+                                    <option value="Antar Kampus">Antar Kampus</option>
+                                    <option value="Kabupaten/Kota">Kabupaten/Kota</option>
+                                    <option value="Provinsi">Provinsi</option>
+                                    <option value="Nasional">Nasional</option>
+                                    <option value="Internasional">Internasional</option>
                                 </select>
                             </div>
                         </div>
@@ -208,8 +220,8 @@
 	                <h4 class="modal-title">Modal Delete</h4>
 	            </div>
                 <form action="#">
-                    <input name="id" type="hidden" value="">
                     <div class="modal-body">
+                        <input name="id" type="hidden" value="">
                        	<p>Apakah anda yakin menghapus data ini?</p>
                    	</div>
     	            <div class="modal-footer">
