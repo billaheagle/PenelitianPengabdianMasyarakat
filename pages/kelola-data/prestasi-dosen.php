@@ -87,7 +87,7 @@
                         <div class="col-xs-6" >
                             <div class="form-group"> 
                                 <label>Bidang Keahlian</label>
-                                <input type="text" placeholder="Bidang Keahlian" name="namakegiatan" class="form-control">
+                                <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-xs-6">
@@ -115,7 +115,7 @@
                         <div class="col-xs-6">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
                             </div>
                         </div>    
                	    </div>
@@ -140,7 +140,7 @@
                         <div class="col-xs-6" >
                             <div class="form-group">
                                 <label>Bidang Keahlian</label>
-                                <input type="text" placeholder="Bidang Keahlian" name="namakegiatan" class="form-control">
+                                <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-xs-6">
@@ -168,7 +168,7 @@
                         <div class="col-xs-6">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
                             </div>    
                         </div>
                	</div>

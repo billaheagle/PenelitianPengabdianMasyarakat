@@ -95,13 +95,13 @@
                         <div class="col-xs-6" >
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
-                                <input type="text" placeholder="Nama Kegiatan" name="namakegiatan" class="form-control">
+                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="form-group">
                                 <label>Prestasi</label>
-                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control">
+                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-xs-6">
@@ -129,13 +129,13 @@
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <textarea name="keterangan" class="form-control" rows="5" placeholder=""></textarea>
+                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan"></textarea>
                             </div>
                         </div>         
                         <div class="col-xs-12">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
                             </div>
                	        </div>
                     </div>
@@ -160,13 +160,13 @@
                         <div class="col-xs-6">
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
-                                <input type="text" placeholder="Nama Kegiatan" name="namakegiatan" class="form-control">
+                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="form-group">
                                 <label>Prestasi</label>
-                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control">
+                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-xs-6">
@@ -194,13 +194,13 @@
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <textarea name="keterangan" class="form-control" rows="5" placeholder=""></textarea>
+                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan"></textarea>
                             </div>
                         </div>         
                         <div class="col-xs-12">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" class="custom-file-input" id="customFile">
+                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
                             </div>
                         </div>
                	</div>
