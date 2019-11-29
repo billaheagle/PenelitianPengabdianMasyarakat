@@ -1,14 +1,20 @@
 <aside class="main-sidebar">
    <section class="sidebar">
+    <?php 
+      if(isset($_SESSION['user'])) {
+    ?>
      <div class="user-panel">
        <div class="pull-left image">
          <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
        </div>
        <div class="pull-left info">
-         <p>Fulan Fulan</p>
+         <p><?php echo $_SESSION['nama']; ?></p>
          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
        </div>
      </div>
+     <?php
+      }
+    ?>
      <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
         <input type="text" name="q" class="form-control" placeholder="Search..."/>
@@ -24,11 +30,12 @@
         </a>
       </li>
       <?php
-        if($_SESSION['page']=='kelola') {
-          echo "<li class='treeview active'>";
-        } else { 
-          echo "<li class='treeview'>";
-        }
+        if(isset($_SESSION['level'])) {
+          if($_SESSION['page']=='kelola') {
+            echo "<li class='treeview active'>";
+          } else { 
+            echo "<li class='treeview'>";
+          }
       ?>
         <a href="#">
           <i class="fa fa-edit"></i>
@@ -37,51 +44,56 @@
         </a>
         <ul class="treeview-menu">
           <?php
-            if($_SESSION['subpage']=='kurikulum') {
-                echo "<li class='active'><a href='../../connector.php?page=kelola-kurikulum'><i class='fa fa-circle-o'></i> Data Kurikulum</a></li>";
-            } else { 
-              echo "<li><a href='../../connector.php?page=kelola-kurikulum'><i class='fa fa-circle-o'></i> Data Kurikulum</a></li>";
-            }
+            if($_SESSION['level'] == '1') {
+              if($_SESSION['subpage']=='kurikulum') {
+                  echo "<li class='active'><a href='../../connector.php?page=kelola-kurikulum'><i class='fa fa-circle-o'></i> Data Kurikulum</a></li>";
+              } else { 
+                echo "<li><a href='../../connector.php?page=kelola-kurikulum'><i class='fa fa-circle-o'></i> Data Kurikulum</a></li>";
+              }
           ?>
           <?php
-            if($_SESSION['page']=='kelola' && $_SESSION['subpage']=='prestasi-dosen') {
-              echo "<li class='active'><a href='../../connector.php?page=kelola-prestasi-dosen'><i class='fa fa-circle-o'></i> Data Prestasi Dosen</a></li>";
-            } else { 
-              echo "<li><a href='../../connector.php?page=kelola-prestasi-dosen'><i class='fa fa-circle-o'></i> Data Prestasi Dosen</a></li>";
-            }
+            } if($_SESSION['level'] == '2') {
+              if($_SESSION['page']=='kelola' && $_SESSION['subpage']=='prestasi-dosen') {
+                echo "<li class='active'><a href='../../connector.php?page=kelola-prestasi-dosen'><i class='fa fa-circle-o'></i> Data Prestasi Dosen</a></li>";
+              } else { 
+                echo "<li><a href='../../connector.php?page=kelola-prestasi-dosen'><i class='fa fa-circle-o'></i> Data Prestasi Dosen</a></li>";
+              }
           ?>
           <?php
-            if($_SESSION['page']=='kelola' && $_SESSION['subpage']=='prestasi-mahasiswa') {
-              echo "<li class='active'><a href='../../connector.php?page=kelola-prestasi-mahasiswa'><i class='fa fa-circle-o'></i> Data Prestasi Mahasiswa</a></li>";
-            } else { 
-              echo "<li><a href='../../connector.php?page=kelola-prestasi-mahasiswa'><i class='fa fa-circle-o'></i> Data Prestasi Mahasiswa</a></li>";
-            }
+            } if($_SESSION['level'] == '3') {
+              if($_SESSION['page']=='kelola' && $_SESSION['subpage']=='prestasi-mahasiswa') {
+                echo "<li class='active'><a href='../../connector.php?page=kelola-prestasi-mahasiswa'><i class='fa fa-circle-o'></i> Data Prestasi Mahasiswa</a></li>";
+              } else { 
+                echo "<li><a href='../../connector.php?page=kelola-prestasi-mahasiswa'><i class='fa fa-circle-o'></i> Data Prestasi Mahasiswa</a></li>";
+              }
           ?>
           <?php
-            if($_SESSION['subpage']=='pengabdian-masyarakat') {
-              echo "<li class='active'><a href='../../connector.php?page=kelola-pengabdian-masyarakat'><i class='fa fa-circle-o'></i> Data Pengabdian Masyarakat</a></li>";
-            } else { 
-              echo "<li><a href='../../connector.php?page=kelola-pengabdian-masyarakat'><i class='fa fa-circle-o'></i> Data Pengabdian Masyarakat</a></li>";
-            }
+            } if($_SESSION['level'] == '2') {
+              if($_SESSION['subpage']=='pengabdian-masyarakat') {
+                echo "<li class='active'><a href='../../connector.php?page=kelola-pengabdian-masyarakat'><i class='fa fa-circle-o'></i> Data Pengabdian Masyarakat</a></li>";
+              } else { 
+                echo "<li><a href='../../connector.php?page=kelola-pengabdian-masyarakat'><i class='fa fa-circle-o'></i> Data Pengabdian Masyarakat</a></li>";
+              }
           ?>
           <?php
-            if($_SESSION['subpage']=='penelitian') {
-              echo "<li class='active'><a href='../../connector.php?page=kelola-penelitian'><i class='fa fa-circle-o'></i> Data Penelitian</a></li>";
-            } else { 
-              echo "<li><a href='../../connector.php?page=kelola-penelitian'><i class='fa fa-circle-o'></i> Data Penelitian</a></li>";
-            }
+              if($_SESSION['subpage']=='penelitian') {
+                echo "<li class='active'><a href='../../connector.php?page=kelola-penelitian'><i class='fa fa-circle-o'></i> Data Penelitian</a></li>";
+              } else { 
+                echo "<li><a href='../../connector.php?page=kelola-penelitian'><i class='fa fa-circle-o'></i> Data Penelitian</a></li>";
+              }
           ?>
           <?php
-            if($_SESSION['subpage']=='hasil-kerjasama') {
-              echo "<li class='active'><a href='../../connector.php?page=kelola-hasil-kerjasama'><i class='fa fa-circle-o'></i> Data Hasil Kerjasama</a></li>";
-            } else { 
-              echo "<li><a href='../../connector.php?page=kelola-hasil-kerjasama'><i class='fa fa-circle-o'></i> Data Hasil Kerjasama</a></li>";
+              if($_SESSION['subpage']=='hasil-kerjasama') {
+                echo "<li class='active'><a href='../../connector.php?page=kelola-hasil-kerjasama'><i class='fa fa-circle-o'></i> Data Hasil Kerjasama</a></li>";
+              } else { 
+                echo "<li><a href='../../connector.php?page=kelola-hasil-kerjasama'><i class='fa fa-circle-o'></i> Data Hasil Kerjasama</a></li>";
+              }
             }
           ?>
         </ul>
       </li>
       <?php
-        if($_SESSION['page']=='kurikulum') {
+        } if($_SESSION['page']=='kurikulum') {
           echo "<li class='active'><a href='../../connector.php?page=kurikulum'><i class='fa fa-table'></i> Kurikulum</a></li>";
         } else { 
           echo "<li><a href='../../connector.php?page=kurikulum'><i class='fa fa-table'></i> Kurikulum</a></li>";

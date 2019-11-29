@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 	<?php include '../static/template-top.php'; ?>
@@ -10,3 +10,4 @@
 	      	</aside>
 	      	<div class="content-wrapper">
 	        	<?php include '../static/content-header.php'; ?>
+	        	<?php include '../static/database-connector.php'; ?>

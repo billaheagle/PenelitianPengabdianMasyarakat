@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +21,9 @@
 </head>
 <body class="skin-blue">
 	<div class="wrapper">
+		<?php 
+			if(isset($_SESSION['user'])) {
+		?>
 		<header class="main-header">
 		  <a href="index.php" class="logo"><b>Admin</b> PKM</a>
 		  <nav class="navbar navbar-static-top" role="navigation">
@@ -29,13 +35,13 @@
 		        <li class="dropdown user user-menu">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-		            <span class="hidden-xs">Fulan Fulan</span>
+		            <span class="hidden-xs"><?php echo $_SESSION['nama']; ?></span>
 		          </a>
 		          <ul class="dropdown-menu">
 		            <li class="user-header">
 		              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
 		              <p>
-		                Fulan Fulan - Web Developer
+		                <?php echo $_SESSION['nama']; ?>
 		                <small>Member since Nov. 2012</small>
 		              </p>
 		            </li>
@@ -44,7 +50,7 @@
 		                <a href="#" class="btn btn-default btn-flat">Profile</a>
 		              </div>
 		              <div class="pull-right">
-		                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+		                <a href="pages/public/action.php?table=user&&action=logout" class="btn btn-default btn-flat">Sign out</a>
 		              </div>
 		            </li>
 		          </ul>
@@ -53,17 +59,46 @@
 		    </div>
 		  </nav>
 		</header>
+		<?php 
+			} else {
+		?>
+		<header class="main-header">
+		  <a href="index.php" class="logo"><b>Admin</b> PKM</a>
+		  <nav class="navbar navbar-static-top" role="navigation">
+		    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+		      <span class="sr-only">Toggle navigation</span>
+		    </a>
+		    <div class="navbar-custom-menu">
+		      <ul class="nav navbar-nav">
+		        <li class="dropdown user user-menu">
+		          <a href="connector.php?page=login">
+		            <span class="hidden-xs">Login</span>
+		          </a>
+		        </li>
+		      </ul>
+		    </div>
+		  </nav>
+		</header>
+		<?php
+			}
+		?>
 		<aside class="main-sidebar">
 		  <section class="sidebar">
+		  	<?php 
+				if(isset($_SESSION['user'])) {
+			?>
 		    <div class="user-panel">
 		      <div class="pull-left image">
 		        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
 		      </div>
 		      <div class="pull-left info">
-		        <p>Fulan Fulan</p>
+		        <p><?php echo $_SESSION['nama']; ?></p>
 		        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 		      </div>
 		    </div>
+		    <?php
+				}
+			?>
 		    <form action="#" method="get" class="sidebar-form">
 		      <div class="input-group">
 		        <input type="text" name="q" class="form-control" placeholder="Search..."/>
@@ -78,6 +113,9 @@
 		          <i class="fa fa-dashboard"></i> Dashboard
 		        </a>
 		      </li>
+		      <?php 
+				if(isset($_SESSION['level'])) {
+			  ?>
 		      <li class="treeview">
 		        <a href="#">
 		          <i class="fa fa-edit"></i>
@@ -85,14 +123,32 @@
 		          <i class="fa fa-angle-left pull-right"></i>
 		        </a>
 		        <ul class="treeview-menu">
+		          <?php 
+					if($_SESSION['level'] == '1') {
+			  	  ?>
 		          <li><a href="connector.php?page=kelola-kurikulum"><i class="fa fa-circle-o"></i> Data Kurikulum</a></li>
+		      	  <?php
+			      	} if($_SESSION['level'] == '2') {
+			      ?>
 		          <li><a href="connector.php?page=kelola-prestasi-dosen"><i class="fa fa-circle-o"></i> Data Prestasi Dosen</a></li>
+		          <?php
+			      	} if($_SESSION['level'] == '3') {
+			      ?>
 		          <li><a href="connector.php?page=kelola-prestasi-mahasiswa"><i class="fa fa-circle-o"></i> Data Prestasi Mahasiswa</a></li>
+		          <?php
+			      	} if($_SESSION['level'] == '2') {
+			      ?>
 		          <li><a href="connector.php?page=kelola-pengabdian-masyarakat"><i class="fa fa-circle-o"></i> Data Pengabdian Masyarakat</a></li>
 		          <li><a href="connector.php?page=kelola-penelitian"><i class="fa fa-circle-o"></i> Data Penelitian</a></li>
 		          <li><a href="connector.php?page=kelola-hasil-kerjasama"><i class="fa fa-circle-o"></i> Data Hasil Kerjasama</a></li>
+		          <?php
+			      	}
+			      ?>
 		        </ul>
 		      </li>
+		      <?php
+				}
+			  ?>
 		      <li>
 		        <a href="connector.php?page=kurikulum">
 		          <i class="fa fa-table"></i> Kurikulum
@@ -128,7 +184,11 @@
 		  </section>
 		</aside>
 		<div class="content-wrapper">
-			<?php include 'pages/static/content-header.php'; ?>
+			<section class="content-header">
+  				<h1>Dashboard</h1>
+  				<ol class="breadcrumb"><li><i class='fa fa-dashboard'></i> Dashboard</li></ol>
+			</section>
+			<?php include 'pages/static/database-connector.php'; ?>
 			<?php include 'homepage.php'; ?>
 		</div>
 		<?php include 'pages/static/footer.php'; ?>

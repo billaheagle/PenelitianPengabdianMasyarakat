@@ -51,13 +51,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                        <td>1</td>
-                        <td class="text-left">ESQ Berbagi</td>
-                        <td>ACT</td>
-                        <td>Jumat, 1 Januari 2019</td>
-                        <td>Jakarta</td>
-                        <td>Blablabla</td>
+                    <?php
+                        $no = 1;
+                        foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
+                    ?>
+                    <tr>
+                        <td><?php echo $no++; ?></td>
+                        <td class="text-left"><?php echo $show['tema']; ?></td>
+                        <td><?php echo $show['judul']; ?></td>
+                        <td><?php echo $show['tanggal']; ?></td>
+                        <td><?php echo $show['tempat']; ?></td>
+                        <td><?php echo $show['id_matakuliah']; ?></td>
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
@@ -68,7 +72,10 @@
                         
                         	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
-                  </tr>  
+                    </tr> 
+                    <?php 
+                        }
+                    ?> 
                 </tbody>
                 <tfoot>
                   <tr>

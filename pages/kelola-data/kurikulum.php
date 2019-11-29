@@ -53,14 +53,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $no = 1;
+                        foreach($db->show() as $show) {
+                    ?>
                      <tr>
-                        <td>1</td>
-                        <td class="text-left">CSSE303</td>
-                        <td>Rekayasa Perangkat Lunak</td>
-                        <td>5</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>Wajib</td>
+                        <td><?php echo $no++; ?></td>
+                        <td class="text-left"><?php echo $show['kode_matakuliah']; ?></td>
+                        <td><?php echo $show['matakuliah']; ?></td>
+                        <td><?php echo $show['semester']; ?></td>
+                        <td><?php echo $show['sks_teori']; ?></td>
+                        <td><?php echo $show['sks_lab']; ?></td>
+                        <td><?php echo $show['jenis']; ?></td>
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
@@ -72,6 +76,9 @@
                         	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr>  
+                    <?php 
+                        }
+                    ?>
                 </tbody>
                 <tfoot>
                     <tr>

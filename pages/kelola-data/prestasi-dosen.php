@@ -47,11 +47,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                        <td>1</td>
-                        <td class="text-left">ESQ Berbagi</td>
-                        <td>Wilayah Jakarta Selatan</td>
-                        <td>2019</td>
+                    <?php
+                        $no = 1;
+                        foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
+                    ?>
+                    <tr>
+                        <td><?php echo $no++; ?></td>
+                        <td class="text-left"><?php echo $show['bidang_keahlian']; ?></td>
+                        <td><?php echo $show['tingkat']; ?></td>
+                        <td><?php echo $show['tahun']; ?></td>
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
@@ -60,7 +64,10 @@
                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                             <button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
-                  </tr>  
+                    </tr> 
+                    <?php 
+                        }
+                    ?>  
                 </tbody>
                 <tfoot>
                   <tr>

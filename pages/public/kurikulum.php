@@ -1,12 +1,15 @@
 <?php include '../static/top.php'; ?>
-  <section class="content">
+  <section class="content row">
+    <?php
+        $no = 1;
+        while($no < 9) {
+    ?>
   	<div class="col-xs-6">
-      <div class="box">
-
+        <div class="box">
             <table class="table table-bordered text-center">
                 <thead>
                 	<tr>
-                		<th colspan="5" style="background-color: aqua;">Semester 1</th>
+                		<th colspan="5" style="background-color: aqua;">Semester <?php echo $no; ?></th>
                 	</tr>
                     <tr>
                         <th rowspan="2" style="vertical-align: middle;">Kode</th>
@@ -20,67 +23,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                     <tr>
-                        <td class="text-left">CSSE303</td>
-                        <td>Rekayasa Perangkat Lunak</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>Wajib</td>
-                        </tr>  
-                       <tr>
-                        <td class="text-left">KKES201</td>
-                        <td>Analisis dan Perancangan Berorientasi Objek</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>Wajib</td>
-                        </tr>  
-
-                </tbody>
-                 </table>
-
-    </div><!-- /.box -->
-</div>
-
-<div class="col-xs-6">
-      <div class="box">
-       
-        
-            <table class="table table-bordered text-center">
-                <thead>
-                	<tr>
-                		<th colspan="6" style="background-color: aqua;">Semester 1</th>
-                	</tr>
+                    <?php
+                        foreach($db->search_by_field('semester', $no++) as $show) {
+                    ?>
                     <tr>
-                        <th rowspan="2" style="vertical-align: middle;">Kode</th>
-                        <th rowspan="2" style="vertical-align: middle;">Mata Kuliah</th>
-                        <th colspan="2" >SKS</th>
-                        <th rowspan="2" style="vertical-align: middle;">Jenis</th>
-                    </tr>
-                    <tr>
-                        <th>Teori</th>
-                        <th>Lab</th>
-                    </tr>
-                </thead>
-                <tbody>
-                     <tr>
-                        <td class="text-left">CSSE303</td>
-                        <td>Rekayasa Perangkat Lunak</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>Wajib</td>
-                        </tr>  
-                       <tr>
-                        <td class="text-left">KKES201</td>
-                        <td>Analisis dan Perancangan Berorientasi Objek</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>Wajib</td>
-                        </tr>  
-
+                        <td class="text-left"><?php echo $show['kode_matakuliah']; ?></td>
+                        <td><?php echo $show['matakuliah']; ?></td>
+                        <td><?php echo $show['sks_teori']; ?></td>
+                        <td><?php echo $show['sks_lab']; ?></td>
+                        <td><?php echo $show['jenis']; ?></td>
+                    </tr>  
+                    <?php
+                        }
+                    ?>
                 </tbody>
-                 </table>
-    
-    </div><!-- /.box -->
-</div>
-  </section>
+            </table>
+        </div>
+    </div>
+    <?php
+        }
+    ?>
+</section>
 <?php include '../static/bot.php'; ?>
