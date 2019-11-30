@@ -55,7 +55,8 @@
                 <tbody>
                     <?php
                         $no = 1;
-                        foreach($db->show() as $show) {
+                        if($db->show() != null) {
+                            foreach($db->show() as $show) {
                     ?>
                      <tr>
                         <td><?php echo $no++; ?></td>
@@ -77,6 +78,7 @@
                         </td>
                     </tr>  
                     <?php 
+                            }
                         }
                     ?>
                 </tbody>

@@ -3,7 +3,8 @@
     <div class="row">
       <?php
         $no = 1;
-        foreach($db->show() as $show) {
+        if($db->show() != null) {
+          foreach($db->show() as $show) {
       ?>
       <div class="col-md-3">
         <div class="box">
@@ -17,6 +18,7 @@
         </div>
       </div>
       <?php
+          }
         }
       ?>
     </div>

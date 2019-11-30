@@ -53,7 +53,8 @@
                 <tbody>
                     <?php
                         $no = 1;
-                        foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
+                        if($db->search_by_field('id_user' , $_SESSION['user']) != null) {
+                            foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
                     ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
@@ -72,6 +73,7 @@
                         </td>
                     </tr>  
                     <?php 
+                            }
                         }
                     ?>  
                 </tbody>

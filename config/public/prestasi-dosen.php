@@ -2,13 +2,20 @@
 	class prestasiDosen {
 		var $table	= "prestasi_dosen";
 		var $dir	= "../../config/database.php";
+		var $status	= null;
 
 		function show() {
 			include $this->dir;
 			$data = mysqli_query($connection, "SELECT * FROM " . $this->table);
 			while($d = mysqli_fetch_array($data)) {
 				$result[] = $d;
+				$this->status = "true";
 			}
+
+			if($this->status == null) {
+				return null;
+			}
+			
 			return $result;
 		}
 
@@ -17,7 +24,13 @@
 			$data = mysqli_query($connection, "SELECT * FROM " . $this->table . " WHERE id='$id'");
 			while($d = mysqli_fetch_array($data)){
 				$result[] = $d;
+				$this->status = "true";
 			}
+
+			if($this->status == null) {
+				return null;
+			}
+			
 			return $result;
 		}
 		
@@ -26,7 +39,13 @@
 			$data = mysqli_query($connection, "SELECT '$field' FROM " . $this->table . " WHERE id='$id'");
 			while($d = mysqli_fetch_array($data)){
 				$result[] = $d;
+				$this->status = "true";
 			}
+
+			if($this->status == null) {
+				return null;
+			}
+			
 			return $result;
 		}
 
@@ -35,7 +54,13 @@
 			$data = mysqli_query($connection, "SELECT * FROM " . $this->table . " WHERE $field='$param'");
 			while($d = mysqli_fetch_array($data)){
 				$result[] = $d;
+				$this->status = "true";
 			}
+
+			if($this->status == null) {
+				return null;
+			}
+			
 			return $result;
 		}
 
@@ -44,7 +69,13 @@
 			$data = mysqli_query($connection, "SELECT '$field1' FROM " . $this->table . " WHERE $field2='$param'");
 			while($d = mysqli_fetch_array($data)){
 				$result[] = $d;
+				$this->status = "true";
 			}
+
+			if($this->status == null) {
+				return null;
+			}
+			
 			return $result;
 		}
 	}
