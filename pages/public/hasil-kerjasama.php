@@ -11,7 +11,7 @@
             <img src="images.png" alt="Foto" width="100%">
           </div>
           <div class="box-body">
-            <h3><?php echo $show['judul_kegiatan']; ?></h3>
+            <h4><b><?php echo $show['judul_kegiatan']; ?></b></h4>
             <p>Sedikit deskripsi untuk menjelaskan isi dari blog ini</p>
           </div>
         </div>

@@ -11,7 +11,7 @@
             <img src="images.png" alt="Foto" width="100%">
           </div>
           <div class="box-body">
-            <h4><?php echo $show['judul']; ?></h4>
+            <h4><b><?php echo $show['judul']; ?></b></h4>
             <p>Sedikit deskripsi untuk menjelaskan isi dari blog ini</p>
           </div>
         </div>

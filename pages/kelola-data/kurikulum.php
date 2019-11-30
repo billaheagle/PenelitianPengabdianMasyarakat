@@ -110,19 +110,19 @@
                 </div>
                 <form action="#">
                     <div class="modal-body row">
-                        <div class="col-xs-4" >
+                        <div class="col-lg-4" >
                             <div class="form-group">
                                 <label>Kode Mata Kuliah</label>
                                 <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
                             </div>
                         </div>
-                        <div class="col-xs-8">
+                        <div class="col-lg-8">
                             <div class="form-group">
                                 <label>Mata Kuliah</label>
                                 <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
                             </div>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Semester</label>
                                 <select name="semester" class="form-control">
@@ -140,7 +140,7 @@
                                 </select>
                             </div>    
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label>SKS Teori</label>
                                 <select name="sksteori" class="form-control">
@@ -155,7 +155,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label>SKS Lab</label>
                                 <select name="skslab" class="form-control">
@@ -166,7 +166,7 @@
                                 </select>
                             </div>
                         </div>         
-                        <div class="col-xs-4">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Jenis</label>
                                 <select name="jenis" class="form-control">
@@ -178,7 +178,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-8">
+                        <div class="col-lg-8">
                             <div class="form-group">
                                 <div class="custom-file">
                                     <label class="custom-file-label" for="customFile">File</label>
@@ -206,19 +206,19 @@
                <form action="#">
                     <div class="modal-body row">
                         <input name="id" type="hidden" value="">
-                            <div class="col-xs-4" >
+                            <div class="col-lg-4" >
                                 <div class="form-group">
                                     <label>Kode Mata Kuliah</label>
                                     <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control" autocomplete="off">
                                 </div>
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-lg-8">
                                 <div class="form-group">
                                     <label>Mata Kuliah</label>
                                     <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off">
                                 </div>
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Semester</label>
                                 <select name="semester" class="form-control">
@@ -236,7 +236,7 @@
                                 </select>
                             </div>    
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label>SKS Teori</label>
                                 <select name="sks_teori" class="form-control">
@@ -251,7 +251,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label>SKS Lab</label>
                                 <select name="sks_lab" class="form-control">
@@ -262,7 +262,7 @@
                                 </select>
                             </div>
                         </div>         
-                        <div class="col-xs-4">
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Jenis</label>
                                 <select name="jenis" class="form-control">
@@ -274,7 +274,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-8">
+                        <div class="col-lg-8">
                             <div class="form-group">
                                 <div class="custom-file">
                                     <label class="custom-file-label" for="customFile">File</label>
