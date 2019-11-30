@@ -24,7 +24,8 @@
                 </thead>
                 <tbody>
                     <?php
-                        foreach($db->search_by_field('semester', $no++) as $show) {
+                        if($db->search_by_field('semester' , $no) != null) {
+                            foreach($db->search_by_field('semester', $no++) as $show) {
                     ?>
                     <tr>
                         <td class="text-left"><?php echo $show['kode_matakuliah']; ?></td>
@@ -34,6 +35,7 @@
                         <td><?php echo $show['jenis']; ?></td>
                     </tr>  
                     <?php
+                            }
                         }
                     ?>
                 </tbody>
