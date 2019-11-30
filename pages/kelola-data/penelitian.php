@@ -103,31 +103,31 @@
                 </div>
                 <form action="#">
                 <div class="modal-body row">
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Tema</label>
                             <input type="text" placeholder="Tema" name="tema" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                              <div class="form-group">
                             <label>Judul</label>
                             <input type="text" placeholder="Judul" name="judul" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-lg-12">
                              <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea class="form-control" rows="3" name="deskripsi"></textarea>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                              <div class="form-group">
                             <label>Tempat</label>
                             <input type="text" placeholder="Tempat" name="tempat" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Tanggal</label>
                                 <div class="input-group">
@@ -138,13 +138,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Sumber Pembiayaan</label>
                             <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Biaya</label>
                             <div class="input-group">
@@ -153,13 +153,13 @@
                             </div>
                         </div>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-lg-12">
                             <div class="form-group">
                             <label>Evaluasi</label>
                             <textarea class="form-control" name="evaluasi" rows="3"></textarea>
                             </div>
                         </div>
-                         <div class="col-xs-12">
+                         <div class="col-lg-12">
                             <div class="form-group">
                             <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
                                 <div class="input-group">
@@ -170,13 +170,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Integrasi</label>
                             <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="custom-file">
                                 <label>File</label>
                                 <input type="file" class="custom-file-input" name="file" id="customFile">
@@ -202,31 +202,31 @@
                 <form action="#">
                 <div class="modal-body row">
                     <input name="id" type="hidden" value="">
-                        <div class="col-xs-6" >
+                        <div class="col-lg-6" >
                             <div class="form-group">
                             <label>Tema</label>
                             <input type="text" placeholder="Tema" name="tema" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Judul</label>
                             <input type="text" placeholder="Judul" name="judul" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-lg-12">
                             <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea class="form-control" name="deskripsi" rows="3"></textarea>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Tempat</label>
                             <input type="text" placeholder="Tempat" name="tempat" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                       <div class="col-xs-6">
+                       <div class="col-lg-6">
                             <div class="form-group">
                             <label>Tanggal</label>
                                 <div class="input-group">
@@ -237,13 +237,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Sumber Pembiayaan</label>
                             <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Biaya</label></br>
                                 <div class="input-group">
@@ -252,13 +252,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-lg-12">
                             <div class="form-group">
                             <label>Evaluasi</label></br>
                             <textarea class="form-control" name="biaya" rows="3"></textarea>
                             </div>
                         </div>
-                         <div class="col-xs-12">
+                         <div class="col-lg-12">
                             <div class="form-group">
                             <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
                                 <div class="input-group">
@@ -269,13 +269,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                             <label>Integrasi</label></br>
                             <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                              <div class="custom-file">
                                 <label>File</label>
                                 <input type="file" name="file" class="custom-file-input" id="customFile">
