@@ -26,7 +26,7 @@
 			if(isset($_SESSION['user'])) {
 		?>
 		<header class="main-header">
-		  <a href="index.php" class="logo"><b>Admin</b> PKM</a>
+		  <a href="../../connector.php?page=dashboard" class="logo"><b>Admin</b> PKM</a>
 		  <nav class="navbar navbar-static-top" role="navigation">
 		    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
 		      <span class="sr-only">Toggle navigation</span>
@@ -64,7 +64,7 @@
 			} else {
 		?>
 		<header class="main-header">
-		  <a href="index.php" class="logo"><b>Admin</b> PKM</a>
+		  <a href="../../connector.php?page=dashboard" class="logo"><b>Admin</b> PKM</a>
 		  <nav class="navbar navbar-static-top" role="navigation">
 		    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
 		      <span class="sr-only">Toggle navigation</span>
