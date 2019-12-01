@@ -1,5 +1,6 @@
 <?php
-	session_start();
+  	session_start();
+  	include 'pages/static/current-page.php'; 
 ?>
 <!DOCTYPE html>
 <html>
