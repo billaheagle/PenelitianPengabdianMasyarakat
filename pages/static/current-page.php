@@ -59,9 +59,9 @@
     		} else if ($page == 'hasil-kerjasama') {
 				$_SESSION['page'] = "hasil-kerjasama";
 				$_SESSION['subpage'] = "";
-    		} else if ($page == 'blog') {
+    		/*} else if ($page == 'blog') {
 				$_SESSION['page'] = "dashboard";
-				$_SESSION['subpage'] = "";
+				$_SESSION['subpage'] = "";*/
     		} else if ($page == 'login' || $page2 == 'login') {
     			if(isset($_SESSION['user']) && isset($_SESSION['level'])) {
 					header('location:../../connector.php?page=dashboard');

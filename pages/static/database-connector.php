@@ -9,16 +9,22 @@
 	    } else if($_SESSION['page']=='kelola') {
 	    	if($_SESSION['subpage']=='kurikulum') {
 	    		include $dir1 . 'kurikulum.php';
-				$db 	= new kurikulum();
-			    $table	= 'matakuliah';
+				$db 		= new kurikulum();
+			    $table		= 'matakuliah';
+			    $semester	= array("1", "2", "3", "4", "5", "6", "7", "8", "Pilihan", "Pendek");
+			    $sks_teori	= array("0", "1", "2", "3", "4", "5", "6");
+			    $sks_lab	= array("0", "1", "2");
+			    $jenis		= array("Wajib", "Peminatan AI", "Peminatan SE", "Pilihan");
 	    	} else if($_SESSION['subpage']=='prestasi-dosen') {
 	    		include $dir1 . 'prestasi-dosen.php';
-				$db 	= new prestasiDosen();
-			    $table	= 'prestasi_dosen';
+				$db 		= new prestasiDosen();
+			    $table		= 'prestasi_dosen';
+			    $tingkat	= array("Dalam Kampus", "Antar Kampus", "Kabupaten / Kota", "Provinsi", "Nasional", "Internasional");
 	    	} else if($_SESSION['subpage']=='prestasi-mahasiswa') {
 	    		include $dir1 . 'prestasi-mahasiswa.php';
-				$db 	= new prestasiMahasiswa();
-			    $table	= 'prestasi_mahasiswa';
+				$db 		= new prestasiMahasiswa();
+			    $table		= 'prestasi_mahasiswa';
+			    $tingkat	= array("Dalam Kampus", "Antar Kampus", "Kabupaten / Kota", "Provinsi", "Nasional", "Internasional");
 	    	} else if($_SESSION['subpage']=='pengabdian-masyarakat') {
 	    		include $dir1 . 'pengabdian-masyarakat.php';
 				$db 	= new pengabdianMasyarakat();
@@ -29,8 +35,9 @@
 			    $table	= 'penelitian';
 	    	} else if($_SESSION['subpage']=='hasil-kerjasama') {
 	    		include $dir1 . 'hasil-kerjasama.php';
-				$db 	= new hasilKerjasama();
-			    $table	= 'hasil_kerjasama';
+				$db 		= new hasilKerjasama();
+			    $table		= 'hasil_kerjasama';
+			    $tingkat	= array("Dalam Kampus", "Antar Kampus", "Kabupaten / Kota", "Provinsi", "Nasional", "Internasional");
 	    	}
 	    } else if($_SESSION['page']=='kurikulum') {
 	    	include $dir2 . 'kurikulum.php';

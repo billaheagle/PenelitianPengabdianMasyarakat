@@ -70,9 +70,9 @@
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
                         <td width="9%">
-                        	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
+                        	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
                         
-                        	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
+                        	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
                         
                         	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
@@ -129,16 +129,9 @@
                                 <label>Semester</label>
                                 <select name="semester" class="form-control">
                                     <option>Semester</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="Pilihan">Pilihan</option>
-                                    <option value="Pendek">Pendek</option>
+                                    <?php foreach($semester as $s) { 
+                                        echo "<option value='$s'>$s</option>";
+                                    } ?>
                                 </select>
                             </div>    
                         </div>
@@ -147,13 +140,9 @@
                                 <label>SKS Teori</label>
                                 <select name="sksteori" class="form-control">
                                     <option>SKS Teori</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    <?php foreach($sks_teori as $s) { 
+                                        echo "<option value='$s'>$s</option>";
+                                    } ?>
                                 </select>
                             </div>
                         </div>
@@ -162,9 +151,9 @@
                                 <label>SKS Lab</label>
                                 <select name="skslab" class="form-control">
                                     <option>SKS Lab</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <?php foreach($sks_lab as $s) { 
+                                        echo "<option value='$s'>$s</option>";
+                                    } ?>
                                 </select>
                             </div>
                         </div>         
@@ -173,10 +162,9 @@
                                 <label>Jenis</label>
                                 <select name="jenis" class="form-control">
                                     <option>Jenis</option>
-                                    <option value="Wajib">Wajib</option>
-                                    <option value="Peminatan AI">Peminatan AI</option>
-                                    <option value="PEminatan SE">Peminatan SE</option>
-                                    <option value="Pilihan">Pilihan</option>
+                                    <?php foreach($jenis as $s) { 
+                                        echo "<option value='$s'>$s</option>";
+                                    } ?>
                                 </select>
                             </div>
                         </div>
@@ -198,7 +186,11 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
 
-     <div div class="modal fade" id="edit">
+    <?php
+        if($db->show() != null) {
+            foreach($db->show() as $show) {
+    ?>
+    <div div class="modal fade" id="edit-<?php echo $show['id']; ?>">
     	<div class="modal-dialog">
             <div class="modal-content">
 	            <div class="modal-header bg-yellow">
@@ -207,34 +199,30 @@
 	            </div>
                <form action="#">
                     <div class="modal-body row">
-                        <input name="id" type="hidden" value="">
+                        <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                             <div class="col-lg-4" >
                                 <div class="form-group">
                                     <label>Kode Mata Kuliah</label>
-                                    <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control" autocomplete="off">
+                                    <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control" value="<?php echo $show['kode_matakuliah']; ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="form-group">
                                     <label>Mata Kuliah</label>
-                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off">
+                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" value="<?php echo $show['matakuliah']; ?>" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Semester</label>
                                 <select name="semester" class="form-control">
-                                    <option>Semester</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="Pilihan">Pilihan</option>
-                                    <option value="Pendek">Pendek</option>
+                                    <?php foreach($semester as $s) { 
+                                        if($s == $show['semester']) {
+                                            echo "<option selected value='$s'>$s</option>";
+                                        } else {
+                                            echo "<option value='$s'>$s</option>";
+                                        }
+                                    } ?>
                                 </select>
                             </div>    
                         </div>
@@ -242,14 +230,13 @@
                             <div class="form-group">
                                 <label>SKS Teori</label>
                                 <select name="sks_teori" class="form-control">
-                                    <option>SKS Teori</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    <?php foreach($sks_teori as $s) { 
+                                        if($s == $show['sks_teori']) {
+                                            echo "<option selected value='$s'>$s</option>";
+                                        } else {
+                                            echo "<option value='$s'>$s</option>";
+                                        }
+                                    } ?>
                                 </select>
                             </div>
                         </div>
@@ -257,10 +244,13 @@
                             <div class="form-group">
                                 <label>SKS Lab</label>
                                 <select name="sks_lab" class="form-control">
-                                    <option>SKS Lab</option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
+                                    <?php foreach($sks_lab as $s) { 
+                                        if($s == $show['sks_lab']) {
+                                            echo "<option selected value='$s'>$s</option>";
+                                        } else {
+                                            echo "<option value='$s'>$s</option>";
+                                        }
+                                    } ?>
                                 </select>
                             </div>
                         </div>         
@@ -268,11 +258,13 @@
                             <div class="form-group">
                                 <label>Jenis</label>
                                 <select name="jenis" class="form-control">
-                                    <option>Jenis</option>
-                                    <option value="Wajib">Wajib</option>
-                                    <option value="Peminatan AI">Peminatan AI</option>
-                                    <option value="PEminatan SE">Peminatan SE</option>
-                                    <option value="Pilihan">Pilihan</option>
+                                    <?php foreach($jenis as $s) { 
+                                        if($s == $show['jenis']) {
+                                            echo "<option selected value='$s'>$s</option>";
+                                        } else {
+                                            echo "<option value='$s'>$s</option>";
+                                        }
+                                    } ?>
                                 </select>
                             </div>
                         </div>
@@ -294,7 +286,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
     
-     <div div class="modal fade" id="delete">
+     <div div class="modal fade" id="delete-<?php echo $show['id']; ?>">
     	<div class="modal-dialog">
             <div class="modal-content">
 	            <div class="modal-header bg-red">
@@ -302,7 +294,7 @@
 	                <h4 class="modal-title">Delete Data</h4>
 	            </div>
                 <form action="#">
-                    <input name="id" type="hidden" value="">
+                    <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                     <div class="modal-body">
                        	<p>Apakah anda yakin menghapus data ini?</p>
                    	</div>
@@ -314,5 +306,9 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
+    <?php 
+            }
+        }
+    ?>
   </section>
 <?php include '../static/bot.php'; ?>

@@ -67,9 +67,9 @@
                         	<button class="btn btn-primary btn-lg"><i class="fa fa-info-circle"></i></button>
                         </td>
                         <td width="9%">
-                        	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
+                        	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
                        
-                        	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
+                        	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
                         
                         	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
@@ -191,7 +191,11 @@
          </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
-     <div div class="modal fade" id="edit">
+    <?php
+        if($db->search_by_field('id_user' , $_SESSION['user']) != null) {
+            foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
+    ?>
+     <div div class="modal fade" id="edit-<?php echo $show['id']; ?>">
     	<div class="modal-dialog">
             <div class="modal-content">
 	            <div class="modal-header bg-yellow">
@@ -200,29 +204,29 @@
 	            </div>
                 <form action="#">
                     <div class="modal-body row">
-                        <input name="id" type="hidden" value="">
+                        <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                         <div class="col-lg-6" >
                             <div class="form-group">
                             <label>Tema</label>
-                            <input type="text" placeholder="Tema" name="tema" class="form-control" autocomplete="off">
+                            <input type="text" placeholder="Tema" name="tema" class="form-control" value="<?php echo $show['tema']; ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-6">
                              <div class="form-group">
                             <label>Judul</label>
-                            <input type="text" placeholder="Judul" name="judul" class="form-control" autocomplete="off">
+                            <input type="text" placeholder="Judul" name="judul" class="form-control" value="<?php echo $show['judul']; ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-12">
                              <div class="form-group">
                             <label>Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" rows="3"></textarea>
+                            <textarea class="form-control" name="deskripsi" rows="3"><?php echo $show['deskripsi']; ?></textarea>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                             <label>Tempat</label>
-                            <input type="text" placeholder="Tempat" name="tempat" class="form-control" autocomplete="off">
+                            <input type="text" placeholder="Tempat" name="tempat" class="form-control" value="<?php echo $show['tempat']; ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -232,14 +236,14 @@
                                 <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                                 </div>
-                            <input type="text" name="tanggal" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" autocomplete="off">
+                            <input type="text" name="tanggal" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" value="<?php echo date('d/m/Y', strtotime($show['tanggal']));?>" autocomplete="off">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                              <div class="form-group">
                             <label>Sumber Pembiayaan</label>
-                            <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" autocomplete="off">
+                            <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" value="<?php echo $show['sumber_pembiayaan']; ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -247,14 +251,14 @@
                             <label>Biaya</label>
                             <div class="input-group">
                             <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
-                            <input type="text" name="biaya" placeholder="Biaya" class="form-control" autocomplete="off">
+                            <input type="text" name="biaya" placeholder="Biaya" class="form-control" value="<?php echo $show['biaya']; ?>" autocomplete="off">
                             </div>
                             </div>
                         </div>
                         <div class="col-lg-12">
                              <div class="form-group">
                             <label>Evaluasi</label>
-                            <textarea class="form-control" name="evaluasi" rows="3"></textarea>
+                            <textarea class="form-control" name="evaluasi" rows="3"><?php echo $show['evaluasi']; ?></textarea>
                             </div>
                         </div>
                          <div class="col-lg-12">
@@ -271,7 +275,7 @@
                         <div class="col-lg-6">
                              <div class="form-group">
                             <label>Integrasi</label>
-                            <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" autocomplete="off">
+                            <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" value="<?php echo $show['id_matakuliah']; ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -290,7 +294,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
-     <div div class="modal fade" id="delete">
+     <div div class="modal fade" id="delete-<?php echo $show['id']; ?>">
     	<div class="modal-dialog">
             <div class="modal-content">
 	            <div class="modal-header bg-red">
@@ -298,7 +302,7 @@
 	                <h4 class="modal-title">Delete Data</h4>
 	            </div>
                 <form action="#">
-                    <input name="id" type="hidden" value="">
+                    <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                     <div class="modal-body">
                         <p>Apakah anda yakin menghapus data ini?</p>
                     </div>
@@ -310,5 +314,9 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
+    <?php
+            }
+        }
+    ?>
   </section>
 <?php include '../static/bot.php'; ?>

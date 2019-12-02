@@ -67,8 +67,8 @@
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
                         <td width="9%">
-                        	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
-                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
+                        	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
                             <button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr>  
@@ -118,12 +118,9 @@
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
                                     <option>Tingkat</option>
-                                    <option value="Dalam Kampus">Dalam Kampus</option>
-                                    <option value="Antar Kampus">Antar Kampus</option>
-                                    <option value="Kabupaten/Kota">Kabupaten/Kota</option>
-                                    <option value="Provinsi">Provinsi</option>
-                                    <option value="Nasional">Nasional</option>
-                                    <option value="Internasional">Internasional</option>
+                                    <?php foreach($tingkat as $s) { 
+                                        echo "<option value='$s'>$s</option>";
+                                    } ?>
                                 </select>
                             </div>
                         </div>
@@ -131,7 +128,13 @@
                             <div class="form-group">
                                 <label>Tahun</label>
                                 <select name="tahun" class="form-control">
-                                    <option value="1">Tahun</option>
+                                    <option>Tahun</option>
+                                    <?php
+                                    $s = 2010;
+                                    while($s < 2025) {  
+                                        echo "<option value='$s'>$s</option>";
+                                        $s++;
+                                    } ?>
                                 </select>
                             </div>
                         </div>
@@ -156,7 +159,12 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
-    <div div class="modal fade" id="edit">
+
+    <?php
+        if($db->search_by_field('id_user' , $_SESSION['user']) != null) {
+            foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
+    ?>
+    <div div class="modal fade" id="edit-<?php echo $show['id']; ?>">
     	<div class="modal-dialog">
             <div class="modal-content">
 	            <div class="modal-header bg-yellow">
@@ -165,30 +173,30 @@
 	            </div>
             <form action="#">
                 <div class="modal-body row">
-                    <input name="id" type="hidden" value="">
+                    <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
-                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" value="<?php echo $show['nama_kegiatan']; ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Prestasi</label>
-                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" value="<?php echo $show['prestasi']; ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
-                                    <option>Tingkat</option>
-                                    <option value="Dalam Kampus">Dalam Kampus</option>
-                                    <option value="Antar Kampus">Antar Kampus</option>
-                                    <option value="Kabupaten/Kota">Kabupaten/Kota</option>
-                                    <option value="Provinsi">Provinsi</option>
-                                    <option value="Nasional">Nasional</option>
-                                    <option value="Internasional">Internasional</option>
+                                    <?php foreach($tingkat as $s) {  
+                                        if($s == $show['tingkat']) {
+                                            echo "<option selected value='$s'>$s</option>";
+                                        } else {
+                                            echo "<option value='$s'>$s</option>";
+                                        }
+                                     } ?>
                                 </select>
                             </div>
                         </div>
@@ -196,14 +204,24 @@
                             <div class="form-group">
                                 <label>Tahun</label>
                                 <select name="tahun" class="form-control">
-                                    <option value="1">Tahun</option>
+                                    <?php
+                                        $s = 2010;
+                                        while($s < 2025) {  
+                                            if($s == $show['tahun']) {
+                                                echo "<option selected value='$s'>$s</option>";
+                                            } else {
+                                                echo "<option value='$s'>$s</option>";
+                                            }
+                                            $s++;
+                                        }
+                                    ?>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan"></textarea>
+                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan"><?php echo $show['keterangan']; ?></textarea>
                             </div>
                         </div>         
                         <div class="col-lg-12">
@@ -221,7 +239,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
-    <div div class="modal fade" id="delete">
+    <div div class="modal fade" id="delete-<?php echo $show['id']; ?>">
     	<div class="modal-dialog">
             <div class="modal-content">
 	            <div class="modal-header bg-red">
@@ -230,7 +248,7 @@
 	            </div>
                 <form action="#">
                     <div class="modal-body">
-                        <input name="id" type="hidden" value="">
+                        <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                        	<p>Apakah anda yakin menghapus data ini?</p>
                    	</div>
     	            <div class="modal-footer">
@@ -241,5 +259,9 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.example-modal -->
+    <?php
+            }
+        }
+    ?>
 </section>
 <?php include '../static/bot.php'; ?>
