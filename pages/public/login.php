@@ -10,6 +10,13 @@
       <div class="login-logo">
         <a href="../../index2.html"><b>Admin</b> PKM</a>
       </div>
+      <?php if(isset($_GET['pesan']) && $_GET['pesan'] == 'gagal') { ?>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+        Email atau Password Salah!
+      </div>
+      <?php } ?>
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
         <form action="action.php?table=user&&action=login" method="post">
