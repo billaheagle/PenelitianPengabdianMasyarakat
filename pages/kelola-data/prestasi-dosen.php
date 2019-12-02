@@ -93,13 +93,13 @@
 	            </div>
                 <form action="#">
                     <div class="modal-body row">
-                        <div class="col-xs-6" >
+                        <div class="col-lg-6" >
                             <div class="form-group"> 
                                 <label>Bidang Keahlian</label>
                                 <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
@@ -113,7 +113,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Tahun</label>
                                 <select name="tahun" class="form-control">
@@ -121,7 +121,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="custom-file">
                                 <label>File</label>
                                 <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
@@ -146,13 +146,13 @@
             <form action="#">
                 <div class="modal-body row">
                     <input name="id" type="hidden" value="">
-                        <div class="col-xs-6" >
+                        <div class="col-lg-6" >
                             <div class="form-group">
                                 <label>Bidang Keahlian</label>
                                 <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" class="form-control" autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
@@ -166,7 +166,7 @@
                                 </select>
                             </div>    
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Tahun</label>
                                 <select name="tahun" class="form-control">
@@ -174,7 +174,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-lg-6">
                             <div class="custom-file">
                                 <label>File</label>
                                 <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">

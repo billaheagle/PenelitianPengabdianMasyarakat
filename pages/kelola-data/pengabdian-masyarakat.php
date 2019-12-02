@@ -67,11 +67,11 @@
                         	<button class="btn btn-primary btn-lg"><i class="fa fa-info-circle"></i></button>
                         </td>
                         <td width="9%">
-                        	<button class="btn btn-warning btn-lg" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
+                        	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i></button>
                        
-                        	<button class="btn btn-danger btn-lg" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
+                        	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o"></i></button>
                         
-                        	<button class="btn btn-info btn-lg"><i class="fa fa-print"></i></button>
+                        	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr> 
                     <?php 
