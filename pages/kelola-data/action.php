@@ -3,7 +3,7 @@
 	$action = $_GET['action'];
 	$dir	= "../../config/kelola-data/";
 
-	if ($table == "kurikulum") {
+	if ($table == "matakuliah") {
 	 	include $dir . 'kurikulum.php';
 		$do = new kurikulum();
 
@@ -47,13 +47,13 @@
 	 	}
 	} elseif ($table == "pengabdian-masyarakat") {
 	 	include $dir . 'pengabdian-masyarakat.php';
-		$do = new pengabdianMasyaakat();
+		$do = new pengabdianMasyarakat();
 
 	 	if ($action == "store") {
 	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], $_POST['biaya'], $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file'], $_POST['id_user']);
 	 		header("location:pengabdian-masyarakat.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tempat'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], $_POST['biaya'], $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], $_POST['biaya'], $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file']);
 	 		header("location:pengabdian-masyarakat.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);
@@ -67,7 +67,7 @@
 	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], $_POST['biaya'], $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file'], $_POST['id_user']);
 	 		header("location:penelitian.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tempat'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], $_POST['biaya'], $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tempat'], $_POST['tanggal'], $_POST['sumber_pembiayaan'], $_POST['biaya'], $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file']);
 	 		header("location:penelitian.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);

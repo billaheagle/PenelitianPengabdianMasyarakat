@@ -110,18 +110,19 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Data</h4> 
                 </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post">
                     <div class="modal-body row">
+                        <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
                         <div class="col-lg-4" >
                             <div class="form-group">
                                 <label>Kode Mata Kuliah</label>
-                                <input type="text" placeholder="Kode" name="kodematakuliah" class="form-control">
+                                <input type="text" placeholder="Kode" name="kode_matakuliah" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <label>Mata Kuliah</label>
-                                <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control">
+                                <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -138,7 +139,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>SKS Teori</label>
-                                <select name="sksteori" class="form-control">
+                                <select name="sks_teori" class="form-control">
                                     <option>SKS Teori</option>
                                     <?php foreach($sks_teori as $s) { 
                                         echo "<option value='$s'>$s</option>";
@@ -149,7 +150,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>SKS Lab</label>
-                                <select name="skslab" class="form-control">
+                                <select name="sks_lab" class="form-control">
                                     <option>SKS Lab</option>
                                     <?php foreach($sks_lab as $s) { 
                                         echo "<option value='$s'>$s</option>";
@@ -197,7 +198,7 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Edit Data</h4>
 	            </div>
-               <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post">
                     <div class="modal-body row">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                             <div class="col-lg-4" >
@@ -279,7 +280,7 @@
                	    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="submit" class="btn btn-warning">Edit</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->
@@ -293,7 +294,7 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Delete Data</h4>
 	            </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=delete" method="post">
                     <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                     <div class="modal-body">
                        	<p>Apakah anda yakin menghapus data ini?</p>

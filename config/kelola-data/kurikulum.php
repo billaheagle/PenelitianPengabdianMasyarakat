@@ -21,7 +21,7 @@
 	 
 		function store ($kode_matakuliah, $matakuliah, $semester, $sks_teori, $sks_lab, $jenis, $file, $id_user) {
 			include $this->dir;
-			mysqli_query($connection, "INSERT INTO " . $this->table . "(kode_matakuliah, matakuliah, semester, sks_teori, sks_lab, $jenis, file, id_user) VALUES('$kode_matakuliah', '$matakuliah', '$semester', '$sks_teori', '$sks_lab', '$jenis', '$file', '$id_user')");
+			mysqli_query($connection, "INSERT INTO " . $this->table . "(kode_matakuliah, matakuliah, semester, sks_teori, sks_lab, jenis, file, id_user) VALUES('$kode_matakuliah', '$matakuliah', '$semester', '$sks_teori', '$sks_lab', '$jenis', '$file', '$id_user')");
 		}
 
 		function update ($id, $kode_matakuliah, $matakuliah, $semester, $sks_teori, $sks_lab, $jenis, $file) {

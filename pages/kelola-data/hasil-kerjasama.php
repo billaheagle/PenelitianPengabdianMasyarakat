@@ -104,18 +104,19 @@
     				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     				<h4 class="modal-title">Tambah Data</h4> 
     			</div>
-    			<form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post">
     				<div class="modal-body row">
+                        <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
     					<div class="col-xs-12" >
     						<div class="form-group">
     							<label>Judul Kegiatan</label>
-    							<input type="text" placeholder="Judul Kegiatan" name="Judul Kegiatan" class="form-control">
+    							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" autocomplete="off">
     						</div>
     					</div>
     					<div class="col-xs-6">
     						<div class="form-group">
     							<label>Lembaga Mitra</label>
-    							<input type="text" placeholder="Lembaga Mitra" name="Lembaga Mitra" class="form-control">
+    							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" autocomplete="off">
     						</div>
     					</div>
     					<div class="col-xs-6">
@@ -136,26 +137,26 @@
     								<div class="input-group-addon">
     									<i class="fa fa-calendar"></i>
     								</div>
-    								<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+    								<input type="text" class="form-control" name="tanggal" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" autocomplete="off">
     							</div>
     						</div>
     					</div>
     					<div class="col-xs-6">
     						<div class="form-group">
     							<label>Durasi</label>
-    							<input type="text" placeholder="Durasi" name="Durasi" class="form-control">
+    							<input type="text" placeholder="Durasi" name="durasi" class="form-control" autocomplete="off">
     						</div>
     					</div>
     					<div class="col-xs-12">
     						<div class="form-group">
     							<label>Manfaat</label>
-    							<textarea class="form-control" rows="3"></textarea>
+    							<textarea class="form-control" name="manfaat" rows="3"></textarea>
     						</div>
     					</div>
     					<div class="col-xs-12">
     						<div class="custom-file">
     							<label>File</label>
-    							<input type="file" class="custom-file-input" id="customFile">
+    							<input type="file" name="file" class="custom-file-input" id="customFile">
     						</div>
     					</div>    
     					
@@ -180,19 +181,19 @@
     				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     				<h4 class="modal-title">Edit Data</h4>
     			</div>
-    			<form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post">
                     <div class="modal-body row">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
     					<div class="col-xs-12" >
     						<div class="form-group">
     							<label>Judul Kegiatan</label>
-    							<input type="text" placeholder="Judul Kegiatan" name="Judul Kegiatan" class="form-control" value="<?php echo $show['judul_kegiatan']; ?>" autocomplete="off">
+    							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" value="<?php echo $show['judul_kegiatan']; ?>" autocomplete="off">
     						</div>
     					</div>
     					<div class="col-xs-6">
     						<div class="form-group">
     							<label>Lembaga Mitra</label>
-    							<input type="text" placeholder="Lembaga Mitra" name="Lembaga Mitra" class="form-control" value="<?php echo $show['lembaga_mitra']; ?>" autocomplete="off">
+    							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" value="<?php echo $show['lembaga_mitra']; ?>" autocomplete="off">
     						</div>
     					</div>
     					<div class="col-xs-6">
@@ -216,26 +217,26 @@
     								<div class="input-group-addon">
     									<i class="fa fa-calendar"></i>
     								</div>
-    								<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" value="<?php echo date('d/m/Y', strtotime($show['tanggal']));?>" autocomplete="off">
+    								<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" name="tanggal" value="<?php echo date('d/m/Y', strtotime($show['tanggal']));?>" autocomplete="off">
     							</div>
     						</div>
     					</div>
     					<div class="col-xs-6">
     						<div class="form-group">
     							<label>Durasi</label>
-    							<input type="text" placeholder="Durasi" name="Durasi" class="form-control" value="<?php echo $show['durasi']; ?>" autocomplete="off">
+    							<input type="text" placeholder="Durasi" name="durasi" class="form-control" value="<?php echo $show['durasi']; ?>" autocomplete="off">
     						</div>
     					</div>
     					<div class="col-xs-12">
     						<div class="form-group">
     							<label>Manfaat</label>
-    							<textarea class="form-control" rows="3"><?php echo $show['manfaat']; ?></textarea>
+    							<textarea class="form-control" name="manfaat" rows="3"><?php echo $show['manfaat']; ?></textarea>
     						</div>
     					</div>
     					<div class="col-xs-12">
     						<div class="custom-file">
     							<label>File</label>
-    							<input type="file" class="custom-file-input" id="customFile">
+    							<input type="file" name="file" class="custom-file-input" id="customFile">
     						</div>
     					</div> 
         			</div>
@@ -254,7 +255,7 @@
     				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     				<h4 class="modal-title">Delete Data</h4>
     			</div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=delete" method="post">
         			<div class="modal-body">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
         				<p>Apakah anda yakin ingin menghapus data ini?</p>

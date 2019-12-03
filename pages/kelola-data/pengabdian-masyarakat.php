@@ -64,7 +64,7 @@
                         <td><?php echo $show['tempat']; ?></td>
                         <td><?php echo $show['id_matakuliah']; ?></td>
                         <td width="5%">
-                        	<button class="btn btn-primary btn-lg"><i class="fa fa-info-circle"></i></button>
+                        	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
                         <td width="9%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
@@ -101,8 +101,9 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Data</h4> 
                 </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post">
                 <div class="modal-body row">
+                        <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
                         <div class="col-lg-6" >
                             <div class="form-group">
                             <label>Tema</label>
@@ -163,7 +164,7 @@
                             <div class="form-group">
                             <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
                             <div class="input-group">
-                                    <input type="text" placeholder="Mahasiswa" name="id_user" class="form-control" autocomplete="off">
+                                    <input type="text" placeholder="Mahasiswa" name="id_mahasiswa" class="form-control" autocomplete="off">
                                 <span class="input-group-btn">
                                 <button class="btn btn-flat btn-secondary" type="file">Tambah</button>
                                 </span>
@@ -185,7 +186,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                 </div>
             </form>
          </div><!-- /.modal-content -->
@@ -202,7 +203,7 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Edit Data</h4>
 	            </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post">
                     <div class="modal-body row">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                         <div class="col-lg-6" >
@@ -265,7 +266,7 @@
                              <div class="form-group">
                             <label for=" Mahasiswa">Mahasiswa yang terlibat</label>
                             <div class="input-group">
-                                    <input type="text" name="id_user" placeholder="Mahasiswa" class="form-control" autocomplete="off">
+                                    <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control" autocomplete="off">
                                 <span class="input-group-btn">
                                 <button class="btn btn-flat btn-secondary" type="file">Tambah</button>
                                 </span>
@@ -288,7 +289,7 @@
                	</div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-warning">Save changes</button>
+	                <button type="submit" class="btn btn-warning">Save changes</button>
 	            </div>
               </form>
             </div><!-- /.modal-content -->
@@ -301,7 +302,7 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Delete Data</h4>
 	            </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=delete" method="post">
                     <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                     <div class="modal-body">
                         <p>Apakah anda yakin menghapus data ini?</p>

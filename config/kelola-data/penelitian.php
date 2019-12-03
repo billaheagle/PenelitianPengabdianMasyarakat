@@ -26,7 +26,7 @@
 
 		function update ($id, $tema, $judul, $deskripsi, $tanggal, $tempat, $sumber_pembiayaan, $biaya, $evaluasi, $id_matakuliah, $file) {
 			include $this->dir;
-			mysqli_query($connection, "UPDATE " . $this->table . " SET tema='$tema', judul='$judul', deskripsi='$deskripsi', tanggal='$tempat', sumber_pembiayaan='$sumber_pembiayaan', biaya='$biaya', evaluasi='$evaluasi', id_matakuliah='$id_matakuliah', file='$file' WHERE id='$id'");
+			mysqli_query($connection, "UPDATE " . $this->table . " SET tema='$tema', judul='$judul', deskripsi='$deskripsi', tanggal='$tanggal', tempat='$tempat', sumber_pembiayaan='$sumber_pembiayaan', biaya='$biaya', evaluasi='$evaluasi', id_matakuliah='$id_matakuliah', file='$file' WHERE id='$id'");
 		}
 
 		function delete ($id) {

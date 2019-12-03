@@ -91,8 +91,9 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Tambah</h4>
 	            </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post">
                     <div class="modal-body row">
+                        <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
                         <div class="col-lg-6" >
                             <div class="form-group"> 
                                 <label>Bidang Keahlian</label>
@@ -150,7 +151,7 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Edit</h4>
 	            </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post">
                     <div class="modal-body row">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                             <div class="col-lg-6" >
@@ -213,7 +214,7 @@
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Delete</h4>
 	            </div>
-                <form action="#">
+                <form action="action.php?table=<?php echo $table; ?>&action=delete" method="post">
                     <div class="modal-body">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                        	<p>Apakah anda yakin menghapus data ini?</p>

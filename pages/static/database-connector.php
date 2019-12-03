@@ -18,17 +18,17 @@
 	    	} else if($_SESSION['subpage']=='prestasi-dosen') {
 	    		include $dir1 . 'prestasi-dosen.php';
 				$db 		= new prestasiDosen();
-			    $table		= 'prestasi_dosen';
+			    $table		= 'prestasi-dosen';
 			    $tingkat	= array("Dalam Kampus", "Antar Kampus", "Kabupaten / Kota", "Provinsi", "Nasional", "Internasional");
 	    	} else if($_SESSION['subpage']=='prestasi-mahasiswa') {
 	    		include $dir1 . 'prestasi-mahasiswa.php';
 				$db 		= new prestasiMahasiswa();
-			    $table		= 'prestasi_mahasiswa';
+			    $table		= 'prestasi-mahasiswa';
 			    $tingkat	= array("Dalam Kampus", "Antar Kampus", "Kabupaten / Kota", "Provinsi", "Nasional", "Internasional");
 	    	} else if($_SESSION['subpage']=='pengabdian-masyarakat') {
 	    		include $dir1 . 'pengabdian-masyarakat.php';
 				$db 	= new pengabdianMasyarakat();
-			    $table	= 'pengabdian_masyarakat';
+			    $table	= 'pengabdian-masyarakat';
 	    	} else if($_SESSION['subpage']=='penelitian') {
 	    		include $dir1 . 'penelitian.php';
 				$db 	= new penelitian();
@@ -36,7 +36,7 @@
 	    	} else if($_SESSION['subpage']=='hasil-kerjasama') {
 	    		include $dir1 . 'hasil-kerjasama.php';
 				$db 		= new hasilKerjasama();
-			    $table		= 'hasil_kerjasama';
+			    $table		= 'hasil-kerjasama';
 			    $tingkat	= array("Dalam Kampus", "Antar Kampus", "Kabupaten / Kota", "Provinsi", "Nasional", "Internasional");
 	    	}
 	    } else if($_SESSION['page']=='kurikulum') {
