@@ -130,12 +130,12 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                             <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
-                            <div class="input-group">
-                                    <input type="text" placeholder="Mahasiswa" name="id_mahasiswa" class="form-control" autocomplete="off">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-secondary" type="file">Tambah</button>
-                                </span>
-                            </div>
+                                <div class="form-group input-group">
+                                    <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control" autocomplete="off">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -229,15 +229,15 @@
                             <textarea class="form-control" name="evaluasi" rows="3"><?php echo $show['evaluasi']; ?></textarea>
                             </div>
                         </div>
-                         <div class="col-lg-12">
-                             <div class="form-group">
-                            <label for=" Mahasiswa">Mahasiswa yang terlibat</label>
-                            <div class="input-group">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                            <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
+                                <div class="form-group input-group">
                                     <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control" autocomplete="off">
-                                <span class="input-group-btn">
-                                <button class="btn btn-flat btn-secondary" type="file">Tambah</button>
-                                </span>
-                            </div>
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
