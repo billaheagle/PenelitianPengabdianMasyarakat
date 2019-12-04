@@ -107,19 +107,19 @@
                 <form action="action.php?table=<?php echo $table; ?>&action=store" method="post">
     				<div class="modal-body row">
                         <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
-    					<div class="col-xs-12" >
+    					<div class="col-lg-12" >
     						<div class="form-group">
     							<label>Judul Kegiatan</label>
     							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" autocomplete="off">
     						</div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Lembaga Mitra</label>
     							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" autocomplete="off">
     						</div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
                                 <label>Tingkat</label>
                                 <select name="tingkat" class="form-control">
@@ -130,7 +130,7 @@
                                 </select>
                             </div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Tanggal</label>
     							<div class="input-group">
@@ -141,19 +141,19 @@
     							</div>
     						</div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Durasi</label>
     							<input type="text" placeholder="Durasi" name="durasi" class="form-control" autocomplete="off">
     						</div>
     					</div>
-    					<div class="col-xs-12">
+    					<div class="col-lg-12">
     						<div class="form-group">
     							<label>Manfaat</label>
     							<textarea class="form-control" name="manfaat" rows="3"></textarea>
     						</div>
     					</div>
-    					<div class="col-xs-12">
+    					<div class="col-lg-12">
     						<div class="custom-file">
     							<label>File</label>
     							<input type="file" name="file" class="custom-file-input" id="customFile">
@@ -184,19 +184,19 @@
                 <form action="action.php?table=<?php echo $table; ?>&action=update" method="post">
                     <div class="modal-body row">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
-    					<div class="col-xs-12" >
+    					<div class="col-lg-12" >
     						<div class="form-group">
     							<label>Judul Kegiatan</label>
     							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" value="<?php echo $show['judul_kegiatan']; ?>" autocomplete="off">
     						</div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Lembaga Mitra</label>
     							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" value="<?php echo $show['lembaga_mitra']; ?>" autocomplete="off">
     						</div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Tingkat</label>
     							<select name="tingkat" class="form-control">
@@ -210,7 +210,7 @@
     							</select>
     						</div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Tanggal</label>
     							<div class="input-group">
@@ -221,19 +221,19 @@
     							</div>
     						</div>
     					</div>
-    					<div class="col-xs-6">
+    					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Durasi</label>
     							<input type="text" placeholder="Durasi" name="durasi" class="form-control" value="<?php echo $show['durasi']; ?>" autocomplete="off">
     						</div>
     					</div>
-    					<div class="col-xs-12">
+    					<div class="col-lg-12">
     						<div class="form-group">
     							<label>Manfaat</label>
     							<textarea class="form-control" name="manfaat" rows="3"><?php echo $show['manfaat']; ?></textarea>
     						</div>
     					</div>
-    					<div class="col-xs-12">
+    					<div class="col-lg-12">
     						<div class="custom-file">
     							<label>File</label>
     							<input type="file" name="file" class="custom-file-input" id="customFile">
