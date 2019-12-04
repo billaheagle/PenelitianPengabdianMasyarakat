@@ -7,9 +7,7 @@
 			include $this->dir;
 			$data = mysqli_query($connection, "SELECT * FROM " . $this->table);
 			if(mysqli_num_rows($data) == 0) return null;
-			while($d = mysqli_fetch_array($data)) {
-				$result[] = $d;
-			}
+			while($d = mysqli_fetch_array($data)) $result[] = $d;
 			return $result;
 		}
 
@@ -17,9 +15,7 @@
 			include $this->dir;
 			$data = mysqli_query($connection, "SELECT * FROM " . $this->table . " WHERE id='$id'");
 			if(mysqli_num_rows($data) == 0) return null;
-			while($d = mysqli_fetch_array($data)){
-				$result[] = $d;
-			}
+			while($d = mysqli_fetch_array($data)) $result[] = $d;
 			return $result;
 		}
 		
@@ -27,9 +23,7 @@
 			include $this->dir;
 			$data = mysqli_query($connection, "SELECT '$field' FROM " . $this->table . " WHERE id='$id'");
 			if(mysqli_num_rows($data) == 0) return null;
-			while($d = mysqli_fetch_array($data)){
-				$result[] = $d;
-			}
+			while($d = mysqli_fetch_array($data)) $result[] = $d;
 			return $result;
 		}
 
@@ -37,9 +31,7 @@
 			include $this->dir;
 			$data = mysqli_query($connection, "SELECT * FROM " . $this->table . " WHERE $field='$param'");
 			if(mysqli_num_rows($data) == 0) return null;
-			while($d = mysqli_fetch_array($data)){
-				$result[] = $d;
-			}
+			while($d = mysqli_fetch_array($data)) $result[] = $d;
 			return $result;
 		}
 
@@ -47,9 +39,7 @@
 			include $this->dir;
 			$data = mysqli_query($connection, "SELECT '$field1' FROM " . $this->table . " WHERE $field2='$param'");
 			if(mysqli_num_rows($data) == 0) return null;
-			while($d = mysqli_fetch_array($data)){
-				$result[] = $d;
-			}
+			while($d = mysqli_fetch_array($data)) $result[] = $d;
 			return $result;
 		}
 	}
