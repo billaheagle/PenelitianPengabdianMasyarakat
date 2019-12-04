@@ -1,41 +1,8 @@
 <?php include '../static/top.php'; ?>
-<section class="content">
-	<div class="alert alert-danger alert-dismissable">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<h4><i class="icon fa fa-ban"></i> Alert!</h4>
-		Gagal! Menambahkan Data
-	</div>
-    <!--<div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-        Gagal! Menghapus Data
-    </div>
-    <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-        Sukses! Menambahkan Data
-    </div>
-    <div class="alert alert-warning alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-        Gagal! Mengubah Data 
-    </div>
-    <div class="alert alert-info alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-        Sukses! Menghapus Data
-    </div>
-    <div class="alert alert-info alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-        Sukses! Mengedit Data
-    </div>-->
     <div class="box">
     	<div class="box-header">
     		<div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
-
-
-    	</div><!-- /.box-header -->
+    	</div>
     	<div class="box-body">
     		<table id="example1" class="table table-bordered table-striped text-center">
     			<thead>
@@ -58,15 +25,15 @@
                             foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
                     ?>
     				<tr>
-    					<td><?php echo $no++; ?></td>
-    					<td class="text-left"><?php echo $show['judul_kegiatan']; ?></td>
+    					<td width="4%"><?php echo $no++; ?></td>
+    					<td><?php echo $show['judul_kegiatan']; ?></td>
     					<td><?php echo $show['lembaga_mitra']; ?></td>
     					<td><?php echo $show['tingkat']; ?></td>
     					<td><?php echo $show['tanggal']; ?></td>
     					<td><?php echo $show['durasi']; ?></td>
     					<td><?php echo $show['manfaat']; ?></td>
-    					<td>
-    						<button class="btn btn-block btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
+                        <td width="5%">
+    						<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
     					</td>
     					<td width="9%">
     						<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
@@ -95,8 +62,8 @@
     				</tr>
     			</tfoot>
     		</table>
-    	</div><!-- /.box-body -->
-    </div><!-- /.box -->
+    	</div>
+    </div>
     <div div class="modal fade" id="save">
     	<div class="modal-dialog">
     		<div class="modal-content">
@@ -158,17 +125,16 @@
     							<label>File</label>
     							<input type="file" name="file" class="custom-file-input" id="customFile">
     						</div>
-    					</div>    
-    					
+    					</div>  
     				</div>
     				<div class="modal-footer">
     					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     					<button type="submit" class="btn btn-success">Save Changes</button>
     				</div>
     			</form>
-    		</div><!-- /.modal-content -->
-    	</div><!-- /.modal-dialog -->
-    </div><!-- /.example-modal -->
+    		</div>
+    	</div>
+    </div>
 
     <?php
         if($db->search_by_field('id_user' , $_SESSION['user']) != null) {
@@ -245,9 +211,9 @@
         				<button type="submit" class="btn btn-warning">Save changes</button>
         			</div>
                 </form>
-    		</div><!-- /.modal-content -->
-    	</div><!-- /.modal-dialog -->
-    </div><!-- /.example-modal -->
+    		</div>
+    	</div>
+    </div>
     <div div class="modal fade" id="delete-<?php echo $show['id']; ?>">
     	<div class="modal-dialog">
     		<div class="modal-content">
@@ -265,12 +231,11 @@
         				<button type="submit" class="btn btn-danger">Delete</button>
         			</div>
                 </form>
-    		</div><!-- /.modal-content -->
-    	</div><!-- /.modal-dialog -->
-    </div><!-- /.example-modal -->
+    		</div>
+    	</div>
+    </div>
     <?php 
             }
         }
     ?>
-</section>
 <?php include '../static/bot.php'; ?>

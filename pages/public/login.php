@@ -10,6 +10,7 @@
       <div class="login-logo">
         <a href="../../index2.html"><b>Admin</b> PKM</a>
       </div>
+      <?php include '../static/alerts.php'; ?>
       <?php if(isset($_GET['pesan']) && $_GET['pesan'] == 'gagal') { ?>
       <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

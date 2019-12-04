@@ -1,80 +1,53 @@
 <section class="content-header">
-  <h1>
     <?php
     	if(isset($_SESSION['page']) && isset($_SESSION['subpage'])) {
 	    	if($_SESSION['page']=='Dashboard') {
-	    		echo "Dashboard";
+	    		echo "<h1>Dashboard</h1>
+	    		<ol class='breadcrumb'><li><i class='fa fa-dashboard'></i> Dashboard</li></ol>";
 	    	} else if($_SESSION['page']=='kelola') {
 	    		if($_SESSION['subpage']=='kurikulum') {
-	    			echo "Kelola Data Kurikulum";
+	    			echo "<h1>Kelola Data Kurikulum</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Kurikulum</li></ol>";
 	    		} else if($_SESSION['subpage']=='prestasi-dosen') {
-	    			echo "Kelola Data Prestasi Dosen";
+	    			echo "<h1>Kelola Data Prestasi Dosen</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Prestasi Dosen</li></ol>";
 	    		} else if($_SESSION['subpage']=='prestasi-mahasiswa') {
-	    			echo "Kelola Data Prestasi Mahasiswa";
+	    			echo "<h1>Kelola Data Prestasi Mahasiswa</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Prestasi Mahasiswa</li></ol>";
 	    		} else if($_SESSION['subpage']=='pengabdian-masyarakat') {
-	    			echo "Kelola Data Pengabdian Masyarakat";
+	    			echo "<h1>Kelola Data Pengabdian Masyarakat</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Pengabdian Masyarakat</li></ol>";
 	    		} else if($_SESSION['subpage']=='penelitian') {
-	    			echo "Kelola Data Penelitian";
+	    			echo "<h1>Kelola Data Penelitian</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Penelitian</li></ol>";
 	    		} else if($_SESSION['subpage']=='hasil-kerjasama') {
-	    			echo "Kelola Data Hasil Kerjasama";
+	    			echo "<h1>Kelola Data Hasil Kerjasama</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Hasil Kerjasama</li></ol>";
 	    		}
 	    	} else if($_SESSION['page']=='kurikulum') {
-	    		echo "Kurikulum";
+	    		echo "<h1>Kurikulum</h1>
+	    		<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Kurikulum</li></ol>";
 	    	} else if($_SESSION['page']=='pengabdian-masyarakat') {
-	    		echo "Pengabdian Masyarakat";
+	    		echo "<h1>Pengabdian Masyarakat</h1>
+	    		<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Pengabdian Masyarakat</li></ol>";
 	    	} else if($_SESSION['page']=='penelitian') {
-	    		echo "Penelitian";
+	    		echo "<h1>Penelitian</h1>
+	    		<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Penelitian</li></ol>";
 	    	} else if($_SESSION['page']=='hasil-kerjasama') {
-	    		echo "Hasil Kerjasama";
+	    		echo "<h1>Hasil Kerjasama</h1>
+	    		<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Hasil Kerjasama</li></ol>";
 	    	} else if($_SESSION['page']=='public') {
 	    		if($_SESSION['subpage']=='prestasi-dosen') {
-	    			echo "Prestasi Dosen";
+	    			echo "<h1>Prestasi Dosen</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Prestasi</li><li class='active'>Prestasi Dosen</li></ol>";
 	    		} else if($_SESSION['subpage']=='prestasi-mahasiswa') {
-	    			echo "Prestasi Mahasiswa";
+	    			echo "<h1>Prestasi Mahasiswa</h1>
+	    			<ol class='breadcrumb'><li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Prestasi</li><li class='active'>Prestasi Mahasiswa</li></ol>";
 	    		}
 	    	}
 	    } else {
-	    	echo "Dashboard";
+	    	echo "<h1>Dashboard</h1>
+	    	<ol class='breadcrumb'><li><i class='fa fa-dashboard'></i> Dashboard</li></ol>";
 	    }
     ?>
-  </h1>
-  <ol class="breadcrumb">
-  	<?php
-    	if(isset($_SESSION['page']) && isset($_SESSION['subpage'])) {
-	    	if($_SESSION['page']=='Dashboard') {
-	    		echo "<li><i class='fa fa-dashboard'></i> Dashboard</li>";
-	    	} else if($_SESSION['page']=='kelola') {
-	    		if($_SESSION['subpage']=='kurikulum') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Kurikulum</li>";
-	    		} else if($_SESSION['subpage']=='prestasi-dosen') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Prestasi Dosen</li>";
-	    		} else if($_SESSION['subpage']=='prestasi-mahasiswa') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Prestasi Mahasiswa</li>";
-	    		} else if($_SESSION['subpage']=='pengabdian-masyarakat') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Pengabdian Masyarakat</li>";
-	    		} else if($_SESSION['subpage']=='penelitian') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Penelitian</li>";
-	    		} else if($_SESSION['subpage']=='hasil-kerjasama') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Kelola Data</li><li class='active'>Hasil Kerjasama</li>";
-	    		}
-	    	} else if($_SESSION['page']=='kurikulum') {
-	    		echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Kurikulum</li>";
-	    	} else if($_SESSION['page']=='pengabdian-masyarakat') {
-	    		echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Pengabdian Masyarakat</li>";
-	    	} else if($_SESSION['page']=='penelitian') {
-	    		echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Penelitian</li>";
-	    	} else if($_SESSION['page']=='hasil-kerjasama') {
-	    		echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li class='active'>Hasil Kerjasama</li>";
-	    	} else if($_SESSION['page']=='public') {
-	    		if($_SESSION['subpage']=='prestasi-dosen') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Prestasi</li><li class='active'>Prestasi Dosen</li>";
-	    		} else if($_SESSION['subpage']=='prestasi-mahasiswa') {
-	    			echo "<li><a href='../../connector.php?page=dashboard'><i class='fa fa-dashboard'></i> Dashboard</a></li><li>Prestasi</li><li class='active'>Prestasi Mahasiswa</li>";
-	    		}
-	    	}
-	    } else {
-	    	echo "<li><i class='fa fa-dashboard'></i> Dashboard</li>";
-	    }
-    ?>
-  </ol>
 </section>

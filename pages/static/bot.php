@@ -1,3 +1,4 @@
+				</section>
       		</div>
         	<?php include '../static/footer.php'; ?>
     	</div>

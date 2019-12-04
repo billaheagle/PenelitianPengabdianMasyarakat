@@ -1,6 +1,5 @@
 <?php include '../static/top.php'; ?>
-  <section class="content">
-    <div class="row">
+  <div class="row">
       <?php
         $no = 1;
         if($db->show() != null) {
@@ -23,6 +22,5 @@
           }
         }
       ?>
-    </div>
-  </section>
+  </div>
 <?php include '../static/bot.php'; ?>

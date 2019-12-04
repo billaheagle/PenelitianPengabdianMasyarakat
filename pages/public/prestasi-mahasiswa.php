@@ -1,5 +1,4 @@
 <?php include '../static/top.php'; ?>
-  <section class="content">
     <div class="row">
       <?php
         $no = 1;
@@ -23,6 +22,5 @@
           }
         }
       ?>
-    </div>
-  </section>
+  </div>
 <?php include '../static/bot.php'; ?>

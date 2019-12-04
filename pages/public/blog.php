@@ -1,5 +1,4 @@
 <?php include '../static/top.php'; ?>
-  <section class="content">
     <div class="cotainer">
     	<div class="box">
     		<div class="row">
@@ -47,5 +46,4 @@
 	    	</div>
     	</div>
     </div>
-  </section>
 <?php include '../static/bot.php'; ?>

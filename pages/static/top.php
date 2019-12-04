@@ -14,3 +14,5 @@
 	      	<div class="content-wrapper">
 	        	<?php include '../static/content-header.php'; ?>
 	        	<?php include '../static/database-connector.php'; ?>
+				<section class="content">
+				    <?php include '../static/alerts.php'; ?>
