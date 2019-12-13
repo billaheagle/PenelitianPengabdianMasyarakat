@@ -1,7 +1,7 @@
 <?php include '../static/top.php'; ?>
     <div class="box">
     	<div class="box-header">
-    		<div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
+    		<div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button> <button class="btn btn-info btn-sm"><i class="fa fa-print"></i></button></div>
     	</div>
     	<div class="box-body">
     		<table id="example1" class="table table-bordered table-striped text-center">
@@ -29,18 +29,15 @@
     					<td><?php echo $show['judul_kegiatan']; ?></td>
     					<td><?php echo $show['lembaga_mitra']; ?></td>
     					<td><?php echo $show['tingkat']; ?></td>
-    					<td><?php echo $show['tanggal']; ?></td>
+    					<td><?php echo date('d/m/Y', strtotime($show['tanggal']));?></td>
     					<td><?php echo $show['durasi']; ?></td>
     					<td><?php echo $show['manfaat']; ?></td>
                         <td width="5%">
     						<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
     					</td>
-    					<td width="9%">
+                        <td width="6%">
     						<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
-    						
     						<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
-    						
-    						<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
     					</td>
     				</tr> 
                     <?php 
@@ -77,13 +74,13 @@
     					<div class="col-lg-12" >
     						<div class="form-group">
     							<label>Judul Kegiatan</label>
-    							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" autocomplete="off">
+    							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" autocomplete="off" required>
     						</div>
     					</div>
     					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Lembaga Mitra</label>
-    							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" autocomplete="off">
+    							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" autocomplete="off" required>
     						</div>
     					</div>
     					<div class="col-lg-6">
@@ -99,31 +96,31 @@
     					</div>
     					<div class="col-lg-6">
     						<div class="form-group">
-    							<label>Tanggal</label>
-    							<div class="input-group">
-    								<div class="input-group-addon">
-    									<i class="fa fa-calendar"></i>
-    								</div>
-    								<input type="text" class="form-control" name="tanggal" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" autocomplete="off">
-    							</div>
-    						</div>
+                                <label>Tanggal</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="tanggal" class="form-control pull-right datepicker" autocomplete="off" required/>
+                                </div>
+                            </div>
     					</div>
     					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Durasi</label>
-    							<input type="text" placeholder="Durasi" name="durasi" class="form-control" autocomplete="off">
+    							<input type="text" placeholder="Durasi" name="durasi" class="form-control" autocomplete="off" required>
     						</div>
     					</div>
     					<div class="col-lg-12">
     						<div class="form-group">
     							<label>Manfaat</label>
-    							<textarea class="form-control" name="manfaat" rows="3"></textarea>
+    							<textarea class="form-control" name="manfaat" rows="3" required></textarea>
     						</div>
     					</div>
     					<div class="col-lg-12">
     						<div class="custom-file">
     							<label>File</label>
-    							<input type="file" name="file" class="custom-file-input" id="customFile">
+    							<input type="file" name="file" class="custom-file-input" id="customFile" required>
     						</div>
     					</div>  
     				</div>
@@ -153,13 +150,13 @@
     					<div class="col-lg-12" >
     						<div class="form-group">
     							<label>Judul Kegiatan</label>
-    							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" value="<?php echo $show['judul_kegiatan']; ?>" autocomplete="off">
+    							<input type="text" placeholder="Judul Kegiatan" name="judul_kegiatan" class="form-control" value="<?php echo $show['judul_kegiatan']; ?>" autocomplete="off" required>
     						</div>
     					</div>
     					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Lembaga Mitra</label>
-    							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" value="<?php echo $show['lembaga_mitra']; ?>" autocomplete="off">
+    							<input type="text" placeholder="Lembaga Mitra" name="lembaga_mitra" class="form-control" value="<?php echo $show['lembaga_mitra']; ?>" autocomplete="off" required>
     						</div>
     					</div>
     					<div class="col-lg-6">
@@ -178,31 +175,32 @@
     					</div>
     					<div class="col-lg-6">
     						<div class="form-group">
-    							<label>Tanggal</label>
-    							<div class="input-group">
-    								<div class="input-group-addon">
-    									<i class="fa fa-calendar"></i>
-    								</div>
-    								<input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" name="tanggal" value="<?php echo date('d/m/Y', strtotime($show['tanggal']));?>" autocomplete="off">
-    							</div>
-    						</div>
+                                <label>Tanggal</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="tanggal" class="form-control pull-right datepicker" value="<?php echo $show['tanggal']; ?>" autocomplete="off" required/>
+                                </div>
+                            </div>
     					</div>
     					<div class="col-lg-6">
     						<div class="form-group">
     							<label>Durasi</label>
-    							<input type="text" placeholder="Durasi" name="durasi" class="form-control" value="<?php echo $show['durasi']; ?>" autocomplete="off">
+    							<input type="text" placeholder="Durasi" name="durasi" class="form-control" value="<?php echo $show['durasi']; ?>" autocomplete="off" required>
     						</div>
     					</div>
     					<div class="col-lg-12">
     						<div class="form-group">
     							<label>Manfaat</label>
-    							<textarea class="form-control" name="manfaat" rows="3"><?php echo $show['manfaat']; ?></textarea>
+    							<textarea class="form-control" name="manfaat" rows="3" required><?php echo $show['manfaat']; ?></textarea>
     						</div>
     					</div>
     					<div class="col-lg-12">
     						<div class="custom-file">
     							<label>File</label>
-    							<input type="file" name="file" class="custom-file-input" id="customFile">
+                                <input type="file" name="file" class="custom-file-input" id="customFile">
+                                <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
     						</div>
     					</div> 
         			</div>

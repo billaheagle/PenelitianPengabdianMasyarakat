@@ -1,7 +1,7 @@
 <?php include '../static/top.php'; ?>
     <div class="box">
         <div class="box-header">
-            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
+            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button> <button class="btn btn-info btn-sm"><i class="fa fa-print"></i></button></div>
         </div>
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped text-center">
@@ -29,10 +29,9 @@
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="9%">
+                        <td width="6%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
-                            <button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr> 
                     <?php 
@@ -66,7 +65,7 @@
                         <div class="col-lg-6" >
                             <div class="form-group"> 
                                 <label>Bidang Keahlian</label>
-                                <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -126,7 +125,7 @@
                         <div class="col-lg-6" >
                             <div class="form-group">
                                 <label>Bidang Keahlian</label>
-                                <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" value="<?php echo $show['bidang_keahlian']; ?>" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" value="<?php echo $show['bidang_keahlian']; ?>" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -164,9 +163,10 @@
                         <div class="col-lg-6">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
-                            </div>    
-                        </div>
+                                <input type="file" name="file" class="custom-file-input" id="customFile">
+                                <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                            </div>   
+                        </div> 
                    	</div>
     	            <div class="modal-footer">
     	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

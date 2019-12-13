@@ -17,7 +17,6 @@
     <link href="plugins/morris/morris.css" rel="stylesheet" type="text/css" />
     <link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
     <link href="plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
     <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="skin-blue">
@@ -206,7 +205,6 @@
 	<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
 	<sczipt src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
 	<script src="plugins/knob/jquery.knob.js" type="text/javascript"></script>
-	<script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
 	<script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
 	<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
 	<script src="plugins/iCheck/icheck.min.js" type="text/javascript"></script>

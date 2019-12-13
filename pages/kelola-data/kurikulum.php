@@ -1,7 +1,7 @@
 <?php include '../static/top.php'; ?>
     <div class="box">
         <div class="box-header">
-            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
+            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button> <button class="btn btn-info btn-sm"><i class="fa fa-print"></i></button></div>
         </div>
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped text-center">
@@ -38,12 +38,9 @@
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="9%">
+                        <td width="6%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
-                        
                         	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
-                        
-                        	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr>  
                     <?php 
@@ -83,13 +80,13 @@
                         <div class="col-lg-4" >
                             <div class="form-group">
                                 <label>Kode Mata Kuliah</label>
-                                <input type="text" placeholder="Kode" name="kode_matakuliah" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Kode" name="kode_matakuliah" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <label>Mata Kuliah</label>
-                                <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -140,7 +137,7 @@
                             <div class="form-group">
                                 <div class="custom-file">
                                     <label class="custom-file-label" for="customFile">File</label>
-                                    <input type="file" class="custom-file-input" id="customFile" name="file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="file" required>
                                 </div>
                             </div>
                         </div>    
@@ -170,13 +167,13 @@
                             <div class="col-lg-4" >
                                 <div class="form-group">
                                     <label>Kode Mata Kuliah</label>
-                                    <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control" value="<?php echo $show['kode_matakuliah']; ?>" autocomplete="off">
+                                    <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control" value="<?php echo $show['kode_matakuliah']; ?>" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="form-group">
                                     <label>Mata Kuliah</label>
-                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" value="<?php echo $show['matakuliah']; ?>" autocomplete="off">
+                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" value="<?php echo $show['matakuliah']; ?>" autocomplete="off" required>
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -236,12 +233,11 @@
                             </div>
                         </div>
                         <div class="col-lg-8">
-                            <div class="form-group">
-                                <div class="custom-file">
-                                    <label class="custom-file-label" for="customFile">File</label>
-                                    <input type="file" class="custom-file-input" id="customFile" name="file">
-                                </div>
-                            </div>
+                            <div class="custom-file">
+                                <label>File</label>
+                                <input type="file" name="file" class="custom-file-input" id="customFile">
+                                <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                            </div>  
                         </div>
                	    </div>
                     <div class="modal-footer">

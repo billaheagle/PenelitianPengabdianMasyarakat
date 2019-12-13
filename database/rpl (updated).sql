@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2019 at 08:07 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.33
+-- Waktu pembuatan: 13 Des 2019 pada 13.08
+-- Versi server: 10.4.6-MariaDB
+-- Versi PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hasil_kerjasama`
+-- Struktur dari tabel `hasil_kerjasama`
 --
 
 CREATE TABLE `hasil_kerjasama` (
@@ -37,23 +37,24 @@ CREATE TABLE `hasil_kerjasama` (
   `durasi` varchar(50) NOT NULL,
   `manfaat` text NOT NULL,
   `file` text NOT NULL,
+  `image` text NOT NULL,
   `id_user` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `hasil_kerjasama`
+-- Dumping data untuk tabel `hasil_kerjasama`
 --
 
-INSERT INTO `hasil_kerjasama` (`id`, `judul_kegiatan`, `lembaga_mitra`, `tingkat`, `tanggal`, `durasi`, `manfaat`, `file`, `id_user`, `created_at`, `updated_at`) VALUES
-(1, 'ESQ Berbagi', 'Aksi Cepat Tanggap (ACT)', 'Dalam Kampus', '2019-11-01', '90 Menit', 'Mengajak Mahasiswa ESQ Business School untuk berbagi kebaikan', 'ESQ-Berbagi-Edo.pdf', 2, '2019-11-22 17:49:56', '0000-00-00 00:00:00'),
-(2, 'ESQ Donor Darah', 'Lembaga Ansuransi Jakarta Selatan', 'Dalam Kampus', '2019-11-03', '300 Menit', 'Memberikan bantuan donor darah kepada yang membutuhkan', 'Donor-Darah-Desy.pdf', 3, '2019-11-22 17:49:56', '0000-00-00 00:00:00');
+INSERT INTO `hasil_kerjasama` (`id`, `judul_kegiatan`, `lembaga_mitra`, `tingkat`, `tanggal`, `durasi`, `manfaat`, `file`, `image`, `id_user`, `created_at`, `updated_at`) VALUES
+(1, 'ESQ Berbagi', 'Aksi Cepat Tanggap (ACT)', 'Dalam Kampus', '2019-11-16', '90 Menit', 'Mengajak Mahasiswa ESQ Business School untuk berbagi kebaikan', '', '', 2, '2019-11-22 17:49:56', '2019-12-13 09:18:52'),
+(2, 'ESQ Donor Darah', 'Lembaga Ansuransi Jakarta Selatan', 'Dalam Kampus', '2019-11-03', '300 Menit', 'Memberikan bantuan donor darah kepada yang membutuhkan', 'Donor-Darah-Desy.pdf', '', 3, '2019-11-22 17:49:56', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matakuliah`
+-- Struktur dari tabel `matakuliah`
 --
 
 CREATE TABLE `matakuliah` (
@@ -71,11 +72,11 @@ CREATE TABLE `matakuliah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `matakuliah`
+-- Dumping data untuk tabel `matakuliah`
 --
 
 INSERT INTO `matakuliah` (`id`, `kode_matakuliah`, `matakuliah`, `semester`, `sks_teori`, `sks_lab`, `jenis`, `file`, `id_user`, `created_at`, `updated_at`) VALUES
-(1, 'ESQC101', 'Pengembangan dan Manajemen Diri 1', '1', '2', '1', 'Wajib', 'Pengembangan dan Manajemen Diri 1.pdf', 1, '2019-11-22 16:50:03', '0000-00-00 00:00:00'),
+(1, 'ESQC101', 'Pengembangan dan Manajemen Diri 1', '1', '2', '1', 'Wajib', '', 1, '2019-11-22 16:50:03', '2019-12-03 15:52:22'),
 (2, 'ESQU101', 'Pendidikan Agama Islam', '1', '2', '0', 'Wajib', 'Pendidikan Agama Islam.pdf', 1, '2019-11-22 16:50:03', '0000-00-00 00:00:00'),
 (3, 'ESQU105', 'Pendidikan Pancasila', '1', '2', '0', 'Wajib', 'Pendidikan Pancasila.pdf', 1, '2019-11-22 16:50:03', '0000-00-00 00:00:00'),
 (4, 'KKIN101', 'Komputasi dan Design Thinking', '1', '3', '0', 'Wajib', 'Komputasi dan Design Thinking.pdf', 1, '2019-11-22 16:50:03', '0000-00-00 00:00:00'),
@@ -93,7 +94,7 @@ INSERT INTO `matakuliah` (`id`, `kode_matakuliah`, `matakuliah`, `semester`, `sk
 (16, 'CSAP200', 'Teori Bahasa dan  Otomata', '3', '3', '0', 'Wajib', 'Teori Bahasa dan  Otomata.pdf', 1, '2019-11-22 16:59:37', '0000-00-00 00:00:00'),
 (17, 'CSMT202', 'Aljabar Linier', '3', '3', '0', 'Wajib', 'Aljabar Linier.pdf', 1, '2019-11-22 16:59:37', '0000-00-00 00:00:00'),
 (18, 'CSMT203', 'Statistika dan Probabilitas', '3', '3', '0', 'Wajib', 'Statistika dan Probabilitas.pdf', 1, '2019-11-22 16:59:37', '0000-00-00 00:00:00'),
-(19, 'CSAP202', 'Algoritma dan Struktur Data.pdf', '3', '3', '1', 'Wajib', 'Algoritma dan Struktur Data.pdf', 1, '2019-11-22 16:59:37', '0000-00-00 00:00:00'),
+(19, 'CSAP202', 'Algoritma dan Struktur Data', '3', '3', '1', 'Wajib', '', 1, '2019-11-22 16:59:37', '2019-12-03 15:52:30'),
 (20, 'CSAP100', 'Perancangan Web', '3', '2', '1', 'Wajib', 'Perancangan Web.pdf', 1, '2019-11-22 16:59:37', '0000-00-00 00:00:00'),
 (21, 'ESQC204', 'Kepemimpinan Berbasis Karakter 2', '4', '2', '1', 'Wajib', 'Kepemimpinan Berbasis Karakter 2.pdf', 1, '2019-11-22 17:03:54', '0000-00-00 00:00:00'),
 (22, 'CSAI300', 'Kecerdasan Buatan', '4', '3', '0', 'Wajib', 'Kecerdasan Buatan.pdf', 1, '2019-11-22 17:03:54', '0000-00-00 00:00:00'),
@@ -135,7 +136,7 @@ INSERT INTO `matakuliah` (`id`, `kode_matakuliah`, `matakuliah`, `semester`, `sk
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penelitian`
+-- Struktur dari tabel `penelitian`
 --
 
 CREATE TABLE `penelitian` (
@@ -149,6 +150,7 @@ CREATE TABLE `penelitian` (
   `biaya` double NOT NULL,
   `evaluasi` text NOT NULL,
   `file` text NOT NULL,
+  `image` text NOT NULL,
   `id_matakuliah` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -156,17 +158,17 @@ CREATE TABLE `penelitian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penelitian`
+-- Dumping data untuk tabel `penelitian`
 --
 
-INSERT INTO `penelitian` (`id`, `tema`, `judul`, `deskripsi`, `tanggal`, `tempat`, `sumber_pembiayaan`, `biaya`, `evaluasi`, `file`, `id_matakuliah`, `id_user`, `created_at`, `updated_at`) VALUES
-(1, 'Tumbuhan', 'Penelitian Kelapa Sawit', 'Penelitan tentang kelapa sawit dengan menggunakan Artificial Intellegent dalam proses penanaman dan panen kelapa sawit di daerah Pekan Baru', '2019-11-01', 'Kebun Pekan Baru', 'ESQ Business School', 10000000, 'Penelitian harus didasarkan oleh metodologi yang sesuai', 'peneliitan-kepala-sawit-edo.pdf', 33, 2, '2019-11-22 18:00:12', '0000-00-00 00:00:00'),
-(2, 'Web', 'Penelitian Perancangan Web dengan Laravel', 'Penelitian Perancangan Web menggunakan framework laravel dalam membangun sistem informasi penjualan didaerah Bekasi', '2019-10-15', 'Halal Mart Bekasi', 'ESQ Business School', 5000000, 'Tidak ada', 'perancangan-web-desy.pdf', 34, 3, '2019-11-22 18:00:12', '0000-00-00 00:00:00');
+INSERT INTO `penelitian` (`id`, `tema`, `judul`, `deskripsi`, `tanggal`, `tempat`, `sumber_pembiayaan`, `biaya`, `evaluasi`, `file`, `image`, `id_matakuliah`, `id_user`, `created_at`, `updated_at`) VALUES
+(1, 'Tumbuhan', 'Penelitian Kelapa Sawit', 'Penelitan tentang kelapa sawit dengan menggunakan Artificial Intellegent dalam proses penanaman dan panen kelapa sawit di daerah Pekan Baru', '2019-12-12', 'Jakarta', 'ESQ Business School', 10000000, 'Penelitian harus didasarkan oleh metodologi yang sesuai', '', '', 33, 2, '2019-11-22 18:00:12', '2019-12-13 09:27:23'),
+(2, 'Web', 'Penelitian Perancangan Web dengan Laravel', 'Penelitian Perancangan Web menggunakan framework laravel dalam membangun sistem informasi penjualan didaerah Bekasi', '2019-10-15', 'Halal Mart Bekasi', 'ESQ Business School', 5000000, 'Tidak ada', 'perancangan-web-desy.pdf', '', 34, 3, '2019-11-22 18:00:12', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengabdian_masyarakat`
+-- Struktur dari tabel `pengabdian_masyarakat`
 --
 
 CREATE TABLE `pengabdian_masyarakat` (
@@ -180,6 +182,7 @@ CREATE TABLE `pengabdian_masyarakat` (
   `biaya` double NOT NULL,
   `evaluasi` text NOT NULL,
   `file` text NOT NULL,
+  `image` text NOT NULL,
   `id_matakuliah` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -187,17 +190,17 @@ CREATE TABLE `pengabdian_masyarakat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pengabdian_masyarakat`
+-- Dumping data untuk tabel `pengabdian_masyarakat`
 --
 
-INSERT INTO `pengabdian_masyarakat` (`id`, `tema`, `judul`, `deskripsi`, `tanggal`, `tempat`, `sumber_pembiayaan`, `biaya`, `evaluasi`, `file`, `id_matakuliah`, `id_user`, `created_at`, `updated_at`) VALUES
-(1, 'Aplikasi Pendidikan', 'Sistem Pendidikan di Daerah Tangerang', 'Membantu sekolah SMPN Tangerang 107 untuk membuat sistem pendidikan internal', '2019-08-05', 'SMPN Tangerang 107', 'ESQ Business School', 2000000, 'Perlu belajar lagi untuk mengajari orang-orang yang awam', 'SMPN-Tangerang-107-edo.pdf', 25, 2, '2019-11-22 18:04:35', '0000-00-00 00:00:00'),
-(2, 'Pembangunan Jembatan', 'Pembangunan Jembatan di Daerah Lampung', 'Membantu membangun jembatan yang menghubungkan dua desa di daerah Lampung', '2019-04-15', 'Bandar Lampung', 'Pemerintah Lampung', 25000000, 'Sumber daya manusia yang kurang mumpuni', 'Jembatan-Lampung-Desy.pdf', 65, 3, '2019-11-22 18:04:35', '0000-00-00 00:00:00');
+INSERT INTO `pengabdian_masyarakat` (`id`, `tema`, `judul`, `deskripsi`, `tanggal`, `tempat`, `sumber_pembiayaan`, `biaya`, `evaluasi`, `file`, `image`, `id_matakuliah`, `id_user`, `created_at`, `updated_at`) VALUES
+(1, 'Aplikasi Pendidikan', 'Sistem Pendidikan di Daerah Tangerang', 'Membantu sekolah SMPN Tangerang 107 untuk membuat sistem pendidikan internal', '2019-12-28', 'SMPN Tangerang 107', 'ESQ Business School', 2000000, 'Perlu belajar lagi untuk mengajari orang-orang yang awam', '', '', 25, 2, '2019-11-22 18:04:35', '2019-12-13 09:16:53'),
+(2, 'Pembangunan Jembatan', 'Pembangunan Jembatan di Daerah Lampung', 'Membantu membangun jembatan yang menghubungkan dua desa di daerah Lampung', '2019-04-15', 'Bandar Lampung', 'Pemerintah Lampung', 25000000, 'Sumber daya manusia yang kurang mumpuni', 'Jembatan-Lampung-Desy.pdf', '', 65, 3, '2019-11-22 18:04:35', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prestasi_dosen`
+-- Struktur dari tabel `prestasi_dosen`
 --
 
 CREATE TABLE `prestasi_dosen` (
@@ -206,23 +209,24 @@ CREATE TABLE `prestasi_dosen` (
   `tingkat` enum('Dalam Kampus','Antar Kampus','Kabupaten / Kota','Provinsi','Nasional','Internasional') NOT NULL,
   `tahun` year(4) NOT NULL,
   `file` text NOT NULL,
+  `image` text NOT NULL,
   `id_user` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `prestasi_dosen`
+-- Dumping data untuk tabel `prestasi_dosen`
 --
 
-INSERT INTO `prestasi_dosen` (`id`, `bidang_keahlian`, `tingkat`, `tahun`, `file`, `id_user`, `created_at`, `updated_at`) VALUES
-(1, 'Artificial Intelegent', 'Internasional', 2019, 'prestasi-dosen-edo.pdf', 2, '2019-11-22 16:41:58', '0000-00-00 00:00:00'),
-(2, 'Machine Learning', 'Internasional', 2019, 'prestasi-dosen-desy.pdf', 3, '2019-11-22 16:41:58', '0000-00-00 00:00:00');
+INSERT INTO `prestasi_dosen` (`id`, `bidang_keahlian`, `tingkat`, `tahun`, `file`, `image`, `id_user`, `created_at`, `updated_at`) VALUES
+(1, 'Artificial Intelegent', 'Internasional', 2019, 'prestasi-dosen-edo.pdf', '', 2, '2019-11-22 16:41:58', '0000-00-00 00:00:00'),
+(2, 'Machine Learning', 'Internasional', 2019, 'prestasi-dosen-desy.pdf', '', 3, '2019-11-22 16:41:58', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prestasi_mahasiswa`
+-- Struktur dari tabel `prestasi_mahasiswa`
 --
 
 CREATE TABLE `prestasi_mahasiswa` (
@@ -233,24 +237,25 @@ CREATE TABLE `prestasi_mahasiswa` (
   `tahun` year(4) NOT NULL,
   `keterangan` text NOT NULL,
   `file` text NOT NULL,
+  `image` text NOT NULL,
   `id_user` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `prestasi_mahasiswa`
+-- Dumping data untuk tabel `prestasi_mahasiswa`
 --
 
-INSERT INTO `prestasi_mahasiswa` (`id`, `nama_kegiatan`, `prestasi`, `tingkat`, `tahun`, `keterangan`, `file`, `id_user`, `created_at`, `updated_at`) VALUES
-(1, 'Lomba Essay', 'Juara Umum 1', 'Nasional', 2019, 'Juara Lomba Essay Tingkat Umum Nasional 2019', 'prestasi-mahasiswa-mita.pdf', 5, '2019-11-22 16:40:50', '0000-00-00 00:00:00'),
-(2, 'Lomba Menggambar', 'Juara 1', 'Nasional', 2019, 'Juara Lomba Menggambar 3D Animation', 'prestasi-mahasiswa-rizky.pdf', 8, '2019-11-22 16:40:50', '0000-00-00 00:00:00'),
-(3, 'Competitive Poster Design', 'Juara 1', 'Nasional', 2019, 'Juara 1 Competitive Design Poster se-Indonesia', 'prestasi-mahasiswa-ammar.pdf', 7, '2019-11-22 16:40:50', '0000-00-00 00:00:00');
+INSERT INTO `prestasi_mahasiswa` (`id`, `nama_kegiatan`, `prestasi`, `tingkat`, `tahun`, `keterangan`, `file`, `image`, `id_user`, `created_at`, `updated_at`) VALUES
+(1, 'Lomba Essay', 'Juara Umum 1', 'Nasional', 2019, 'Juara Lomba Essay Tingkat Umum Nasional 2019', 'prestasi-mahasiswa-mita.pdf', '', 5, '2019-11-22 16:40:50', '0000-00-00 00:00:00'),
+(2, 'Lomba Menggambar', 'Juara 1', 'Nasional', 2019, 'Juara Lomba Menggambar 3D Animation', 'prestasi-mahasiswa-rizky.pdf', '', 8, '2019-11-22 16:40:50', '0000-00-00 00:00:00'),
+(3, 'Competitive Poster Design', 'Juara 1', 'Nasional', 2019, 'Juara 1 Competitive Design Poster se-Indonesia', 'prestasi-mahasiswa-ammar.pdf', '', 7, '2019-11-22 16:40:50', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -259,30 +264,31 @@ CREATE TABLE `user` (
   `password` varchar(50) NOT NULL,
   `level` enum('1','2','3') NOT NULL,
   `nama` varchar(100) NOT NULL,
+  `image` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `password`, `level`, `nama`, `created_at`, `updated_at`) VALUES
-(1, 'ahlijati.nuraminah@esqbs.ac.id', 'esqbs165', '1', 'Ahlijati Nuraminah', '2019-11-22 16:33:36', '2019-11-29 19:02:33'),
-(2, 'edo.surya@esqbs.ac.id', 'esqbs165', '2', 'Edo Surya', '2019-11-22 16:33:36', '2019-11-29 19:05:48'),
-(3, 'desy.komalasari@esqbs.ac.id', 'esqbs165', '2', 'Desy Komalasari', '2019-11-22 16:33:36', '2019-11-29 19:02:33'),
-(4, 'm.billah@students.esqbs.ac.id', 'esqbs165', '3', 'Mu\'tashim Billah', '2019-11-22 16:34:40', '2019-11-29 19:02:33'),
-(5, 'm.nurul.y@students.esqbs.ac.id', 'esqbs165', '3', 'Mitha Nurul Y', '2019-11-22 16:34:40', '2019-11-29 19:05:48'),
-(6, 'a.rasyid.y@students.esqbs.ac.id', 'esqbs165', '3', 'Ahmad Rasyid Y', '2019-11-22 16:34:40', '2019-11-29 19:05:48'),
-(7, 'abdullah.a@students.esqbs.ac.id', 'esqbs165', '3', 'Abdullah Ammar', '2019-11-22 16:36:54', '2019-11-29 19:02:33'),
-(8, 'm.rizky.p@students.esqbs.ac.id', 'esqbs165', '3', 'Muhammad Rizky P', '2019-11-22 16:36:54', '2019-11-29 19:05:48'),
-(9, 'a.fadia.h@students.esqbs.ac.id', 'esqbs165', '3', 'Aqila Fadia H', '2019-11-22 16:36:54', '2019-11-29 19:02:33'),
-(10, 'm.akbar.w@students.esqbs.ac.id', 'esqbs165', '3', 'Muhammad Akbar W', '2019-11-22 16:36:54', '2019-11-29 19:02:34');
+INSERT INTO `user` (`id`, `email`, `password`, `level`, `nama`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'ahlijati.nuraminah@esqbs.ac.id', 'esqbs165', '1', 'Ahlijati Nuraminah', '', '2019-11-22 16:33:36', '2019-11-29 19:02:33'),
+(2, 'edo.surya@esqbs.ac.id', 'esqbs165', '2', 'Edo Surya', '', '2019-11-22 16:33:36', '2019-11-29 19:05:48'),
+(3, 'desy.komalasari@esqbs.ac.id', 'esqbs165', '2', 'Desy Komalasari', '', '2019-11-22 16:33:36', '2019-11-29 19:02:33'),
+(4, 'm.billah@students.esqbs.ac.id', 'esqbs165', '3', 'Mu\'tashim Billah', '', '2019-11-22 16:34:40', '2019-11-29 19:02:33'),
+(5, 'm.nurul.y@students.esqbs.ac.id', 'esqbs165', '3', 'Mitha Nurul Y', '', '2019-11-22 16:34:40', '2019-11-29 19:05:48'),
+(6, 'a.rasyid.y@students.esqbs.ac.id', 'esqbs165', '3', 'Ahmad Rasyid Y', '', '2019-11-22 16:34:40', '2019-11-29 19:05:48'),
+(7, 'abdullah.a@students.esqbs.ac.id', 'esqbs165', '3', 'Abdullah Ammar', '', '2019-11-22 16:36:54', '2019-11-29 19:02:33'),
+(8, 'm.rizky.p@students.esqbs.ac.id', 'esqbs165', '3', 'Muhammad Rizky P', '', '2019-11-22 16:36:54', '2019-11-29 19:05:48'),
+(9, 'a.fadia.h@students.esqbs.ac.id', 'esqbs165', '3', 'Aqila Fadia H', '', '2019-11-22 16:36:54', '2019-11-29 19:02:33'),
+(10, 'm.akbar.w@students.esqbs.ac.id', 'esqbs165', '3', 'Muhammad Akbar W', '', '2019-11-22 16:36:54', '2019-11-29 19:02:34');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_penelitian`
+-- Struktur dari tabel `user_penelitian`
 --
 
 CREATE TABLE `user_penelitian` (
@@ -295,7 +301,7 @@ CREATE TABLE `user_penelitian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_penelitian`
+-- Dumping data untuk tabel `user_penelitian`
 --
 
 INSERT INTO `user_penelitian` (`id`, `jabatan`, `id_penelitian`, `id_user`, `created_at`, `updated_at`) VALUES
@@ -310,7 +316,7 @@ INSERT INTO `user_penelitian` (`id`, `jabatan`, `id_penelitian`, `id_user`, `cre
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_pengabdian_masyarakat`
+-- Struktur dari tabel `user_pengabdian_masyarakat`
 --
 
 CREATE TABLE `user_pengabdian_masyarakat` (
@@ -323,7 +329,7 @@ CREATE TABLE `user_pengabdian_masyarakat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_pengabdian_masyarakat`
+-- Dumping data untuk tabel `user_pengabdian_masyarakat`
 --
 
 INSERT INTO `user_pengabdian_masyarakat` (`id`, `jabatan`, `id_pengabdian_masyarakat`, `id_user`, `created_at`, `updated_at`) VALUES
@@ -340,14 +346,14 @@ INSERT INTO `user_pengabdian_masyarakat` (`id`, `jabatan`, `id_pengabdian_masyar
 --
 
 --
--- Indexes for table `hasil_kerjasama`
+-- Indeks untuk tabel `hasil_kerjasama`
 --
 ALTER TABLE `hasil_kerjasama`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `matakuliah`
+-- Indeks untuk tabel `matakuliah`
 --
 ALTER TABLE `matakuliah`
   ADD PRIMARY KEY (`id`),
@@ -355,7 +361,7 @@ ALTER TABLE `matakuliah`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `penelitian`
+-- Indeks untuk tabel `penelitian`
 --
 ALTER TABLE `penelitian`
   ADD PRIMARY KEY (`id`),
@@ -363,7 +369,7 @@ ALTER TABLE `penelitian`
   ADD KEY `id_matakuliah` (`id_matakuliah`);
 
 --
--- Indexes for table `pengabdian_masyarakat`
+-- Indeks untuk tabel `pengabdian_masyarakat`
 --
 ALTER TABLE `pengabdian_masyarakat`
   ADD PRIMARY KEY (`id`),
@@ -371,28 +377,28 @@ ALTER TABLE `pengabdian_masyarakat`
   ADD KEY `id_matakuliah` (`id_matakuliah`);
 
 --
--- Indexes for table `prestasi_dosen`
+-- Indeks untuk tabel `prestasi_dosen`
 --
 ALTER TABLE `prestasi_dosen`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `prestasi_mahasiswa`
+-- Indeks untuk tabel `prestasi_mahasiswa`
 --
 ALTER TABLE `prestasi_mahasiswa`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `user_penelitian`
+-- Indeks untuk tabel `user_penelitian`
 --
 ALTER TABLE `user_penelitian`
   ADD PRIMARY KEY (`id`),
@@ -400,7 +406,7 @@ ALTER TABLE `user_penelitian`
   ADD KEY `id_penelitian` (`id_penelitian`);
 
 --
--- Indexes for table `user_pengabdian_masyarakat`
+-- Indeks untuk tabel `user_pengabdian_masyarakat`
 --
 ALTER TABLE `user_pengabdian_masyarakat`
   ADD PRIMARY KEY (`id`),
@@ -408,114 +414,114 @@ ALTER TABLE `user_pengabdian_masyarakat`
   ADD KEY `id_pengabdian_masyarakat` (`id_pengabdian_masyarakat`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `hasil_kerjasama`
+-- AUTO_INCREMENT untuk tabel `hasil_kerjasama`
 --
 ALTER TABLE `hasil_kerjasama`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `matakuliah`
+-- AUTO_INCREMENT untuk tabel `matakuliah`
 --
 ALTER TABLE `matakuliah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
--- AUTO_INCREMENT for table `penelitian`
+-- AUTO_INCREMENT untuk tabel `penelitian`
 --
 ALTER TABLE `penelitian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pengabdian_masyarakat`
+-- AUTO_INCREMENT untuk tabel `pengabdian_masyarakat`
 --
 ALTER TABLE `pengabdian_masyarakat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `prestasi_dosen`
+-- AUTO_INCREMENT untuk tabel `prestasi_dosen`
 --
 ALTER TABLE `prestasi_dosen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `prestasi_mahasiswa`
---
-ALTER TABLE `prestasi_mahasiswa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `prestasi_mahasiswa`
+--
+ALTER TABLE `prestasi_mahasiswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `user_penelitian`
+-- AUTO_INCREMENT untuk tabel `user_penelitian`
 --
 ALTER TABLE `user_penelitian`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `user_pengabdian_masyarakat`
+-- AUTO_INCREMENT untuk tabel `user_pengabdian_masyarakat`
 --
 ALTER TABLE `user_pengabdian_masyarakat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `hasil_kerjasama`
+-- Ketidakleluasaan untuk tabel `hasil_kerjasama`
 --
 ALTER TABLE `hasil_kerjasama`
   ADD CONSTRAINT `hasil_kerjasama_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `matakuliah`
+-- Ketidakleluasaan untuk tabel `matakuliah`
 --
 ALTER TABLE `matakuliah`
   ADD CONSTRAINT `matakuliah_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `penelitian`
+-- Ketidakleluasaan untuk tabel `penelitian`
 --
 ALTER TABLE `penelitian`
   ADD CONSTRAINT `penelitian_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `penelitian_ibfk_2` FOREIGN KEY (`id_matakuliah`) REFERENCES `matakuliah` (`id`);
 
 --
--- Constraints for table `pengabdian_masyarakat`
+-- Ketidakleluasaan untuk tabel `pengabdian_masyarakat`
 --
 ALTER TABLE `pengabdian_masyarakat`
   ADD CONSTRAINT `pengabdian_masyarakat_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `pengabdian_masyarakat_ibfk_2` FOREIGN KEY (`id_matakuliah`) REFERENCES `matakuliah` (`id`);
 
 --
--- Constraints for table `prestasi_dosen`
+-- Ketidakleluasaan untuk tabel `prestasi_dosen`
 --
 ALTER TABLE `prestasi_dosen`
   ADD CONSTRAINT `prestasi_dosen_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `prestasi_mahasiswa`
+-- Ketidakleluasaan untuk tabel `prestasi_mahasiswa`
 --
 ALTER TABLE `prestasi_mahasiswa`
   ADD CONSTRAINT `prestasi_mahasiswa_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `user_penelitian`
+-- Ketidakleluasaan untuk tabel `user_penelitian`
 --
 ALTER TABLE `user_penelitian`
   ADD CONSTRAINT `user_penelitian_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `user_penelitian_ibfk_2` FOREIGN KEY (`id_penelitian`) REFERENCES `penelitian` (`id`);
 
 --
--- Constraints for table `user_pengabdian_masyarakat`
+-- Ketidakleluasaan untuk tabel `user_pengabdian_masyarakat`
 --
 ALTER TABLE `user_pengabdian_masyarakat`
   ADD CONSTRAINT `user_pengabdian_masyarakat_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),

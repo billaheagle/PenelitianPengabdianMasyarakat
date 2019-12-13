@@ -1,7 +1,7 @@
 <?php include '../static/top.php'; ?>
     <div class="box">
         <div class="box-header">
-            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
+            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button> <button class="btn btn-info btn-sm"><i class="fa fa-print"></i></button></div>
         </div>
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped text-center">
@@ -33,10 +33,9 @@
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="9%">
+                        <td width="6%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
-                            <button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr>  
                     <?php 
@@ -72,13 +71,13 @@
                         <div class="col-lg-6" >
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
-                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Prestasi</label>
-                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" autocomplete="off">
+                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -109,13 +108,13 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan"></textarea>
+                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan" required></textarea>
                             </div>
                         </div>         
                         <div class="col-lg-12">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
+                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off" required>
                             </div>
                	        </div>
                     </div>
@@ -144,13 +143,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Nama Kegiatan</label>
-                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" value="<?php echo $show['nama_kegiatan']; ?>" autocomplete="off">
+                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" value="<?php echo $show['nama_kegiatan']; ?>" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Prestasi</label>
-                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" value="<?php echo $show['prestasi']; ?>" autocomplete="off">
+                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" value="<?php echo $show['prestasi']; ?>" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -188,14 +187,15 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Keterangan</label>
-                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan"><?php echo $show['keterangan']; ?></textarea>
+                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan" required><?php echo $show['keterangan']; ?></textarea>
                             </div>
                         </div>         
                         <div class="col-lg-12">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off">
-                            </div>
+                                <input type="file" name="file" class="custom-file-input" id="customFile">
+                                <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                            </div>  
                         </div>
                    	</div>
     	            <div class="modal-footer">

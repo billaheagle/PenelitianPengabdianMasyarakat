@@ -1,7 +1,7 @@
 <?php include '../static/top.php'; ?>
     <div class="box">
         <div class="box-header">
-            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button></div>
+            <div class="text-right"><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#save"><i class="fa fa-plus"></i></button> <button class="btn btn-info btn-sm"><i class="fa fa-print"></i></button></div>
         </div>
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped text-center">
@@ -27,18 +27,15 @@
                         <td width="4%"><?php echo $no++; ?></td>
                         <td><?php echo $show['tema']; ?></td>
                         <td><?php echo $show['judul']; ?></td>
-                        <td><?php echo $show['tanggal']; ?></td>
+                        <td><?php echo date('d/m/Y', strtotime($show['tanggal']));?></td>
                         <td><?php echo $show['tempat']; ?></td>
                         <td><?php echo $show['id_matakuliah']; ?></td>
                         <td width="5%">
                         	<button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
-                        <td width="9%">
+                        <td width="6%">
                         	<button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo $show['id']; ?>"><i class="fa fa-edit"></i></button>
-                       
                         	<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $show['id']; ?>"><i class="fa fa-trash-o"></i></button>
-                        
-                        	<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
                         </td>
                     </tr> 
                     <?php 
@@ -73,81 +70,81 @@
                         <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
                         <div class="col-lg-6" >
                             <div class="form-group">
-                            <label>Tema</label>
-                            <input type="text" placeholder="Tema" name="tema" class="form-control" autocomplete="off">
+                                <label>Tema</label>
+                                <input type="text" placeholder="Tema" name="tema" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Judul</label>
-                            <input type="text" placeholder="Judul" name="judul" class="form-control" autocomplete="off">
+                                <label>Judul</label>
+                                <input type="text" placeholder="Judul" name="judul" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                            <label>Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" rows="3"></textarea>
+                                <label>Deskripsi</label>
+                                <textarea class="form-control" name="deskripsi" rows="3" required></textarea>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Tempat</label>
-                            <input type="text" placeholder="Tempat" name="tempat" class="form-control" autocomplete="off">
+                                <label>Tempat</label>
+                                <input type="text" placeholder="Tempat" name="tempat" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Tanggal</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+                                <label>Tanggal</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="tanggal" class="form-control pull-right datepicker" autocomplete="off" required/>
                                 </div>
-                                <input type="text" name="tanggal" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" autocomplete="off">
-                             </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Sumber Pembiayaan</label>
-                            <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" autocomplete="off">
+                                <label>Sumber Pembiayaan</label>
+                                <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group">
                             <label>Biaya</label>
                             <div class="input-group">
-                            <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
-                            <input type="text" placeholder="Biaya" name="biaya" class="form-control" autocomplete="off">
+                                <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
+                                <input type="text" placeholder="Biaya" name="biaya" class="form-control money" autocomplete="off" required>
                             </div>
                         </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                            <label>Evaluasi</label>
-                            <textarea class="form-control" name="evaluasi" rows="3"></textarea>
+                                <label>Evaluasi</label>
+                                <textarea class="form-control" name="evaluasi" rows="3" required></textarea>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                            <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
+                                <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
                                 <div class="form-group input-group">
                                     <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control" autocomplete="off">
                                     <span class="input-group-btn">
-                                    <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
+                                        <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Integrasi</label>
-                            <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" autocomplete="off">
+                                <label>Integrasi</label>
+                                <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="custom-file">
                                 <label>File</label>
-                                <input type="file" name="file" class="custom-file-input" id="customFile">
+                                <input type="file" name="file" class="custom-file-input" id="customFile" required>
                             </div>
                         </div>       
                     </div>
@@ -175,82 +172,83 @@
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                         <div class="col-lg-6" >
                             <div class="form-group">
-                            <label>Tema</label>
-                            <input type="text" placeholder="Tema" name="tema" class="form-control" value="<?php echo $show['tema']; ?>" autocomplete="off">
+                                <label>Tema</label>
+                                <input type="text" placeholder="Tema" name="tema" class="form-control" value="<?php echo $show['tema']; ?>" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                             <div class="form-group">
-                            <label>Judul</label>
-                            <input type="text" placeholder="Judul" name="judul" class="form-control" value="<?php echo $show['judul']; ?>" autocomplete="off">
+                            <div class="form-group">
+                                <label>Judul</label>
+                                <input type="text" placeholder="Judul" name="judul" class="form-control" value="<?php echo $show['judul']; ?>" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-12">
-                             <div class="form-group">
-                            <label>Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" rows="3"><?php echo $show['deskripsi']; ?></textarea>
+                            <div class="form-group">
+                                <label>Deskripsi</label>
+                                <textarea class="form-control" name="deskripsi" rows="3" required><?php echo $show['deskripsi']; ?></textarea>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Tempat</label>
-                            <input type="text" placeholder="Tempat" name="tempat" class="form-control" value="<?php echo $show['tempat']; ?>" autocomplete="off">
+                                <label>Tempat</label>
+                                <input type="text" placeholder="Tempat" name="tempat" class="form-control" value="<?php echo $show['tempat']; ?>" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Tanggal</label>
+                                <label>Tanggal</label>
                                 <div class="input-group">
-                                <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                                </div>
-                            <input type="text" name="tanggal" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" value="<?php echo date('d/m/Y', strtotime($show['tanggal']));?>" autocomplete="off">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" name="tanggal" class="form-control pull-right datepicker" value="<?php echo $show['tanggal']; ?>" autocomplete="off"  required/>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                             <div class="form-group">
-                            <label>Sumber Pembiayaan</label>
-                            <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" value="<?php echo $show['sumber_pembiayaan']; ?>" autocomplete="off">
+                            <div class="form-group">
+                                <label>Sumber Pembiayaan</label>
+                                <input type="text" placeholder="Sumber Pembiayaan" name="sumber_pembiayaan" class="form-control" value="<?php echo $show['sumber_pembiayaan']; ?>" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                            <label>Biaya</label>
-                            <div class="input-group">
-                            <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
-                            <input type="text" name="biaya" placeholder="Biaya" class="form-control" value="<?php echo $show['biaya']; ?>" autocomplete="off">
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                             <div class="form-group">
-                            <label>Evaluasi</label>
-                            <textarea class="form-control" name="evaluasi" rows="3"><?php echo $show['evaluasi']; ?></textarea>
+                                <label>Biaya</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="background-color: rgb(230, 230, 230);">Rp.</span>
+                                    <input type="text" name="biaya" placeholder="Biaya" class="form-control money" value="<?php echo $show['biaya']; ?>" autocomplete="off" required>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
-                            <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
+                                <label>Evaluasi</label>
+                                <textarea class="form-control" name="evaluasi" rows="3" required><?php echo $show['evaluasi']; ?></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
                                 <div class="form-group input-group">
                                     <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control" autocomplete="off">
                                     <span class="input-group-btn">
-                                    <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
+                                        <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                             <div class="form-group">
-                            <label>Integrasi</label>
-                            <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" value="<?php echo $show['id_matakuliah']; ?>" autocomplete="off">
+                            <div class="form-group">
+                                <label>Integrasi</label>
+                                <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" value="<?php echo $show['id_matakuliah']; ?>" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="custom-file">
                                 <label>File</label>
                                 <input type="file" name="file" class="custom-file-input" id="customFile">
-                            </div>    
+                                <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                            </div>   
                         </div>   
                    	</div>
     	            <div class="modal-footer">
