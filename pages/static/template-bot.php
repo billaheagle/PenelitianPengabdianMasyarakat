@@ -11,6 +11,7 @@
 <script src='../../plugins/fastclick/fastclick.min.js'></script>
 <script src="../../dist/js/app.js" type="text/javascript"></script>
 <script src="../../dist/js/demo.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 <script type="text/javascript"  src="../../plugins/money/jquery.mask.js"></script>
 <script>
 $(document).ready(function(){
@@ -64,6 +65,34 @@ $(document).ready(function(){
         $(document).on('click', '.btn-add', addFormGroup);
         $(document).on('click', '.btn-remove', removeFormGroup);
 
+    });
+    $('.contact-form').bootstrapValidator({
+        //live: 'disabled',
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            Name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The Name is required and cannot be empty'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required'
+                    },
+                    emailAddress: {
+                        message: 'The email address is not valid'
+                    }
+                }
+            }
+        }
     });
 </script>
 <script type="text/javascript">

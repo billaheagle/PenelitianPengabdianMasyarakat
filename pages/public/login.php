@@ -8,25 +8,18 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b> PKM</a>
+        <a href="../../connector.php?page=dashboard"><b>Admin</b> PKM</a>
       </div>
       <?php include '../static/alerts.php'; ?>
-      <?php if(isset($_GET['pesan']) && $_GET['pesan'] == 'gagal') { ?>
-      <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-        Email atau Password Salah!
-      </div>
-      <?php } ?>
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
-        <form action="action.php?table=user&&action=login" method="post">
+        <form action="action.php?table=user&&action=login" method="post" class="contact-form">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Email" name="email" autocomplete="off">
+            <input type="text" class="form-control" placeholder="Email" name="email" autocomplete="off" required>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">

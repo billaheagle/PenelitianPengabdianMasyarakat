@@ -11,4 +11,5 @@
     <link href="../../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <link href="../../dist/css/skins/_all-skins.css" rel="stylesheet" type="text/css" />
     <link href="../../plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
 </head>

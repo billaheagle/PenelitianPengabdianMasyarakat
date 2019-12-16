@@ -11,7 +11,7 @@
 	 		$do->store($_POST['kode_matakuliah'], $_POST['matakuliah'], $_POST['semester'], $_POST['sks_teori'], $_POST['sks_lab'], $_POST['jenis'], $_POST['file'], $_POST['id_user']);
 	 		header("location:kurikulum.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['kode_matakuliah'], $_POST['matakuliah'], $_POST['semester'], $_POST['sks_teori'], $_POST['sks_lab'], $_POST['jenis'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['kode_matakuliah'], $_POST['matakuliah'], $_POST['semester'], $_POST['sks_teori'], $_POST['sks_lab'], $_POST['jenis'], $_POST['file2']);
 	 		header("location:kurikulum.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);
@@ -25,7 +25,7 @@
 	 		$do->store($_POST['bidang_keahlian'], $_POST['tingkat'], $_POST['tahun'], $_POST['file'], $_POST['id_user']);
 	 		header("location:prestasi-dosen.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['bidang_keahlian'], $_POST['tingkat'], $_POST['tahun'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['bidang_keahlian'], $_POST['tingkat'], $_POST['tahun'], $_POST['file2']);
 	 		header("location:prestasi-dosen.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);
@@ -39,7 +39,7 @@
 	 		$do->store($_POST['nama_kegiatan'], $_POST['prestasi'], $_POST['tingkat'], $_POST['tahun'], $_POST['keterangan'], $_POST['file'], $_POST['id_user']);
 	 		header("location:prestasi-mahasiswa.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['nama_kegiatan'], $_POST['prestasi'], $_POST['tingkat'], $_POST['tahun'], $_POST['keterangan'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['nama_kegiatan'], $_POST['prestasi'], $_POST['tingkat'], $_POST['tahun'], $_POST['keterangan'], $_POST['file2']);
 	 		header("location:prestasi-mahasiswa.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);
@@ -53,7 +53,7 @@
 	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file'], $_POST['id_user']);
 	 		header("location:pengabdian-masyarakat.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file2']);
 	 		header("location:pengabdian-masyarakat.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);
@@ -67,7 +67,7 @@
 	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file'], $_POST['id_user']);
 	 		header("location:penelitian.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file2']);
 	 		header("location:penelitian.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);
@@ -81,7 +81,7 @@
 	 		$do->store($_POST['judul_kegiatan'], $_POST['lembaga_mitra'], $_POST['tingkat'], $_POST['tanggal'], $_POST['durasi'], $_POST['manfaat'], $_POST['file'], $_POST['id_user']);
 	 		header("location:hasil-kerjasama.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['judul_kegiatan'], $_POST['lembaga_mitra'], $_POST['tingkat'], $_POST['tanggal'], $_POST['durasi'], $_POST['manfaat'], $_POST['file']);
+	 		$do->update($_POST['id'], $_POST['judul_kegiatan'], $_POST['lembaga_mitra'], $_POST['tingkat'], $_POST['tanggal'], $_POST['durasi'], $_POST['manfaat'], $_POST['file2']);
 	 		header("location:hasil-kerjasama.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);

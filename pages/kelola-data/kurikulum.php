@@ -68,79 +68,85 @@
         </div>
     </div>
     <div div class="modal fade" id="save">
-    	<div class="modal-dialog">
+    	<div class="modal-dialog modal-lg">
             <div class="modal-content">
 	            <div class="modal-header bg-green">
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Data</h4> 
                 </div>
-                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post">
-                    <div class="modal-body row">
+                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post" class="contact-form">
+                    <div class="modal-body">
                         <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
-                        <div class="col-lg-4" >
-                            <div class="form-group">
-                                <label>Kode Mata Kuliah</label>
-                                <input type="text" placeholder="Kode" name="kode_matakuliah" class="form-control" autocomplete="off" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="form-group">
-                                <label>Mata Kuliah</label>
-                                <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>Semester</label>
-                                <select name="semester" class="form-control">
-                                    <option>Semester</option>
-                                    <?php foreach($semester as $s) { 
-                                        echo "<option value='$s'>$s</option>";
-                                    } ?>
-                                </select>
-                            </div>    
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>SKS Teori</label>
-                                <select name="sks_teori" class="form-control">
-                                    <option>SKS Teori</option>
-                                    <?php foreach($sks_teori as $s) { 
-                                        echo "<option value='$s'>$s</option>";
-                                    } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>SKS Lab</label>
-                                <select name="sks_lab" class="form-control">
-                                    <option>SKS Lab</option>
-                                    <?php foreach($sks_lab as $s) { 
-                                        echo "<option value='$s'>$s</option>";
-                                    } ?>
-                                </select>
-                            </div>
-                        </div>         
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>Jenis</label>
-                                <select name="jenis" class="form-control">
-                                    <option>Jenis</option>
-                                    <?php foreach($jenis as $s) { 
-                                        echo "<option value='$s'>$s</option>";
-                                    } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="form-group">
-                                <div class="custom-file">
-                                    <label class="custom-file-label" for="customFile">File</label>
-                                    <input type="file" class="custom-file-input" id="customFile" name="file" required>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>Kode Mata Kuliah</label>
+                                    <input type="text" placeholder="Kode" name="kode_matakuliah" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
-                        </div>    
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <label>Mata Kuliah</label>
+                                    <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" autocomplete="off" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>Semester</label>
+                                    <select name="semester" class="form-control" required>
+                                        <option value="">Semester</option>
+                                        <?php foreach($semester as $s) { 
+                                            echo "<option value='$s'>$s</option>";
+                                        } ?>
+                                    </select>
+                                </div>    
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>SKS Teori</label>
+                                    <select name="sks_teori" class="form-control" required>
+                                        <option value="">SKS Teori</option>
+                                        <?php foreach($sks_teori as $s) { 
+                                            echo "<option value='$s'>$s</option>";
+                                        } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>SKS Lab</label>
+                                    <select name="sks_lab" class="form-control" required>
+                                        <option value="">SKS Lab</option>
+                                        <?php foreach($sks_lab as $s) { 
+                                            echo "<option value='$s'>$s</option>";
+                                        } ?>
+                                    </select>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="row">      
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>Jenis</label>
+                                    <select name="jenis" class="form-control" required>
+                                        <option value="">Jenis</option>
+                                        <?php foreach($jenis as $s) { 
+                                            echo "<option value='$s'>$s</option>";
+                                        } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <label class="custom-file-label" for="customFile">File</label>
+                                        <input type="file" class="custom-file-input" id="customFile" name="file" required>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
                	    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -155,15 +161,16 @@
             foreach($db->show() as $show) {
     ?>
     <div div class="modal fade" id="edit-<?php echo $show['id']; ?>">
-    	<div class="modal-dialog">
+    	<div class="modal-dialog modal-lg">
             <div class="modal-content">
 	            <div class="modal-header bg-yellow">
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Edit Data</h4>
 	            </div>
-                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post">
-                    <div class="modal-body row">
+                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post" class="contact-form">
+                    <div class="modal-body">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
+                        <div class="row">
                             <div class="col-lg-4" >
                                 <div class="form-group">
                                     <label>Kode Mata Kuliah</label>
@@ -176,68 +183,75 @@
                                     <input type="text" placeholder="Mata Kuliah" name="matakuliah" class="form-control" value="<?php echo $show['matakuliah']; ?>" autocomplete="off" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>Semester</label>
-                                <select name="semester" class="form-control">
-                                    <?php foreach($semester as $s) { 
-                                        if($s == $show['semester']) {
-                                            echo "<option selected value='$s'>$s</option>";
-                                        } else {
-                                            echo "<option value='$s'>$s</option>";
-                                        }
-                                    } ?>
-                                </select>
-                            </div>    
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>SKS Teori</label>
-                                <select name="sks_teori" class="form-control">
-                                    <?php foreach($sks_teori as $s) { 
-                                        if($s == $show['sks_teori']) {
-                                            echo "<option selected value='$s'>$s</option>";
-                                        } else {
-                                            echo "<option value='$s'>$s</option>";
-                                        }
-                                    } ?>
-                                </select>
+                                <div class="form-group">
+                                    <label>Semester</label>
+                                    <select name="semester" class="form-control" required>
+                                        <?php foreach($semester as $s) { 
+                                            if($s == $show['semester']) {
+                                                echo "<option selected value='$s'>$s</option>";
+                                            } else {
+                                                echo "<option value='$s'>$s</option>";
+                                            }
+                                        } ?>
+                                    </select>
+                                </div>    
                             </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>SKS Lab</label>
-                                <select name="sks_lab" class="form-control">
-                                    <?php foreach($sks_lab as $s) { 
-                                        if($s == $show['sks_lab']) {
-                                            echo "<option selected value='$s'>$s</option>";
-                                        } else {
-                                            echo "<option value='$s'>$s</option>";
-                                        }
-                                    } ?>
-                                </select>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>SKS Teori</label>
+                                    <select name="sks_teori" class="form-control" required>
+                                        <?php foreach($sks_teori as $s) { 
+                                            if($s == $show['sks_teori']) {
+                                                echo "<option selected value='$s'>$s</option>";
+                                            } else {
+                                                echo "<option value='$s'>$s</option>";
+                                            }
+                                        } ?>
+                                    </select>
+                                </div>
                             </div>
-                        </div>         
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label>Jenis</label>
-                                <select name="jenis" class="form-control">
-                                    <?php foreach($jenis as $s) { 
-                                        if($s == $show['jenis']) {
-                                            echo "<option selected value='$s'>$s</option>";
-                                        } else {
-                                            echo "<option value='$s'>$s</option>";
-                                        }
-                                    } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="custom-file">
-                                <label>File</label>
-                                <input type="file" name="file" class="custom-file-input" id="customFile">
-                                <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>SKS Lab</label>
+                                    <select name="sks_lab" class="form-control" required>
+                                        <?php foreach($sks_lab as $s) { 
+                                            if($s == $show['sks_lab']) {
+                                                echo "<option selected value='$s'>$s</option>";
+                                            } else {
+                                                echo "<option value='$s'>$s</option>";
+                                            }
+                                        } ?>
+                                    </select>
+                                </div>
                             </div>  
+                        </div>
+                        <div class="row">       
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>Jenis</label>
+                                    <select name="jenis" class="form-control" required>
+                                        <?php foreach($jenis as $s) { 
+                                            if($s == $show['jenis']) {
+                                                echo "<option selected value='$s'>$s</option>";
+                                            } else {
+                                                echo "<option value='$s'>$s</option>";
+                                            }
+                                        } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <label class="custom-file-label" for="customFile">File</label>
+                                        <input type="file" class="custom-file-input" id="customFile" name="file2">
+                                        <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                	    </div>
                     <div class="modal-footer">

@@ -59,64 +59,70 @@
         </div>
     </div>
     <div div class="modal fade" id="save">
-    	<div class="modal-dialog">
+    	<div class="modal-dialog modal-lg">
             <div class="modal-content">
 	            <div class="modal-header bg-green">
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Tambah</h4>
 	            </div>
-                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post">
-                    <div class="modal-body row">
+                <form action="action.php?table=<?php echo $table; ?>&action=store" method="post" class="contact-form">
+                    <div class="modal-body">
                         <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
-                        <div class="col-lg-6" >
-                            <div class="form-group">
-                                <label>Nama Kegiatan</label>
-                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" autocomplete="off" required>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Nama Kegiatan</label>
+                                    <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" id="Name" class="form-control" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Prestasi</label>
+                                    <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" autocomplete="off" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Prestasi</label>
-                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" autocomplete="off" required>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Tingkat</label>
+                                    <select name="tingkat" class="form-control" required>
+                                        <option value="">Tingkat</option>
+                                        <?php foreach($tingkat as $s) { 
+                                            echo "<option value='$s'>$s</option>";
+                                        } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Tahun</label>
+                                    <select name="tahun" class="form-control" required>
+                                        <option value="">Tahun</option>
+                                        <?php
+                                        $s = 2010;
+                                        while($s < 2025) {  
+                                            echo "<option value='$s'>$s</option>";
+                                            $s++;
+                                        } ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Tingkat</label>
-                                <select name="tingkat" class="form-control">
-                                    <option>Tingkat</option>
-                                    <?php foreach($tingkat as $s) { 
-                                        echo "<option value='$s'>$s</option>";
-                                    } ?>
-                                </select>
-                            </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Keterangan</label>
+                                    <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan" required></textarea>
+                                </div>
+                            </div>         
+                            <div class="col-lg-12">
+                                <div class="custom-file">
+                                    <label>File</label>
+                                    <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off" required>
+                                </div>
+                   	        </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Tahun</label>
-                                <select name="tahun" class="form-control">
-                                    <option>Tahun</option>
-                                    <?php
-                                    $s = 2010;
-                                    while($s < 2025) {  
-                                        echo "<option value='$s'>$s</option>";
-                                        $s++;
-                                    } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label>Keterangan</label>
-                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan" required></textarea>
-                            </div>
-                        </div>         
-                        <div class="col-lg-12">
-                            <div class="custom-file">
-                                <label>File</label>
-                                <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off" required>
-                            </div>
-               	        </div>
                     </div>
     	            <div class="modal-footer">
     	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -131,71 +137,77 @@
             foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
     ?>
     <div div class="modal fade" id="edit-<?php echo $show['id']; ?>">
-    	<div class="modal-dialog">
+    	<div class="modal-dialog modal-lg">
             <div class="modal-content">
 	            <div class="modal-header bg-yellow">
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	                <h4 class="modal-title">Modal Edit</h4>
 	            </div>
-                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post">
-                    <div class="modal-body row">
+                <form action="action.php?table=<?php echo $table; ?>&action=update" method="post" class="contact-form">
+                    <div class="modal-body">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Nama Kegiatan</label>
-                                <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" value="<?php echo $show['nama_kegiatan']; ?>" autocomplete="off" required>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Nama Kegiatan</label>
+                                    <input type="text" placeholder="Nama Kegiatan" name="nama_kegiatan" class="form-control" value="<?php echo $show['nama_kegiatan']; ?>" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Prestasi</label>
+                                    <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" value="<?php echo $show['prestasi']; ?>" autocomplete="off" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Prestasi</label>
-                                <input type="text" placeholder="Prestasi" name="prestasi" class="form-control" value="<?php echo $show['prestasi']; ?>" autocomplete="off" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Tingkat</label>
-                                <select name="tingkat" class="form-control">
-                                    <?php foreach($tingkat as $s) {  
-                                        if($s == $show['tingkat']) {
-                                            echo "<option selected value='$s'>$s</option>";
-                                        } else {
-                                            echo "<option value='$s'>$s</option>";
-                                        }
-                                    } ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>Tahun</label>
-                                <select name="tahun" class="form-control">
-                                    <?php
-                                        $s = 2010;
-                                        while($s < 2025) {  
-                                            if($s == $show['tahun']) {
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Tingkat</label>
+                                    <select name="tingkat" class="form-control" required>
+                                        <?php foreach($tingkat as $s) {  
+                                            if($s == $show['tingkat']) {
                                                 echo "<option selected value='$s'>$s</option>";
                                             } else {
                                                 echo "<option value='$s'>$s</option>";
                                             }
-                                            $s++;
-                                        }
-                                    ?>
-                                </select>
+                                        } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Tahun</label>
+                                    <select name="tahun" class="form-control" required>
+                                        <?php
+                                            $s = 2010;
+                                            while($s < 2025) {  
+                                                if($s == $show['tahun']) {
+                                                    echo "<option selected value='$s'>$s</option>";
+                                                } else {
+                                                    echo "<option value='$s'>$s</option>";
+                                                }
+                                                $s++;
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label>Keterangan</label>
-                                <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan" required><?php echo $show['keterangan']; ?></textarea>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Keterangan</label>
+                                    <textarea name="keterangan" class="form-control" rows="5" placeholder="Keterangan" required><?php echo $show['keterangan']; ?></textarea>
+                                </div>
+                            </div>         
+                            <div class="col-lg-12">
+                                <div class="custom-file">
+                                    <label>File</label>
+                                    <input type="file" name="file2" class="custom-file-input" id="customFile">
+                                    <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                                </div>  
                             </div>
-                        </div>         
-                        <div class="col-lg-12">
-                            <div class="custom-file">
-                                <label>File</label>
-                                <input type="file" name="file" class="custom-file-input" id="customFile">
-                                <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
-                            </div>  
                         </div>
                    	</div>
     	            <div class="modal-footer">
