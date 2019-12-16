@@ -22,6 +22,7 @@
                         $no = 1;
                         if($db->search_by_field('id_user' , $_SESSION['user']) != null) {
                             foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
+                                 $show2 = $db2->search_by_id($show['id_matakuliah']);
                     ?>
                     <tr>
                         <td width="4%"><?php echo $no++; ?></td>
@@ -29,7 +30,7 @@
                         <td><?php echo $show['judul']; ?></td>
                         <td><?php echo date('d/m/Y', strtotime($show['tanggal']));?></td>
                         <td><?php echo $show['tempat']; ?></td>
-                        <td><?php echo $show['id_matakuliah']; ?></td>
+                        <td><?php echo $show2['kode_matakuliah'] . " - " . $show2['matakuliah']; ?></td>
                         <td width="5%">
                             <button class="btn btn-primary btn-xs"><i class="fa fa-info-circle"></i></button>
                         </td>
@@ -137,7 +138,7 @@
                                 <div class="form-group">
                                 <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
                                     <div class="form-group input-group">
-                                        <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control" autocomplete="off">
+                                        <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control terlibat" autocomplete="off">
                                         <span class="input-group-btn">
                                             <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
                                         </span>
@@ -146,16 +147,24 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label>Integrasi</label>
-                                    <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" autocomplete="off" required>
+                                    <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control integrasi" autocomplete="off" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="custom-file">
                                     <label>File</label>
                                     <input type="file" class="custom-file-input" name="file" id="customFile" required>
+                                </div>   
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="custom-file">
+                                    <label>Image</label>
+                                    <input type="file" class="custom-file-input" name="image" id="customFile" required>
                                 </div>   
                             </div>
                         </div>
@@ -171,6 +180,7 @@
     <?php
         if($db->search_by_field('id_user' , $_SESSION['user']) != null) {
             foreach($db->search_by_field('id_user' , $_SESSION['user']) as $show) {
+                $show2 = $db2->search_by_id($show['id_matakuliah']);
     ?>
      <div div class="modal fade" id="edit-<?php echo $show['id']; ?>">
         <div class="modal-dialog modal-lg">
@@ -251,7 +261,7 @@
                                 <div class="form-group">
                                 <label for=" Mahasiswa">Mahasiswa yang Terlibat</label>
                                     <div class="form-group input-group">
-                                        <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control" autocomplete="off">
+                                        <input type="text" name="id_mahasiswa" placeholder="Mahasiswa" class="form-control terlibat" autocomplete="off">
                                         <span class="input-group-btn">
                                             <button class="btn btn-flat btn-primary btn-add" type="button">+</button>
                                         </span>
@@ -260,17 +270,26 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label>Integrasi</label>
-                                    <input type="text" placeholder="Kode Mata Kuliah" name="id_matakuliah" class="form-control" value="<?php echo $show['id_matakuliah']; ?>" autocomplete="off" required>
+                                    <input type="text" placeholder="Kode Mata Kuliah" name="kode_matakuliah" class="form-control integrasi" value="<?php echo $show2['kode_matakuliah'] . " - " . $show2['matakuliah']; ?>" autocomplete="off" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                  <div class="custom-file">
                                     <label>File</label>
                                     <input type="file" name="file2" class="custom-file-input" id="customFile">
                                     <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                                </div>
+                            </div>  
+                            <div class="col-lg-6">
+                                 <div class="custom-file">
+                                    <label>Image</label>
+                                    <input type="file" name="image2" class="custom-file-input" id="customFile">
+                                    <div class="form-group">Image yang sudah ada : <a href="#"><?php echo $show['image']; ?></a></div>
                                 </div>
                             </div>  
                         </div>

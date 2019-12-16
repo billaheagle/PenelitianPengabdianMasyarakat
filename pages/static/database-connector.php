@@ -28,10 +28,14 @@
 	    	} else if($_SESSION['subpage']=='pengabdian-masyarakat') {
 	    		include $dir1 . 'pengabdian-masyarakat.php';
 				$db 	= new pengabdianMasyarakat();
+	    		include $dir1 . 'kurikulum.php';
+				$db2 		= new kurikulum();
 			    $table	= 'pengabdian-masyarakat';
 	    	} else if($_SESSION['subpage']=='penelitian') {
 	    		include $dir1 . 'penelitian.php';
 				$db 	= new penelitian();
+	    		include $dir1 . 'kurikulum.php';
+				$db2 		= new kurikulum();
 			    $table	= 'penelitian';
 	    	} else if($_SESSION['subpage']=='hasil-kerjasama') {
 	    		include $dir1 . 'hasil-kerjasama.php';

@@ -123,13 +123,21 @@
         							<label>Manfaat</label>
         							<textarea class="form-control" name="manfaat" rows="3" required></textarea>
         						</div>
-        					</div>
-        					<div class="col-lg-12">
-        						<div class="custom-file">
-        							<label>File</label>
-        							<input type="file" name="file" class="custom-file-input" id="customFile" required>
-        						</div>
-        					</div>  
+        					</div> 
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="custom-file">
+                                    <label>File</label>
+                                    <input type="file" name="file" class="custom-file-input" id="customFile" required>
+                                </div>
+                            </div> 
+                            <div class="col-lg-6">
+                                <div class="custom-file">
+                                    <label>Image</label>
+                                    <input type="file" name="image" class="custom-file-input" id="customFile" required>
+                                </div>
+                            </div> 
                         </div>
     				</div>
     				<div class="modal-footer">
@@ -211,13 +219,22 @@
         							<textarea class="form-control" name="manfaat" rows="3" required><?php echo $show['manfaat']; ?></textarea>
         						</div>
         					</div>
-        					<div class="col-lg-12">
-        						<div class="custom-file">
-        							<label>File</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="custom-file">
+                                    <label>File</label>
                                     <input type="file" name="file2" class="custom-file-input" id="customFile">
                                     <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
-        						</div>
-        					</div> 
+                                </div>
+                            </div> 
+                            <div class="col-lg-6">
+                                <div class="custom-file">
+                                    <label>Image</label>
+                                    <input type="file" name="image2" class="custom-file-input" id="customFile">
+                                    <div class="form-group">Image yang sudah ada : <a href="#"><?php echo $show['image']; ?></a></div>
+                                </div>
+                            </div> 
                         </div>
         			</div>
         			<div class="modal-footer">

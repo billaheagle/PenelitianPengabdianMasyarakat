@@ -12,7 +12,26 @@
 <script src="../../dist/js/app.js" type="text/javascript"></script>
 <script src="../../dist/js/demo.js" type="text/javascript"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-<script type="text/javascript"  src="../../plugins/money/jquery.mask.js"></script>
+<script type="text/javascript" src="../../plugins/money/jquery.mask.js"></script>
+<script type="text/javascript" src="../../plugins/autocomplete/jquery.autocomplete.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $( ".integrasi" ).autocomplete({
+            serviceUrl: "../../config/kelola-data/matakuliah.php",
+            dataType: "JSON",
+            onSelect: function (suggestion) {
+                $( ".integrasi" ).val(suggestion.kode + " - " + suggestion.matkul);
+            }
+        });
+        $( ".terlibat" ).autocomplete({
+            serviceUrl: "../../config/kelola-data/mahasiswa.php",
+            dataType: "JSON",
+            onSelect: function (suggestion) {
+                $( ".terlibat" ).val(suggestion.email + " - " + suggestion.nama);
+            }
+        });
+    })
+</script>
 <script>
 $(document).ready(function(){
 
@@ -85,10 +104,17 @@ $(document).ready(function(){
             email: {
                 validators: {
                     notEmpty: {
-                        message: 'The email address is required'
+                        message: 'The email address is required and cannot be empty'
                     },
                     emailAddress: {
                         message: 'The email address is not valid'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'Password is required and cannot be empty'
                     }
                 }
             }

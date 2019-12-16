@@ -50,10 +50,10 @@
 		$do = new pengabdianMasyarakat();
 
 	 	if ($action == "store") {
-	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file'], $_POST['id_user']);
-	 		header("location:pengabdian-masyarakat.php");
+	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], substr($_POST['kode_matakuliah'], 0, 7), $_POST['file'], $_POST['id_user']);
+	 		//header("location:pengabdian-masyarakat.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file2']);
+	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], substr($_POST['kode_matakuliah'], 0, 7), $_POST['file2']);
 	 		header("location:pengabdian-masyarakat.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);
@@ -64,10 +64,10 @@
 		$do = new penelitian();
 
 	 	if ($action == "store") {
-	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file'], $_POST['id_user']);
+	 		$do->store($_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], substr($_POST['kode_matakuliah'], 0, 7), $_POST['file'], $_POST['id_user']);
 	 		header("location:penelitian.php");
 	 	} elseif ($action == "update") {
-	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], $_POST['id_matakuliah'], $_POST['file2']);
+	 		$do->update($_POST['id'], $_POST['tema'], $_POST['judul'], $_POST['deskripsi'], $_POST['tanggal'], $_POST['tempat'], $_POST['sumber_pembiayaan'], str_replace(".", "", $_POST['biaya']), $_POST['evaluasi'], substr($_POST['kode_matakuliah'], 0, 7), $_POST['file2']);
 	 		header("location:penelitian.php");
 	 	} elseif ($action == "delete") {
 	 		$do->delete($_POST['id']);

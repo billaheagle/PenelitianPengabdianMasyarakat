@@ -63,12 +63,14 @@
                     <div class="modal-body">
                         <input name="id_user" type="hidden" value="<?php echo $_SESSION['user']; ?>">
                         <div class="row">
-                            <div class="col-lg-6" >
+                            <div class="col-lg-12" >
                                 <div class="form-group"> 
                                     <label>Bidang Keahlian</label>
                                     <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Tingkat</label>
@@ -80,8 +82,6 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Tahun</label>
@@ -95,14 +95,22 @@
                                         } ?>
                                     </select>
                                 </div>
-                            </div>
+                            </div>  
+                        </div> 
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="custom-file">
                                     <label>File</label>
                                     <input type="file" name="file" class="custom-file-input" id="customFile" autocomplete="off" required>
                                 </div>
-                            </div>   
-                        </div> 
+                            </div> 
+                            <div class="col-lg-6">
+                                <div class="custom-file">
+                                    <label>Image</label>
+                                    <input type="file" name="image" class="custom-file-input" id="customFile" autocomplete="off" required>
+                                </div>
+                            </div> 
+                        </div>
                	    </div>
 	                <div class="modal-footer">
 	                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -127,12 +135,14 @@
                     <div class="modal-body">
                         <input name="id" type="hidden" value="<?php echo $show['id']; ?>">
                         <div class="row">
-                            <div class="col-lg-6" >
+                            <div class="col-lg-12" >
                                 <div class="form-group">
                                     <label>Bidang Keahlian</label>
                                     <input type="text" placeholder="Bidang Keahlian" name="bidang_keahlian" value="<?php echo $show['bidang_keahlian']; ?>" class="form-control" autocomplete="off" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Tingkat</label>
@@ -147,8 +157,6 @@
                                     </select>
                                 </div>    
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Tahun</label>
@@ -167,11 +175,20 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="custom-file">
                                     <label>File</label>
                                     <input type="file" name="file2" class="custom-file-input" id="customFile">
                                     <div class="form-group">File yang sudah ada : <a href="#"><?php echo $show['file']; ?></a></div>
+                                </div>   
+                            </div> 
+                            <div class="col-lg-6">
+                                <div class="custom-file">
+                                    <label>Image</label>
+                                    <input type="file" name="image2" class="custom-file-input" id="customFile">
+                                    <div class="form-group">Image yang sudah ada : <a href="#"><?php echo $show['image']; ?></a></div>
                                 </div>   
                             </div> 
                         </div>
